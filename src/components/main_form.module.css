@@ -1,0 +1,78 @@
+.container {
+    width: 1360px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    display: grid;
+}
+
+.discription {
+    width: 90%;
+    padding: 0 5% 0 5%;
+}
+
+.sectionForm {
+    width: 1360px;
+    background-color: #f4f4f4;
+    margin: 0 auto 15px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+}
+
+.sectionForm div {
+    background-color: #fff;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.sectionForm div label {
+    display: block;
+    padding: 0 0 5px 30px;
+    font-size: 15px;
+    margin: 20px  20px 0;
+    text-align: left;
+}
+.sectionForm div select {
+    width: 90%;
+    height: 30px;
+    padding: 1%;
+    margin: 0;
+}
+.sectionForm div input {
+    width: 90%;
+    height: 20px;
+    padding: 1%;
+    margin: 0;
+}
+
+.header a {
+    display: block;
+    width: 115px;
+    margin: 5px 0 20px 70px;
+}
+.header h1 {
+    font-size: 40px;
+    display: block;
+    padding: 15px 0 0 0;
+    color: #2a2a2a;
+}
+
+
+
+@media only screen and (max-width: 1360px) {
+    .sectionForm, .discription, .container{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .sectionForm, .container {
+        width: 95%;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+   
+}
+/* @media only screen and (max-width: 520px) {
+    
+} */

@@ -1,0 +1,45 @@
+.header {
+    width: 1360px;
+    height: 125px;
+    background-color: #fff;
+    margin: 0 auto 0 auto;
+    display: grid;
+    grid-template-columns: 195px 1fr;
+}
+.header a {
+    display: block;
+    width: 115px;
+    margin: 5px 0 20px 70px;
+}
+.header h1 {
+    font-size: 40px;
+    display: block;
+    padding: 15px 0 0 0;
+    color: #2a2a2a;
+}
+
+
+
+
+@media only screen and (max-width: 1360px) {
+    .header {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .header {
+        width: 95%;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .header a {
+        width: auto;
+        margin: 15px auto 0 auto;
+    }
+}
+@media only screen and (max-width: 520px) {
+    .header h1 {
+        font-size: 26px;
+    }
+}
