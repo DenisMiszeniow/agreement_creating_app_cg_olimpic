@@ -1,20 +1,20 @@
 .header {
     width: 1360px;
-    height: 125px;
+    
     background-color: #fff;
     margin: 0 auto 0 auto;
     display: grid;
-    grid-template-columns: 195px 1fr;
+    grid-template-columns: 1fr;
 }
 .header a {
     display: block;
     width: 115px;
-    margin: 5px 0 20px 70px;
+    margin: 5px auto 0 auto;
 }
 .header h1 {
     font-size: 40px;
     display: block;
-    padding: 15px 0 0 0;
+    padding: 0px 0 0 0;
     color: #2a2a2a;
 }
 
