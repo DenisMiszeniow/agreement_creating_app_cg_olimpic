@@ -1,6 +1,7 @@
 const VALUE_SITE = 'VALUE_SITE'
 const VALUE_PACKAGE = 'VALUE PACKAGE'
 const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
+const VALUE_SCHOOL_YEAR = 'VALUE_SCHOOL_YEAR'
 
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
@@ -17,11 +18,24 @@ const liza3 = 'Szkoła Podstawowa nr 33 - Kolista 17, 43-152 Wrocław'
 const liza4 = 'Świetlica Wiejska - Główna 47, 55-080 Smolec'
 const liza5 = 'Szkoła Podstawowa W Kobierzycach - Parkowa 7, 55-040 Kobierzyce'
 
+//---PACKAGE OPTIONS------
+const gp60 = 'GRUPA POCZĄTKUJĄCA (60 min)'
+const gp90 = 'GRUPA POCZĄTKUJĄCA (90 min)'
+const gk60 = 'GRUPA KONTYNUUJĄCA (60 min)'
+const gk90 = 'GRUPA KONTYNUUJĄCA (90 min)'
+
+//---FREQUENCY OPTIONS----
+const x1 = '1-x w tygodniu'
+const x2 = '2-x w tygodniu'
+const x3 = '3-x w tygodniu'
+
 const initialState = {
     forecastDate: new Date(),
     schoolYear:[
         '2022/2023',
+        '2023/2024'
     ],
+    chosenSchoolYear:'2022/2023',
     institution: [
         {site: olga1, id:1},
         {site: olga2, id:2},
@@ -35,9 +49,23 @@ const initialState = {
         {site: liza4, id:10},
         {site: liza5, id:11},
     ],
-    // parentChoice: '',
-    price: 0,
-    priceInWords: '',
+    prices: {
+        priceJun60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
+        priceJun90Ones: { price: 160, letter: 'Sto Sześćdziesiąt zł 00/100' },
+        priceJun60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
+        priceJun90Twise: { price: 260, letter: 'Dwieście Sześćdziesiąt zł 00/100' },
+        priceMed60Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
+        priceMed90Ones: { price: 195, letter: 'Sto Dziewięćdziesiąt Pięć zł 00/100' },
+        priceMed60Twise: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
+        priceMed90Twice: { price: 295, letter: 'Dwieśćie Dziewięćdziesiąt Pięć zł 00/100' },
+        priceMed60Triple: { price: 300, letter: 'Trzysta zł 00/100' },
+        priceMed90Triple: { price: 320, letter: 'Trzysta Dwadzieścia zł 00/100' },
+        priceSeniorTwise: { price: 295, letter: 'Dwieśćie Dziewięćdziesiąt Pięć zł 00/100' },
+        priceSeniorTriple: { price: 300, letter: 'Trzysta zł 00/100' },
+        priceSeniorQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
+    },
+    calculatePrice: 0,
+    calculatePriceInWords: '',
     chosenSite: '',
     package: null,
     chosenPackage: '',
@@ -73,43 +101,79 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState.ownerName = 'Olga Mishenova'
             }
             if (newState.chosenSite == olga1){
-                 newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (60 min)',
-                    'GRUPA KONTYNUUJĄCA (60 min)',
-                    'GRUPA KONTYNUUJĄCA (90 min)'
-                ]
+                 newState.package = [gp60, gk60, gk90]
             }
             if ((newState.chosenSite === olga2) || (newState.chosenSite === olga3) || (newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
-                newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (60 min)',
-                    'GRUPA KONTYNUUJĄCA (90 min)'
-                ]
+                newState.package = [gp60, gk90]
             }
             if (newState.chosenSite === olga4) {
-                newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (60 min)',
-                    'GRUPA KONTYNUUJĄCA (60 min)'
-                ]
+                newState.package = [gp60, gk60]
             }
             if ((newState.chosenSite == olga5) || (newState.chosenSite === liza4)) {
-                newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (60 min)',
-                    'GRUPA POCZĄTKUJĄCA (90 min)'
-                ]
+                newState.package = [gp60, gp90]
             }
             if (newState.chosenSite === olga6) {
-                newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (60 min)'
-                ]
+                newState.package = [gp60]
             }
             if (newState.chosenSite === liza5) {
-                newState.package = [
-                    'GRUPA POCZĄTKUJĄCA (90 min)'
-                ]
+                newState.package = [gp90]
             }
         return newState
-        case VALUE_PACKAGE: return ({...state, chosenPackage: action.valuePackage})
-        case VALUE_FREQUENCY: return ({...state, chosenFrequency: action.valueFrequency}) 
+        case VALUE_PACKAGE:
+            const newState1 = {...state}
+            newState1.chosenPackage = action.valuePackage
+            newState1.chosenFrequency = ''
+            if ((newState1.chosenPackage === gp60) || (newState1.chosenPackage === gp90)) {
+                newState1.frequency = [x1, x2]
+            } else {
+                newState1.frequency = [x1, x2, x3]
+            }
+        return newState1
+        case VALUE_FREQUENCY: 
+            const newState2 = {...state}
+            newState2.chosenFrequency = action.valueFrequency
+            if ((newState2.chosenPackage === gp60) && (newState2.chosenFrequency === x1)){
+                newState2.calculatePrice = newState2.prices.priceJun60Ones.price
+                newState2.calculatePriceInWords = newState2.prices.priceJun60Ones.letter
+            }
+            if ((newState2.chosenPackage === gp90) && (newState2.chosenFrequency === x1)){
+                newState2.calculatePrice = newState2.prices.priceJun90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.priceJun90Ones.letter
+            }
+            if ((newState2.chosenPackage === gp60) && (newState2.chosenFrequency === x2)){
+                newState2.calculatePrice = newState2.prices.priceJun60Twise.price
+                newState2.calculatePriceInWords = newState2.prices.priceJun60Twise.letter
+            }
+            if ((newState2.chosenPackage === gp90) && (newState2.chosenFrequency === x2)){
+                newState2.calculatePrice = newState2.prices.priceJun90Twise.price
+                newState2.calculatePriceInWords = newState2.prices.priceJun90Twise.letter
+            }
+            if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x1)){
+                newState2.calculatePrice = newState2.prices.priceMed60Ones.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed60Ones.letter
+            }
+            if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x2)){
+                newState2.calculatePrice = newState2.prices.priceMed60Twise.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed60Twise.letter
+            }
+            if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x3)){
+                newState2.calculatePrice = newState2.prices.priceMed60Triple.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed60Triple.letter
+            }
+            if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x1)){
+                newState2.calculatePrice = newState2.prices.priceMed90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed90Ones.letter
+            }
+            if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x2)){
+                newState2.calculatePrice = newState2.prices.priceMed90Twice.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed90Twice.letter
+            }
+            if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x3)){
+                newState2.calculatePrice = newState2.prices.priceMed90Triple.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
+            }
+        return newState2
+        case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
         default: return {...state}
     }
 
@@ -118,3 +182,4 @@ export const mainStateDataReducer = (state = initialState, action) => {
 export const onChosenSite = (valueSite) => ({type: VALUE_SITE, valueSite})
 export const onChosenPackage = (valuePackage) => ({type: VALUE_PACKAGE, valuePackage})
 export const onChosenFrequency = (valueFrequency) => ({type:VALUE_FREQUENCY, valueFrequency})
+export const onChosenSchoolYear = (valueYear) => ({type:VALUE_SCHOOL_YEAR, valueYear})

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onChosenSite, onChosenPackage } from "../BLL/main_state_data_reducer";
+import { onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear } from "../BLL/main_state_data_reducer";
 import MainForm from "./main_form";
 export const mapStateToProps = (state) => {
     return (
@@ -15,7 +15,11 @@ export const mapStateToProps = (state) => {
             chosenPackage: state.mainData.chosenPackage,
             frequency: state.mainData.frequency,
             chosenFrequency: state.mainData.chosenFrequency,
-            owner: state.mainData.ownerName
+            schoolYear: state.mainData.schoolYear,
+            chosenSchoolYear: state.mainData.chosenSchoolYear,
+            priceNumber: state.mainData.calculatePrice,
+            priceInWord: state.mainData.calculatePriceInWords 
+            
 
         }
     )
@@ -25,7 +29,9 @@ export const mapDispatchToProps = (dispatch) => {
     return (
         {
             onChosenSite: (valueSite) => {dispatch(onChosenSite(valueSite))},
-            onChosenPackage: (valuePackage) => {dispatch(onChosenPackage(valuePackage))}
+            onChosenPackage: (valuePackage) => {dispatch(onChosenPackage(valuePackage))},
+            onChosenFrequency: (valueFrequency) => {dispatch(onChosenFrequency(valueFrequency))},
+            onChosenSchoolYear: (valueYear) => {dispatch(onChosenSchoolYear(valueYear))}
         }
     )
 }

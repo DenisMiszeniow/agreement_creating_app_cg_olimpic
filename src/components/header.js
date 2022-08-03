@@ -7,7 +7,7 @@ const Header = (props) => {
                 <img width={115} src="https://cg-olimpic.pl/wp-content/uploads/2020/08/Logo_new_web_1.jpg" alt="CG-Olimpic"/>
             </a>
             <h1>
-                Kreator Umowy CG-Olimpic
+                Generator Umowy CG-Olimpic
             </h1>
 
         </header>

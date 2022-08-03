@@ -1,7 +1,6 @@
 import styles from "./main_form.module.css"
 
 const MainForm = (props) => {
-    
     //-------------select site-----------------
     const localonChangeSite = ({ target: { value } }) => {
         props.onChosenSite(value)
@@ -11,7 +10,16 @@ const MainForm = (props) => {
     const localonChangePackage = ({ target: { value } }) => {
         props.onChosenPackage(value)
     }
+
+    //------------select frequency------------
+    const localonChangeFrequency = ({ target: { value } }) => {
+        props.onChosenFrequency(value)
+    }
     
+    //------------select school year------------
+    const localonChangeSchoolYear = ({ target: { value } }) => {
+        props.onChosenSchoolYear(value)
+    }
 
     return (
         <div className={styles.container}>
@@ -36,14 +44,14 @@ const MainForm = (props) => {
                     </div>
                     <div className={`${styles.sectionForm__Form__Triple} ${styles.sectionForm__Form__Alone}`}>
                         <div>
-                            <label>Wybierz pakiet:</label>
+                            <label>Wybierz grupę:</label>
                             {
                                 !props.package
                                 ? <select onChange={localonChangePackage} value={props.chosenPackage}>
-                                    <option value="" selected disabled hidden>najpierw wybierz placówkę</option>
+                                    <option value="" selected disabled hidden>najpierw placówkę :)</option>
                                 </select>
                                 : <select onChange={localonChangePackage} value={props.chosenPackage}>
-                                <option value="" selected disabled hidden>wybierz pakiet</option>
+                                <option value="" selected disabled hidden>wybierz grupę</option>
                                 {props.package.map(packageName => {
                                 return (
                                     <option value={packageName}>{packageName}</option>
@@ -51,35 +59,31 @@ const MainForm = (props) => {
                             })}
                             </select>
                             }
-
-
-                            {/* <select onChange={localonChangePackage} value={props.chosenPackage}>
-                               
-                                {!props.package
-                                    ? <option value="" selected disabled hidden>najpierw wybierz placówkę</option>
-                                    
-                                    : props.package.map(packageName => {
-                                        return (
-                                            <option value={packageName}>{packageName}</option>
-                                            )
-                                        }
-                                    )
-
-                                }
-                            </select> */}
                         </div>
                         <div>
                             <label>Częstotliwość:</label>
-                            <select>
-                                <option value="" selected disabled hidden></option>
-                                <option value="1">1-x w tygodniu</option>
+                            {
+                                !props.frequency
+                                ? <select onChange={localonChangeFrequency} value={props.chosenFrequency}>
+                                    <option value="" selected disabled hidden>najpierw grupę :)</option>
+                                </select>
+                                : <select onChange={localonChangeFrequency} value={props.chosenFrequency}>
+                                <option value="" selected disabled hidden>wybierz</option>
+                                {props.frequency.map(frequencyItem => {
+                                return (
+                                    <option value={frequencyItem}>{frequencyItem}</option>
+                                )
+                            })}
                             </select>
+                            }
                         </div>
                         <div>
                             <label>Rok szkolny:</label>
-                            <select>
-                                <option value="" selected disabled hidden></option>
-                                <option value="1">2022/2023</option>
+                            <select onChange={localonChangeSchoolYear} value={props.chosenSchoolYear}>
+                                {
+                                    props.schoolYear.map(year => <option value={year}>{year}</option>)
+                                }
+                                {/* <option value="1">2022/2023</option> */}
                             </select>
                         </div>
                     </div>
@@ -144,7 +148,7 @@ const MainForm = (props) => {
                     </div>
                     <div className={`${styles.sectionForm__Form__Alone} ${styles.sectionForm__Form__DoubleSame}`}>
                         <div>
-
+                            <p>Czesne: {props.priceNumber} zł</p>
                         </div>
                         <div>
 
