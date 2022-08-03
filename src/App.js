@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './components/header';
-import MainForm from './components/main_form';
+import { MainFormContainer } from './components/main_form_container';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Header/>
-      <MainForm/>
+      <MainFormContainer/>
     </div>
   );
 }
