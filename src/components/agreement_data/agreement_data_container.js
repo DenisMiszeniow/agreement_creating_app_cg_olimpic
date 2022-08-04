@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear } from "../BLL/main_state_data_reducer";
-import MainForm from "./main_form";
+import { onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear } from "../../BLL/main_state_data_reducer";
+import AgreementData from "./agreement_data";
+
 export const mapStateToProps = (state) => {
     return (
         {
@@ -16,11 +17,7 @@ export const mapStateToProps = (state) => {
             frequency: state.mainData.frequency,
             chosenFrequency: state.mainData.chosenFrequency,
             schoolYear: state.mainData.schoolYear,
-            chosenSchoolYear: state.mainData.chosenSchoolYear,
-            priceNumber: state.mainData.calculatePrice,
-            priceInWord: state.mainData.calculatePriceInWords 
-            
-
+            chosenSchoolYear: state.mainData.chosenSchoolYear, 
         }
     )
 }
@@ -36,4 +33,4 @@ export const mapDispatchToProps = (dispatch) => {
     )
 }
 
-export const MainFormContainer = connect(mapStateToProps, mapDispatchToProps)(MainForm)
+export const AgreementDataContainer = connect(mapStateToProps, mapDispatchToProps)(AgreementData)
