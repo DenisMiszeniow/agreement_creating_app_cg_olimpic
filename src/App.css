@@ -3,4 +3,23 @@
   background: url(https://cg-olimpic.pl/wp-content/uploads/2022/05/kids-boxed-background-img_left.jpg) center top repeat-y;
   height: 100vh;
   width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.content-container {
+  background-color: #f4f4f4;
+  width: 1360px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1360px) {
+  .content-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .content-container {
+    width: 95%;
+  }
 }

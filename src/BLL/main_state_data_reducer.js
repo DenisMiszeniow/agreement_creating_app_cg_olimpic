@@ -30,7 +30,7 @@ const x2 = '2-x w tygodniu'
 const x3 = '3-x w tygodniu'
 
 const initialState = {
-    forecastDate: new Date(),
+    forecastDate: new Date,
     schoolYear:[
         '2022/2023',
         '2023/2024'
@@ -64,6 +64,8 @@ const initialState = {
         priceSeniorTriple: { price: 300, letter: 'Trzysta zł 00/100' },
         priceSeniorQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
     },
+    priceCjk: 80,
+    priceCjkWord: 'osiemdziesiąt zł 00/100',
     calculatePrice: 0,
     calculatePriceInWords: '',
     chosenSite: '',
