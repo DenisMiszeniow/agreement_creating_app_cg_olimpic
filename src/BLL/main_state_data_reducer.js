@@ -180,7 +180,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             }
         return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
-        case TESTING_FORM: return ({...state, testingForm: true, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)'})
+        case TESTING_FORM: return ({...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)'})
         case TESTING_FORM_TEXT: return ({...state, testingFormText: action.text})
         default: return {...state}
     }

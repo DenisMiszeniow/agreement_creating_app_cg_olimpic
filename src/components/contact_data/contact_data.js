@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import styles from "../main_form/main_form.module.css"
 
 const ContactData = (props) => {
@@ -49,11 +50,14 @@ const ContactData = (props) => {
             props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
         } else if (!/\./.test(props.parrentEmail)) {
             props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
-        }
-        
-        else {
+        } else {
             props.onTestingForm()
         }
+    }
+    //------------ invert test status to false------------
+    const onLocalInvertTestStatus = () => {
+        props.onTestingForm()
+        props.onTestingFormText ('')
     }
 
 
@@ -82,7 +86,7 @@ const ContactData = (props) => {
                     {
                         !props.testingForm 
                         ? <input className={styles.buttonActive} type="button" onClick={localTestForm} value="SPRAWDŹ DANE" />
-                        : <a className={styles.linkActive} href="#">GENERUJ UMOWĘ</a>
+                        : <NavLink to={'/agreement'} onClick={onLocalInvertTestStatus} className={styles.linkActive} href="#">GENERUJ UMOWĘ</NavLink>
                     }
                 </div>
             </div>
