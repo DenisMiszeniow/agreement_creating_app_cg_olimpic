@@ -113,7 +113,7 @@ niepodanie uniemożliwi realizację zawartej umowy.</p>
         <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.forecastDate.getDate()}.${props.forecastDate.getMonth()+1}.${props.forecastDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>{props.parrentName}</i></span></p>
         <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Miejscowość, Data</span><span className={styles.ownerSignature}>Podpis Klienta</span></p>
      </div>
-     <NavLink to={'/'} className={styles.linkActive} href="#">WSZYSTKO SIĘ ZGADZA, PRZECHODZIMY DALEJ</NavLink>
+     <NavLink to={'/download'} className={styles.linkActive} href="#">WSZYSTKO SIĘ ZGADZA, PRZECHODZIMY DALEJ</NavLink>
    </div>
     )
 }
