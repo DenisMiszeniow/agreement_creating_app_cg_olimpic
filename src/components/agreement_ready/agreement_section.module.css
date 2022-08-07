@@ -14,6 +14,21 @@
     border-radius: 10px;
 }
 
+.linkActive {
+    display: block;
+    padding: 9px 30px 11px 30px;
+    margin: 15px auto 30px auto;
+    width: 50%;
+    font-size: 26px;
+    background-color: #f7c33e!important;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1360px) {
     .container{
         width: 96%;
@@ -101,6 +116,20 @@ p.signaturesDiscription span {
     .ownerSignature {
         font-size: 18px;
         font-weight: bold;  
+    }
+    .linkActive {
+        display: block;
+        padding: 9px 30px 11px 30px;
+        margin: 15px auto 30px auto;
+        width: 80%;
+        font-size: 26px;
+        background-color: #f7c33e!important;
+        font-weight: bold;
+        border: 1px solid #000;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
     }
 }
 

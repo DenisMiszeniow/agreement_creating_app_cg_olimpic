@@ -1,6 +1,7 @@
 import styles from "./agreement_section.module.css"
 import React from "react"
 import Step2 from "../step_2_div"
+import { NavLink } from "react-router-dom"
 
 const Agreement = (props) => {
   return (
@@ -82,6 +83,37 @@ rzeczowo sądu ze względu na siedzibę firmy Wykonawcy.</p>
         <p className={styles.signatures}><span className={styles.clientSignature}><i>{props.parrentName}</i></span><span className={styles.ownerSignature}><i>{props.ownerName}</i></span></p>
         <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Podpis Klienta</span><span className={styles.ownerSignature}>Podpis Wykonawcy</span></p>
      </div>
+     <div className={styles.container}>
+
+        {/* --- zgody i RODO: --- */}
+        <h4>wyrażam zgodę na:</h4>
+        <p>1. Przetwarzanie moich/mojego dziecka danych osobowych (do celów statutowych i organizacyjnych) przez <b>{props.companyName}</b> (dotyczące prowadzonej działalności rekreacyjno-sportowej <strong>Centrum Gimnastycznego Olimpic</strong>) dla
+utrwalania zajęć lub ich fragmentów, a także form współzawodnictwa sportowego za pomocą urządzeń rejestrujących.</p>
+        <p>2. Nieodpłatne wykorzystanie mojego wizerunku/wizerunku mojego dziecka w publikacjach w formie tradycyjnej (np.
+katalogi, foldery, notatki prasowe) i elektronicznej, związane z prowadzoną działalnością rekreacyjno-sportową <strong>Centrum Gimnastyczne Olimpic</strong>.</p>
+<h4>przyjmuję do wiadomości, że:</h4>
+     <p>1. Administratorem Pana/Pani danych osobowych jest <b>{props.companyName}</b> z siedzibą: {props.companyAdress}. Może Pan/Pani skontaktować się z Inspektorem Danych Osobowych w
+sprawie ochrony danych pod adresem: <u>kontakt@cg-olimpic.pl</u>.</p>
+     <p>2. Pana/Pani dane osobowe będą przetwarzane zgodnie z RODO w celach związanych z: realizowaniem i wykonaniem zawartej z Panem/Panią umowy; statutową działalnością sportową; organizowania i przeprowadzania konkursów, zawodów, obozów, konsultacji; promocji i marketingu usług (związanych z prowadzoną działalnością rekreacyjno-sportową).</p>
+     <p>3. W niektórych sytuacjach Administrator ma prawo przekazywać Pana/Pani dane osobowe innym odbiorcom,
+jeżeli będzie to niezbędne do wykonania zawartej z Panem/Panią umowy lub do zrealizowania obowiązków
+ciążących na Administratorze: pracownikom i współpracownikom, którzy muszą mieć dostęp do danych osobowych w celu wykonywania
+swoich obowiązków; organom upoważnionym na podstawie przepisów prawa.</p>
+        <p>4. Pana/Pani dane osobowe będą przechowywane: przez okres trwania zawartej umowy; przez okres wynikający z przepisów dotyczących archiwizowania dokumentacji.</p>
+        <p>5. Przysługuje Panu/Pani prawo żądania od Administratora dostępu do danych osobowych Pana/Pani dotyczących ich
+sprostowania, usunięcia, ograniczenia przetwarzania oraz przenoszenia danych, a zgoda na przetwarzanie danych może
+zostać cofnięta w każdym momencie (cofnięcie zgody - tylko w formie pisemnej, nie wpływa na zgodność z prawem
+przetwarzania, którego dokonano na podstawie udzielonej zgody przed jej wycofaniem).</p>
+        <p>6. Przysługuje Panu/Pani prawo do złożenia skargi w zakresie przetwarzania danych osobowych przez Administratora do
+organu nadzorczego - Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa.</p>
+        <p>7. Podanie danych osobowych jest dobrowolne, lecz niezbędne do realizacji zawartej z Panem/Panią umowy, a ich
+niepodanie uniemożliwi realizację zawartej umowy.</p>
+        
+        {/* --- podpis rodzica / opiekuna prawnego --- */}
+        <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.forecastDate.getDate()}.${props.forecastDate.getMonth()+1}.${props.forecastDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>{props.parrentName}</i></span></p>
+        <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Miejscowość, Data</span><span className={styles.ownerSignature}>Podpis Klienta</span></p>
+     </div>
+     <NavLink to={'/'} className={styles.linkActive} href="#">WSZYSTKO SIĘ ZGADZA, PRZECHODZIMY DALEJ</NavLink>
    </div>
     )
 }
