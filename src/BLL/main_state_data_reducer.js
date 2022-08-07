@@ -2,6 +2,8 @@ const VALUE_SITE = 'VALUE_SITE'
 const VALUE_PACKAGE = 'VALUE PACKAGE'
 const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
 const VALUE_SCHOOL_YEAR = 'VALUE_SCHOOL_YEAR'
+const TESTING_FORM  = 'TESTING_FORM'
+const TESTING_FORM_TEXT = 'TESTING_FORM_TEXT'
 
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
@@ -64,8 +66,8 @@ const initialState = {
         priceSeniorTriple: { price: 300, letter: 'Trzysta zł 00/100' },
         priceSeniorQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
     },
-    priceCjk: 80,
-    priceCjkWord: 'osiemdziesiąt zł 00/100',
+    priceCjk: 100,
+    priceCjkWord: 'sto zł 00/100',
     calculatePrice: 0,
     calculatePriceInWords: '',
     chosenSite: '',
@@ -79,6 +81,8 @@ const initialState = {
     companyRegon: '',
     ownerName: '',
     bankAccount: '',
+    testingFormText: '',
+    testingForm: false,
 }
 
 export const mainStateDataReducer = (state = initialState, action) => {
@@ -176,6 +180,8 @@ export const mainStateDataReducer = (state = initialState, action) => {
             }
         return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
+        case TESTING_FORM: return ({...state, testingForm: true, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)'})
+        case TESTING_FORM_TEXT: return ({...state, testingFormText: action.text})
         default: return {...state}
     }
 
@@ -185,3 +191,5 @@ export const onChosenSite = (valueSite) => ({type: VALUE_SITE, valueSite})
 export const onChosenPackage = (valuePackage) => ({type: VALUE_PACKAGE, valuePackage})
 export const onChosenFrequency = (valueFrequency) => ({type:VALUE_FREQUENCY, valueFrequency})
 export const onChosenSchoolYear = (valueYear) => ({type:VALUE_SCHOOL_YEAR, valueYear})
+export const onTestingForm = () => ({type: TESTING_FORM})
+export const onTestingFormText = (text) => ({type: TESTING_FORM_TEXT, text})

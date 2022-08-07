@@ -32,7 +32,10 @@ export const mapStateToProps = (state) => {
             parrentEmail: state.parrentData.parrentEmail,
             //childData
             childName: state.childData.childName,
-            childDayOfBirth: state.childData.childDayOfBirth
+            childDayOfBirth: state.childData.childDayOfBirth,
+            //agreementVisibility
+            agreementVisibility: state.mainData.agreementVisibility,
+
         }
     )
 }

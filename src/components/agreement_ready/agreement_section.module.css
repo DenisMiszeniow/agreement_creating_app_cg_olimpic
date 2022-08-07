@@ -1,3 +1,10 @@
+.agreementContainerUnvisible {
+    display: none;
+}
+.agreementContainerVisible {
+    display: block;
+}
+
 .container {
     width: 1356px;
     margin: 0 auto 20px auto;

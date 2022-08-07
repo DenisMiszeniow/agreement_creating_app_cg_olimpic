@@ -17,6 +17,45 @@ const ContactData = (props) => {
         props.onParrentEmail(value)
     }
 
+    //------------test form------------
+    const localTestForm = () => {
+        if (props.chosenSite === '') {
+            props.onTestingFormText ('UWAGA! WYBIERZ PLACÓWKĘ')
+        } else if (props.chosenPackage === '') {
+            props.onTestingFormText ('UWAGA! WYBIERZ PAKIET')
+        } else if (props.chosenFrequency === '') {
+            props.onTestingFormText ('UWAGA! WYBIERZ CZEŚTOTLIWOŚĆ ZAJĘĆ')
+        } else if (props.chosenSchoolYear === '') {
+            props.onTestingFormText ('UWAGA! WYBIERZ ROK SZKOLNY')
+        } else if (props.childName === '') {
+            props.onTestingFormText ('UWAGA! IMIĘ I NAZWISKO DZIECKA')
+        } else if (props.childDayOfBirth === '') {
+            props.onTestingFormText ('UWAGA! DATĘ URODZENIA DZIECKA')
+        } else if (props.parrentName === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ IMIĘ I NAZWISKO RODZCA / OPIEKUNA PRAWNEGO')
+        } else if (props.parrentIdCard === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ SERIE I NUMER DOWODU TOŻSAMOŚCI')
+        } else if (props.parrentCity === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ MIEJSCOWOŚĆ')
+        } else if (props.parrentZipCode === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ KOD POCZTOWY')
+        } else if (props.parrentAddress === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ ADRES ZAMIESZKANIA')
+        } else if ((props.motherPhoneNumber === '') && (props.fatherPhoneNumber === '')) {
+            props.onTestingFormText ('UWAGA! WPROWADŹ NUMER TELEFONU PRZYNAJMNIEJ JEDNEGO Z RODZICÓW / OPIEKUNA PRAWNEGO')
+        } else if (props.parrentEmail === '') {
+            props.onTestingFormText ('UWAGA! WPROWADŹ ADRES EMAIL')
+        } else if (!/@/.test(props.parrentEmail)) {
+            props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
+        } else if (!/\./.test(props.parrentEmail)) {
+            props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
+        }
+        
+        else {
+            props.onTestingForm()
+        }
+    }
+
 
     return (
         <>
@@ -33,15 +72,18 @@ const ContactData = (props) => {
             </div>
             <div className={styles.sectionForm__Form__Alone}>
                 <label>Adres e-mail do kontaktu:</label>
-                <input type="email" name="user_email" onChange={localOnParrentEmail} value={props.parrentEmail} required placeholder="np.: kowalski@name.com" />
+                <input type="email" name="email" onChange={localOnParrentEmail} value={props.parrentEmail} required placeholder="np.: kowalski@name.com" />
             </div>
             <div className={`${styles.sectionForm__Form__Alone} ${styles.sectionForm__Form__DoubleSame}`}>
                 <div>
-                    <p>Czesne: {props.priceNumber} zł</p>
+                    {!props.testingForm ? <p className={styles.pError}>{props.testingFormText}</p> : <p className={styles.pGood}>{props.testingFormText}</p>}
                 </div>
                 <div>
-
-                    <input className={styles.buttonActive} type="button" value="GENERUJ UMOWĘ" />
+                    {
+                        !props.testingForm 
+                        ? <input className={styles.buttonActive} type="button" onClick={localTestForm} value="SPRAWDŹ DANE" />
+                        : <a className={styles.linkActive} href="#">GENERUJ UMOWĘ</a>
+                    }
                 </div>
             </div>
         </>

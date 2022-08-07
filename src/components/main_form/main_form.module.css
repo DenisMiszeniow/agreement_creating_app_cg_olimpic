@@ -61,6 +61,37 @@
     margin-top: 15px!important;
     background-color: #f7c33e!important;
     font-weight: bold;
+    cursor: pointer;
+}
+.buttonActive:active {
+    background-color: #dbad38!important;
+}
+
+.linkActive {
+    display: block;
+    padding: 9px 0 11px 0;
+    margin-top: 15px!important;
+    background-color: #f7c33e!important;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+.linkActive:active {
+    background-color: #dbad38!important;
+}
+
+.pError {
+    color: darkred;
+    font-weight: bold;
+}
+
+.pGood {
+    color: green;
+    font-weight: bold;
+
 }
 
 /*Form Alone*/
