@@ -123,7 +123,7 @@ const Step3 = (props) => {
                     </div>
                 </div>
             </div>
-            <NavLink to={'/download'} className={styles.linkActive} onClick={onClickDownload}>ŚCIĄGAM I PRZECHODZĘ DALEJ</NavLink>
+            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>ŚCIĄGAM I PRZECHODZĘ DALEJ</NavLink>
         </div>
     )
 }
