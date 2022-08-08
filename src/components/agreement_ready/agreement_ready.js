@@ -36,7 +36,7 @@ const Agreement = (props) => {
         <p className={styles.paragraph}>§1</p>
         <p>1. Wykonawca zobowiązuję się do realizacji na rzecz Klienta usług w zakresie prowadzenia zajęć dodatkowych z gimnastyki
               artystycznej.</p>
-        <p>2. Umowa zostaje zawarta na czas określony tj. do dnia <b>30-go czerwca roku szkolnego {props.chosenSchoolYear}</b>.</p>
+        <p>2. Umowa zostaje zawarta na czas określony tj. <b>do ostatniego dnia roku szkolnego {props.chosenSchoolYear}</b>.</p>
 
         {/* --- §2 --- */}
         <p className={styles.paragraph}>§2</p>
@@ -80,7 +80,7 @@ rzeczowo sądu ze względu na siedzibę firmy Wykonawcy.</p>
         <p>1. Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednym dla każdej ze stron.</p>
 
         {/* --- podpisy stron --- */}
-        <p className={styles.signatures}><span className={styles.clientSignature}><i>{props.parrentName}</i></span><span className={styles.ownerSignature}><i>{props.ownerName}</i></span></p>
+        <p className={styles.signatures}><span className={styles.clientSignature}><i>tutaj będzie twój podpis</i></span><span className={styles.ownerSignature}><i>{props.ownerName}</i></span></p>
         <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Podpis Klienta</span><span className={styles.ownerSignature}>Podpis Wykonawcy</span></p>
      </div>
      <div className={styles.container}>
@@ -110,10 +110,10 @@ organu nadzorczego - Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-
 niepodanie uniemożliwi realizację zawartej umowy.</p>
         
         {/* --- podpis rodzica / opiekuna prawnego --- */}
-        <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.forecastDate.getDate()}.${props.forecastDate.getMonth()+1}.${props.forecastDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>{props.parrentName}</i></span></p>
+        <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.forecastDate.getDate()}.${props.forecastDate.getMonth()+1}.${props.forecastDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>tutaj będzie twój podpis</i></span></p>
         <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Miejscowość, Data</span><span className={styles.ownerSignature}>Podpis Klienta</span></p>
      </div>
-     <NavLink to={'/download'} className={styles.linkActive} href="#">WSZYSTKO SIĘ ZGADZA, PRZECHODZIMY DALEJ</NavLink>
+     <NavLink to={'/download'} className={styles.linkActive} href="#">WSZYSTKO SIĘ ZGADZA, PODPISUJĘ :)</NavLink>
    </div>
     )
 }
