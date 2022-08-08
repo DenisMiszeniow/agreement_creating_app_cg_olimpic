@@ -31,7 +31,6 @@ export const parrentDataReducer = (state = initialState, action) => {
         case PARRENT_EMAIL: return({...state, parrentEmail: action.valueParrentEmail})
         default: return {...state}
     }
-
 }
 
 export const onParrentName = (valueName) => ({type: PARRENT_NAME, valueName})

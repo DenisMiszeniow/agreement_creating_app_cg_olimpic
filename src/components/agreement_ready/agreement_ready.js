@@ -44,7 +44,7 @@ const Agreement = (props) => {
         <p>2. Jeżeli termin zajęcia dodatkowego przypadnie na dzień wolny od pracy opłata za zajęcia nie podlega zmniejszeniu.</p>
         <p>3. Podczas ferii zimowych zajęcia dodatkowe nie odbywają się.</p>
         <p>4. Wykonawca zobowiązuje się do wykonania odpowiedniej ilości zajęć w roku szkolnym zgodnie z tabelą zajęć umieszczonej
-              pod adresem internetowym: <a href="https://cg-olimpic.pl/gimnastyka_artystyczna" target="_blank">https://cg-olimpic.pl/gimnastyka_artystyczna</a>.</p>
+              pod adresem internetowym: <a href="https://cg-olimpic.pl/gimnastyka_artystyczna" target="_blank" rel="noreferrer">https://cg-olimpic.pl/gimnastyka_artystyczna</a>.</p>
         <p>5. Wykonawca zobowiązuje się do zachowania stałej odpłatności za zajęcia przez cały rok szkolny w wysokości <b>{props.calculatePrice},00 zł ({props.calculatePriceInWords}) BRUTTO</b> za miesiąc zajęć z wyjątkiem miesiąca na który przypadają ferie zimowe. <b>W miesiącu na który przypadają ferie zimowe koszt zajęć wyniesie połowę od miesięcznej kwoty</b>. Jednocześnie Klient zobowiązuje się do wpłacenia corocznej
         jednorazowej kwoty (CJK) w wysokości <b>{props.priceCjk},00 zł ({props.priceCjkWord}) BRUTTO, <u>(wpłata CJK to warunek konieczny dla aktywacji umowy na wybrany rok szkolny)</u></b>.</p>
         <p>6. W przypadku choroby nauczyciela lub innych zdarzeń losowych uniemożliwiających odbycie się zajęć dodatkowych w
@@ -73,7 +73,7 @@ rzeczowo sądu ze względu na siedzibę firmy Wykonawcy.</p>
         {/* --- §6 --- */}
         <p className={styles.paragraph}>§6</p>
         <p>1. Klient prawny oświadcza, że dziecko nie ma żadnych przeciwskazań zdrowotnych do brania udziału w zajęciach sportów.</p>
-        <p>2. Klient zobowiązany jest zapoznać się z regulaminem znajdującym się na stronie <a href="https://cg-olimpic.pl/regulamin/" target="_blank">https://cg-olimpic.pl/regulamin/</a> i przestrzeganie jego reguł.</p>
+        <p>2. Klient zobowiązany jest zapoznać się z regulaminem znajdującym się na stronie <a href="https://cg-olimpic.pl/regulamin/" target="_blank" rel="noreferrer">https://cg-olimpic.pl/regulamin/</a> i przestrzeganie jego reguł.</p>
         
         {/* --- §7 --- */}
         <p className={styles.paragraph}>§7</p>

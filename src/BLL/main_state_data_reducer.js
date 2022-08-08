@@ -32,7 +32,7 @@ const x2 = '2-x w tygodniu'
 const x3 = '3-x w tygodniu'
 
 const initialState = {
-    forecastDate: new Date,
+    forecastDate: new Date(),
     schoolYear:[
         '2022/2023',
         '2023/2024'
@@ -106,7 +106,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState.companyAdress ='52-129 Wrocław, ul. Johanna Straussa 28/2'
                 newState.ownerName = 'Olga Mishenova'
             }
-            if (newState.chosenSite == olga1){
+            if (newState.chosenSite === olga1){
                  newState.package = [gp60, gk60, gk90]
             }
             if ((newState.chosenSite === olga2) || (newState.chosenSite === olga3) || (newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
@@ -115,7 +115,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             if (newState.chosenSite === olga4) {
                 newState.package = [gp60, gk60]
             }
-            if ((newState.chosenSite == olga5) || (newState.chosenSite === liza4)) {
+            if ((newState.chosenSite === olga5) || (newState.chosenSite === liza4)) {
                 newState.package = [gp60, gp90]
             }
             if (newState.chosenSite === olga6) {
