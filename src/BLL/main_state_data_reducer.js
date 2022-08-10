@@ -4,6 +4,9 @@ const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
 const VALUE_SCHOOL_YEAR = 'VALUE_SCHOOL_YEAR'
 const TESTING_FORM  = 'TESTING_FORM'
 const TESTING_FORM_TEXT = 'TESTING_FORM_TEXT'
+const SENDING_OK = 'SENDING_OK'
+const LOADER = 'LOADER'
+const ERROR_SENDING = 'ERROR_SENDING'
 
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
@@ -53,16 +56,16 @@ const initialState = {
     ],
     prices: {
         priceJun60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
-        priceJun90Ones: { price: 160, letter: 'Sto Sześćdziesiąt zł 00/100' },
+        priceJun90Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
         priceJun60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
-        priceJun90Twise: { price: 260, letter: 'Dwieście Sześćdziesiąt zł 00/100' },
-        priceMed60Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
-        priceMed90Ones: { price: 195, letter: 'Sto Dziewięćdziesiąt Pięć zł 00/100' },
-        priceMed60Twise: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
-        priceMed90Twice: { price: 295, letter: 'Dwieśćie Dziewięćdziesiąt Pięć zł 00/100' },
+        priceJun90Twise: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
+        priceMed60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
+        priceMed90Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
+        priceMed60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
+        priceMed90Twice: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
         priceMed60Triple: { price: 300, letter: 'Trzysta zł 00/100' },
-        priceMed90Triple: { price: 320, letter: 'Trzysta Dwadzieścia zł 00/100' },
-        priceSeniorTwise: { price: 295, letter: 'Dwieśćie Dziewięćdziesiąt Pięć zł 00/100' },
+        priceMed90Triple: { price: 300, letter: 'Trzysta zł 00/100' },
+        priceSeniorTwise: { price: 275, letter: 'Dwieśćie Siedemdziesiąt Pięć zł 00/100' },
         priceSeniorTriple: { price: 300, letter: 'Trzysta zł 00/100' },
         priceSeniorQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
     },
@@ -81,8 +84,10 @@ const initialState = {
     companyRegon: '',
     ownerName: '',
     bankAccount: '',
-    testingFormText: '',
-    testingForm: false,
+    sendingText: 'WYŚLIJ',
+    errorText: '',
+    loader: false,
+    lastPage: false,
 }
 
 export const mainStateDataReducer = (state = initialState, action) => {
@@ -182,6 +187,24 @@ export const mainStateDataReducer = (state = initialState, action) => {
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
         case TESTING_FORM: return ({...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)'})
         case TESTING_FORM_TEXT: return ({...state, testingFormText: action.text})
+        case SENDING_OK: 
+            const newStateClear = {...state}
+                newStateClear.chosenSite = ''
+                newStateClear.chosenPackage = ''
+                newStateClear.chosenFrequency = ''
+                newStateClear.companyName = ''
+                newStateClear.companyAdress = ''
+                newStateClear.companyNip = ''
+                newStateClear.companyRegon = ''
+                newStateClear.ownerName = ''
+                newStateClear.bankAccount = ''
+                newStateClear.sendingText = 'WYŚLIJ'
+                newStateClear.loader = false
+                newStateClear.errorText = ''
+                newStateClear.lastPage = true
+            return newStateClear
+            case LOADER: return {...state, loader: true, sendingText: ''}
+            case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
         default: return {...state}
     }
 
@@ -193,3 +216,6 @@ export const onChosenFrequency = (valueFrequency) => ({type:VALUE_FREQUENCY, val
 export const onChosenSchoolYear = (valueYear) => ({type:VALUE_SCHOOL_YEAR, valueYear})
 export const onTestingForm = () => ({type: TESTING_FORM})
 export const onTestingFormText = (text) => ({type: TESTING_FORM_TEXT, text})
+export const onSendingMainClear = () => ({type: SENDING_OK})
+export const onLoader = () => ({type: LOADER})
+export const onErrorSending = () => ({type: ERROR_SENDING})

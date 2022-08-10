@@ -1,9 +1,9 @@
-import Step4 from "../step_4_div"
-import { useState } from "react";
-import styles from './sending.module.css'
-import { FileUploader } from 'react-drag-drop-files'
-import emailjs from '@emailjs/browser'
-import { useRef } from 'react'
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from "react";
+import { FileUploader } from 'react-drag-drop-files';
+import { EndPageContainer } from '../end_page/end_page_container';
+import Step4 from "../step_4_div";
+import styles from './sending.module.css';
 
 const Sending = (props) => {
 
@@ -11,22 +11,23 @@ const Sending = (props) => {
     const handleChange = (file) => { setFile(file) };
     const fileTypes = ["PDF"]
     const form = useRef();
-
+    
     const sendEmail = (e) => {
         e.preventDefault()
         emailjs.sendForm('service_weofkil', 'template_jpopojg', form.current, 'rB9N2zoV8qvOchXfR')
-            .then((result) => {
-                console.log(result.text)
-                // props.onSentMessage()
-                // setTimeout(() => props.clearMessageStatus(), 5000)
-            }, (error) => {
-                console.log(error.text)
-                // props.onSentMessageError()
+            .then(() => {
+                props.onSendingMainClear()
+                props.onSendingParrentDataClear()
+                props.onSendingChildDataClear()
+                setFile = null
+            }, () => {
+                props.onErrorSending()
             })
     }
 
     return (
-        <div>
+        <>
+        <div className={props.lastPage ? `${styles.visibleDiv}` : ''}>
             <Step4 />
             <form ref={form} onSubmit={sendEmail}>
                 <div className={styles.sectionForm}>
@@ -63,17 +64,20 @@ const Sending = (props) => {
                             
                             <div>
                             {
-                            file
-                            ? <input className={styles.buttonActive} type="submit" value="WYŚLIJ" />
-                            : <span className={styles.linkActive}>WYŚLIJ</span>
+                            file && props.parrentEmail != ''
+                            ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={props.onLoader} type="submit" value={props.sendingText} />
+                            : <span className={styles.linkActive}>{props.sendingText}</span>
                             }
                             </div>
 
                         </div>
                     </div>
+                    <span className={styles.errorText}>{props.errorText}</span>
                 </div>
             </form>
         </div>
+        <EndPageContainer/>
+        </>
     )
 }
 

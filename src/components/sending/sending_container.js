@@ -1,42 +1,38 @@
 
 import { connect } from "react-redux";
 import Sending from "./sending";
+import { onErrorSending, onLoader, onSendingMainClear } from '../../BLL/main_state_data_reducer'
+import { onSendingParrentDataClear } from "../../BLL/parrent_data_reducer";
+import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
+import { useNavigate } from "react-router-dom";
+
 
 
 export const mapStateToProps = (state) => {
     return (
         {
             //mainData
-            forecastDate: state.mainData.forecastDate,
             chosenSite: state.mainData.chosenSite,
             chosenPackage: state.mainData.chosenPackage,
             chosenFrequency: state.mainData.chosenFrequency,
-            chosenSchoolYear: state.mainData.chosenSchoolYear,
             calculatePrice: state.mainData.calculatePrice,
-            calculatePriceInWords: state.mainData.calculatePriceInWords,
             priceCjk: state.mainData.priceCjk,
             priceCjkWord: state.mainData.priceCjkWord,
-            companyName: state.mainData.companyName,
-            companyAdress: state.mainData.companyAdress,
-            companyNip: state.mainData.companyNip,
-            companyRegon: state.mainData.companyRegon,
             ownerName: state.mainData.ownerName,
             bankAccount: state.mainData.bankAccount,
             //parrentData
             parrentName: state.parrentData.parrentName,
-            parrentIdCard: state.parrentData.parrentIdCard,
-            parrentCity: state.parrentData.parrentCity,
-            parrentZipCode: state.parrentData.parrentZipCode,
-            parrentAddress: state.parrentData.parrentAddress,
             motherPhoneNumber: state.parrentData.motherPhoneNumber,
             fatherPhoneNumber: state.parrentData.fatherPhoneNumber,
             parrentEmail: state.parrentData.parrentEmail,
             //childData
             childName: state.childData.childName,
             childDayOfBirth: state.childData.childDayOfBirth,
-            //agreementVisibility
-            agreementVisibility: state.mainData.agreementVisibility,
-
+            //otherData
+            sendingText: state.mainData.sendingText,
+            errorText: state.mainData.errorText,
+            loader: state.mainData.loader,
+            lastPage: state.mainData.lastPage
         }
     )
 }
@@ -44,6 +40,11 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return (
         {
+            onSendingMainClear: () => {dispatch(onSendingMainClear())},
+            onSendingParrentDataClear: () => {dispatch(onSendingParrentDataClear())},
+            onSendingChildDataClear: () => {dispatch(onSendingChildDataClear)},
+            onLoader: () => {dispatch(onLoader())},
+            onErrorSending: () => {dispatch(onErrorSending())}
         }
     )
 }

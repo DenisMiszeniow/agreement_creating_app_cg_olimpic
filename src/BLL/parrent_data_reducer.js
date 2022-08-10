@@ -6,6 +6,7 @@ const PARRENT_ADDRESS = 'PARRENT_ADDRESS'
 const MOTHER_PHONE_NUMBER = 'MOTHER_PHONE_NUMBER'
 const FATHER_PHONE_NUMBER = 'FATHER_PHONE_NUMBER'
 const PARRENT_EMAIL = 'PARRENT_EMAIL'
+const PARRENT_DATA_CLEAR = 'PARRENT_DATA_CLEAR'
 
 
 const initialState = {
@@ -29,6 +30,18 @@ export const parrentDataReducer = (state = initialState, action) => {
         case MOTHER_PHONE_NUMBER: return({...state, motherPhoneNumber: action.valueMotherPhoneNumber})
         case FATHER_PHONE_NUMBER: return({...state, fatherPhoneNumber: action.valueFatherPhoneNumber})
         case PARRENT_EMAIL: return({...state, parrentEmail: action.valueParrentEmail})
+        case PARRENT_DATA_CLEAR:
+            const newStateParrentDataCleaer = {...state}
+                newStateParrentDataCleaer.parrentName = ''
+                newStateParrentDataCleaer.parrentIdCard = ''
+                newStateParrentDataCleaer.parrentCity = ''
+                newStateParrentDataCleaer.parrentZipCode = ''
+                newStateParrentDataCleaer.parrentAddress = ''
+                newStateParrentDataCleaer.motherPhoneNumber = ''
+                newStateParrentDataCleaer.fatherPhoneNumber = ''
+                newStateParrentDataCleaer.parrentEmail = ''
+            return newStateParrentDataCleaer
+
         default: return {...state}
     }
 }
@@ -41,3 +54,4 @@ export const onParrentAddress = (valueAddress) => ({type:PARRENT_ADDRESS, valueA
 export const onMotherPhoneNumber = (valueMotherPhoneNumber) => ({type:MOTHER_PHONE_NUMBER, valueMotherPhoneNumber})
 export const onFatherPhoneNumber = (valueFatherPhoneNumber) => ({type: FATHER_PHONE_NUMBER, valueFatherPhoneNumber})
 export const onParrentEmail = (valueParrentEmail) => ({type: PARRENT_EMAIL, valueParrentEmail})
+export const onSendingParrentDataClear = () => ({type: PARRENT_DATA_CLEAR})

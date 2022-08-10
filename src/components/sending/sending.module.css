@@ -1,13 +1,14 @@
-.unvisibleInput {
+.visibleDiv {
     display: none;
 }
 
 .sectionForm {
     width: 80%;
-    background-color: #f4f4f4;
+    background-color: #fff;
     margin: 0 auto 15px auto;
-    
     border: 1px solid #000;
+    border-radius: 5px;
+    padding-bottom: 10px;
 }
 
 .sectionForm__Form {
@@ -103,6 +104,13 @@ input[type="file"] {
 .buttonActive:active {
     background-color: #dbad38!important;
 }
+.buttonSending {
+    height: 64px!important;
+    
+    background: url(../../images/navy_for-light_bg.webp) center center no-repeat;
+    background-size: auto 100%;
+    
+}
 
 .linkActive {
     display: flex;
@@ -120,4 +128,13 @@ input[type="file"] {
 
 .visibility {
     display: none;
+}
+
+.errorText {
+    display: block;
+    margin: 0 10px;
+    padding: 0 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: darkred;
 }
