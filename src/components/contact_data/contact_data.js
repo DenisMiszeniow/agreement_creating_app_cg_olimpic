@@ -60,7 +60,6 @@ const ContactData = (props) => {
         props.onTestingFormText ('')
     }
 
-
     return (
         <>
             <h3>Dane kontaktowe</h3>
@@ -86,7 +85,7 @@ const ContactData = (props) => {
                     {
                         !props.testingForm 
                         ? <input className={styles.buttonActive} type="button" onClick={localTestForm} value="SPRAWDŹ DANE" />
-                        : <NavLink to={'/agreement'} onClick={onLocalInvertTestStatus} className={styles.linkActive} href="#">GENERUJ UMOWĘ</NavLink>
+                        : <NavLink to={props.agreementRoute} onClick={onLocalInvertTestStatus} className={styles.linkActive} href="#">GENERUJ UMOWĘ</NavLink>
                     }
                 </div>
             </div>

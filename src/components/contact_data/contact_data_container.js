@@ -22,6 +22,7 @@ export const mapStateToProps = (state) => {
             childDayOfBirth: state.childData.childDayOfBirth,
             testingFormText: state.mainData.testingFormText,
             testingForm: state.mainData.testingForm,
+            agreementRoute: state.mainData.agreementRoute,
         }
     )
 }

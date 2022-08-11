@@ -43,6 +43,7 @@ const Sending = (props) => {
                             <div className={styles.visibility}><input name="user_price" value={props.calculatePrice} readOnly/></div>
                             <div className={styles.visibility}><input name="owner_name" value={props.ownerName} readOnly/></div>
                             <div className={styles.visibility}><input name="owner_account" value={props.bankAccount} readOnly/></div>
+                            <div className={styles.visibility}><input name="user_cjk" value={props.priceCjk} readOnly/></div>
                             <div>
                                 <label> Twoje Imię i Nazwisko:</label>
                                 <input name="user_name" readOnly type='text' value={props.parrentName} />
@@ -57,8 +58,8 @@ const Sending = (props) => {
                                     handleChange={handleChange}
                                     name="my_file"
                                     types={fileTypes}
-                                    label={file ? `${file[0].name}` : "Przeciągnij lub załącz plik"}
-                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Przeciągnij lub załącz plik"}</p></div>}
+                                    label={file ? `${file[0].name}` : "Przeciągnij lub załącz umowę"}
+                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Przeciągnij lub załącz umowę"}</p></div>}
                                 />
                             </div>
                             

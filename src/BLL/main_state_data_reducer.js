@@ -1,3 +1,5 @@
+import { type } from "@testing-library/user-event/dist/type"
+
 const VALUE_SITE = 'VALUE_SITE'
 const VALUE_PACKAGE = 'VALUE PACKAGE'
 const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
@@ -7,6 +9,7 @@ const TESTING_FORM_TEXT = 'TESTING_FORM_TEXT'
 const SENDING_OK = 'SENDING_OK'
 const LOADER = 'LOADER'
 const ERROR_SENDING = 'ERROR_SENDING'
+const DOWNLOAD_ROUTE = 'DOWNLOAD_ROUTE'
 
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
@@ -88,6 +91,9 @@ const initialState = {
     errorText: '',
     loader: false,
     lastPage: false,
+    agreementRoute: '',
+    downloadRoute: '',
+    acceptAgreement: false,
 }
 
 export const mainStateDataReducer = (state = initialState, action) => {
@@ -185,7 +191,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             }
         return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
-        case TESTING_FORM: return ({...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)'})
+        case TESTING_FORM: return ({...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)', agreementRoute: '/agreement'})
         case TESTING_FORM_TEXT: return ({...state, testingFormText: action.text})
         case SENDING_OK: 
             const newStateClear = {...state}
@@ -202,9 +208,16 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newStateClear.loader = false
                 newStateClear.errorText = ''
                 newStateClear.lastPage = true
+                newStateClear.agreementRoute = ''
+                newStateClear.downloadRoute = ''
             return newStateClear
             case LOADER: return {...state, loader: true, sendingText: ''}
             case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
+            case DOWNLOAD_ROUTE: 
+                const newStateDownloading = {...state}
+                newStateDownloading.downloadRoute = '/download'
+                newStateDownloading.acceptAgreement = !newStateDownloading.acceptAgreement
+            return newStateDownloading
         default: return {...state}
     }
 
@@ -219,3 +232,4 @@ export const onTestingFormText = (text) => ({type: TESTING_FORM_TEXT, text})
 export const onSendingMainClear = () => ({type: SENDING_OK})
 export const onLoader = () => ({type: LOADER})
 export const onErrorSending = () => ({type: ERROR_SENDING})
+export const onDownloadRoute = () => ({type: DOWNLOAD_ROUTE})

@@ -1,5 +1,6 @@
 
 import { connect } from "react-redux";
+import { onDownloadRoute } from "../../BLL/main_state_data_reducer";
 import Agreement from "./agreement_ready";
 
 export const mapStateToProps = (state) => {
@@ -35,6 +36,9 @@ export const mapStateToProps = (state) => {
             childDayOfBirth: state.childData.childDayOfBirth,
             //agreementVisibility
             agreementVisibility: state.mainData.agreementVisibility,
+            //routing
+            downloadRoute: state.mainData.downloadRoute,
+            acceptAgreement: state.mainData.acceptAgreement,
 
         }
     )
@@ -43,6 +47,7 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return (
         {
+            onDownloadRoute: () => {dispatch(onDownloadRoute())}
         }
     )
 }
