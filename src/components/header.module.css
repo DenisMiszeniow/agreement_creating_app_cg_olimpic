@@ -2,6 +2,8 @@
     width: 1360px;
     
     background-color: #fff;
+    background: url(../images/bg3.jpg) top left no-repeat;
+    background-size: auto 100%;
     margin: 0 auto 0 auto;
     display: grid;
     grid-template-columns: 1fr;
