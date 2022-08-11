@@ -37,6 +37,7 @@ const Sending = (props) => {
                             <div className={styles.visibility}><input name="father_tel" value={props.fatherPhoneNumber} readOnly/></div>
                             <div className={styles.visibility}><input name="child_name" value={props.childName} readOnly/></div>
                             <div className={styles.visibility}><input name="child_birthday" value={props.childDayOfBirth} readOnly/></div>
+                            <div className={styles.visibility}><input name="child_checkbox" value={props.childCheckbox ? 'TAK' : 'NIE'} readOnly/></div>
                             <div className={styles.visibility}><input name="user_site" value={props.chosenSite} readOnly/></div>
                             <div className={styles.visibility}><input name="user_package" value={props.chosenPackage} readOnly/></div>
                             <div className={styles.visibility}><input name="user_frequency" value={props.chosenFrequency} readOnly/></div>

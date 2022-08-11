@@ -28,6 +28,7 @@ export const mapStateToProps = (state) => {
             //childData
             childName: state.childData.childName,
             childDayOfBirth: state.childData.childDayOfBirth,
+            childCheckbox: state.childData.childCheckbox,
             //otherData
             sendingText: state.mainData.sendingText,
             errorText: state.mainData.errorText,

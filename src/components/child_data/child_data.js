@@ -12,6 +12,10 @@ const ChildData = (props) => {
         props.onChildDayOfBirth(value)
     }
     
+    const localOnCheck = () => {
+        props.onChildCheckbox()
+
+    }
 
     return (
         <>
@@ -25,6 +29,15 @@ const ChildData = (props) => {
                             <label>Data urodzenia:</label>
                             <input name='child_birthday' type='date' onChange={localOnChildDayOfBirth} value={props.childDayOfBirth} required />
                         </div>
+                    </div>
+                    <div className={styles.sectionForm__Form__Alone}>
+                        <div className={styles.div__checkbox}>
+                            <input name='child_check' type="checkbox" className={styles.checkbox} onChange={localOnCheck} defaultChecked={props.childCheckbox}/>
+                            <span>Zgoda na wykorzystanie wiezyrunku dziecka*</span>
+                            <span className={styles.discription}>*Zachęcamy do pozostawiena tego punktu zaznaczonego aby mogliście Państwo cieszyć się zdjęciami swojej pociechy w naszych profilach spółecznościowych.</span>
+                            
+                        </div>
+                        
                     </div>
         </>
     )

@@ -33,6 +33,7 @@ export const mapStateToProps = (state) => {
             //childData
             childName: state.childData.childName,
             childDayOfBirth: state.childData.childDayOfBirth,
+            childCheckbox: state.childData.childCheckbox,
             //agreementVisibility
             agreementVisibility: state.mainData.agreementVisibility,
 

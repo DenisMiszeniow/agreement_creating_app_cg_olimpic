@@ -56,6 +56,27 @@
     border-radius: 5px;
     border: 1px solid;
 }
+
+.div__checkbox {
+    width: auto;
+    text-align: left;
+}
+
+.checkbox {
+    width: 20px!important;
+    display: block;
+    margin-right: 20px!important;
+    float: left;
+    padding-right: 20px;
+}
+
+.discription {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+    padding: 0;
+}
+
 .buttonActive {
     height: 40px!important;
     margin-top: 15px!important;

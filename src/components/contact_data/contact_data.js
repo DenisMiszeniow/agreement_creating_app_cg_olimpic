@@ -23,15 +23,15 @@ const ContactData = (props) => {
         if (props.chosenSite === '') {
             props.onTestingFormText ('UWAGA! WYBIERZ PLACÓWKĘ')
         } else if (props.chosenPackage === '') {
-            props.onTestingFormText ('UWAGA! WYBIERZ PAKIET')
+            props.onTestingFormText ('UWAGA! WYBIERZ GRUPĘ')
         } else if (props.chosenFrequency === '') {
             props.onTestingFormText ('UWAGA! WYBIERZ CZEŚTOTLIWOŚĆ ZAJĘĆ')
         } else if (props.chosenSchoolYear === '') {
             props.onTestingFormText ('UWAGA! WYBIERZ ROK SZKOLNY')
         } else if (props.childName === '') {
-            props.onTestingFormText ('UWAGA! IMIĘ I NAZWISKO DZIECKA')
+            props.onTestingFormText ('UWAGA! WPROWADŹ IMIĘ I NAZWISKO DZIECKA')
         } else if (props.childDayOfBirth === '') {
-            props.onTestingFormText ('UWAGA! DATĘ URODZENIA DZIECKA')
+            props.onTestingFormText ('UWAGA! WPROWADŹ DATĘ URODZENIA DZIECKA')
         } else if (props.parrentName === '') {
             props.onTestingFormText ('UWAGA! WPROWADŹ IMIĘ I NAZWISKO RODZCA / OPIEKUNA PRAWNEGO')
         } else if (props.parrentIdCard === '') {

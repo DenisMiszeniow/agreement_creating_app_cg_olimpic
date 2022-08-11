@@ -90,7 +90,7 @@ const Agreement = (props) => {
                         <div className={styles.container}>
 
                                 {/* --- zgody i RODO: --- */}
-                                <h4>wyrażam zgodę na:</h4>
+                                <h4>{!props.childCheckbox ? 'nie ' : ''}wyrażam zgod{!props.childCheckbox ? 'y' : 'ę'} na:</h4>
                                 <p>1. Przetwarzanie moich/mojego dziecka danych osobowych (do celów statutowych i organizacyjnych) przez <b>{props.companyName}</b> (dotyczące prowadzonej działalności rekreacyjno-sportowej <strong>Centrum Gimnastycznego Olimpic</strong>) dla
                                         utrwalania zajęć lub ich fragmentów, a także form współzawodnictwa sportowego za pomocą urządzeń rejestrujących.</p>
                                 <p>2. Nieodpłatne wykorzystanie mojego wizerunku/wizerunku mojego dziecka w publikacjach w formie tradycyjnej (np.
