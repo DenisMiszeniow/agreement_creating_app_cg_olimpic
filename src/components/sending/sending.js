@@ -19,7 +19,7 @@ const Sending = (props) => {
                 props.onSendingMainClear()
                 props.onSendingParrentDataClear()
                 props.onSendingChildDataClear()
-                setFile = null
+                setFile(null)
             }, () => {
                 props.onErrorSending()
             })
@@ -55,11 +55,12 @@ const Sending = (props) => {
                             <div className={styles.fileDropDiv}>
                                 <FileUploader
                                     multiple={true}
-                                    handleChange={handleChange}
+                                    onSelect={handleChange}
                                     name="my_file"
                                     types={fileTypes}
-                                    label={file ? `${file[0].name}` : "Przeciągnij lub załącz umowę"}
-                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Przeciągnij lub załącz umowę"}</p></div>}
+                                    label={file ? `${file[0].name}` : ""}
+                                    hoverTitle = ''
+                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Kliknij aby załączyć umowę"}</p></div>}
                                 />
                             </div>
                             

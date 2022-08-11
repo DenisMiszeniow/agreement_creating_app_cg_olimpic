@@ -210,6 +210,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newStateClear.lastPage = true
                 newStateClear.agreementRoute = ''
                 newStateClear.downloadRoute = ''
+                newStateClear.acceptAgreement = false
             return newStateClear
             case LOADER: return {...state, loader: true, sendingText: ''}
             case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
