@@ -1,4 +1,4 @@
-import styles from './main_form/main_form.module.css'
+import styles from './steps.module.css'
 
 const Step4 = (props) => {
     return (
