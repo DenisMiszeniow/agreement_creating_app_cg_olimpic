@@ -23,7 +23,7 @@ const AgreementData = (props) => {
 
     return (
         <>
-            <h3>Placówka i pakiet</h3>
+            <h3>Wybór placówki</h3>
             <div className={styles.sectionForm__Form__Alone}>
                 <label>Wybierz placówkę:</label>
                 <select className={styles.selectSite} onChange={localonChangeSite} value={props.chosenSite} key={props.chosenSiteId}>

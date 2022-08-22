@@ -22,6 +22,20 @@
     cursor: pointer;
 }
 
+.linkPassive {
+    
+    padding: 9px 30px 11px 30px;
+    margin: 15px auto 30px auto;
+    width: 50%;
+    font-size: 26px;
+    background-color: gray!important;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: lightgray;
+}
+
 @media only screen and (max-width: 1360px) {
     .container{
         width: 96%;
@@ -91,6 +105,34 @@ p.signaturesDiscription span {
 .ownerSignature {
     float: right;
     font-size: 24px;  
+}
+
+
+.checkboxContainer {
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.checkboxContainer__checkbox {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 20px 0 0;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.checkboxContainer__Span {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 3px;
 }
 
 @media only screen and (max-width: 850px) {

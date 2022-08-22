@@ -117,10 +117,10 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState.companyAdress ='52-129 Wrocław, ul. Johanna Straussa 28/2'
                 newState.ownerName = 'Olga Mishenova'
             }
-            if (newState.chosenSite === olga1){
+            if ((newState.chosenSite === olga1) || (newState.chosenSite === olga2)){
                  newState.package = [gp60, gk60, gk90]
             }
-            if ((newState.chosenSite === olga2) || (newState.chosenSite === olga3) || (newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
+            if ((newState.chosenSite === olga3) || (newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
                 newState.package = [gp60, gk90]
             }
             if (newState.chosenSite === olga4) {

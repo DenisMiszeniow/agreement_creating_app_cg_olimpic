@@ -21,35 +21,35 @@ const ContactData = (props) => {
     //------------test form------------
     const localTestForm = () => {
         if (props.chosenSite === '') {
-            props.onTestingFormText ('UWAGA! WYBIERZ PLACÓWKĘ')
+            props.onTestingFormText ('WYBIERZ PLACÓWKĘ')
         } else if (props.chosenPackage === '') {
-            props.onTestingFormText ('UWAGA! WYBIERZ GRUPĘ')
+            props.onTestingFormText ('WYBIERZ GRUPĘ')
         } else if (props.chosenFrequency === '') {
-            props.onTestingFormText ('UWAGA! WYBIERZ CZEŚTOTLIWOŚĆ ZAJĘĆ')
+            props.onTestingFormText ('WYBIERZ CZEŚTOTLIWOŚĆ ZAJĘĆ')
         } else if (props.chosenSchoolYear === '') {
-            props.onTestingFormText ('UWAGA! WYBIERZ ROK SZKOLNY')
+            props.onTestingFormText ('WYBIERZ ROK SZKOLNY')
         } else if (props.childName === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ IMIĘ I NAZWISKO DZIECKA')
+            props.onTestingFormText ('WPROWADŹ IMIĘ I NAZWISKO DZIECKA')
         } else if (props.childDayOfBirth === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ DATĘ URODZENIA DZIECKA')
+            props.onTestingFormText ('WPROWADŹ DATĘ URODZENIA DZIECKA')
         } else if (props.parrentName === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ IMIĘ I NAZWISKO RODZCA / OPIEKUNA PRAWNEGO')
+            props.onTestingFormText ('WPROWADŹ IMIĘ I NAZWISKO RODZCA / OPIEKUNA PRAWNEGO')
         } else if (props.parrentIdCard === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ SERIE I NUMER DOWODU TOŻSAMOŚCI')
+            props.onTestingFormText ('WPROWADŹ SERIE I NUMER DOWODU TOŻSAMOŚCI')
         } else if (props.parrentCity === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ MIEJSCOWOŚĆ')
+            props.onTestingFormText ('WPROWADŹ MIEJSCOWOŚĆ')
         } else if (props.parrentZipCode === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ KOD POCZTOWY')
+            props.onTestingFormText ('WPROWADŹ KOD POCZTOWY')
         } else if (props.parrentAddress === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ ADRES ZAMIESZKANIA')
+            props.onTestingFormText ('WPROWADŹ ADRES ZAMIESZKANIA')
         } else if ((props.motherPhoneNumber === '') && (props.fatherPhoneNumber === '')) {
-            props.onTestingFormText ('UWAGA! WPROWADŹ NUMER TELEFONU PRZYNAJMNIEJ JEDNEGO Z RODZICÓW / OPIEKUNA PRAWNEGO')
+            props.onTestingFormText ('WPROWADŹ NUMER TELEFONU PRZYNAJMNIEJ JEDNEGO Z RODZICÓW / OPIEKUNA PRAWNEGO')
         } else if (props.parrentEmail === '') {
-            props.onTestingFormText ('UWAGA! WPROWADŹ ADRES EMAIL')
+            props.onTestingFormText ('WPROWADŹ ADRES EMAIL')
         } else if (!/@/.test(props.parrentEmail)) {
-            props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
+            props.onTestingFormText ('SPRAWDŹ POPRAWNOŚĆ EMAIL')
         } else if (!/\./.test(props.parrentEmail)) {
-            props.onTestingFormText ('UWAGA! SPRAWDŹ POPRAWNOŚĆ EMAIL')
+            props.onTestingFormText ('SPRAWDŹ POPRAWNOŚĆ EMAIL')
         } else {
             props.onTestingForm()
         }
