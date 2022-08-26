@@ -14,7 +14,7 @@ const DOWNLOAD_ROUTE = 'DOWNLOAD_ROUTE'
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
 const olga2 = 'ZSEO we Wrocławiu - Drukarska 50, 53-310 Wrocław'
-const olga3 = 'Technikum NR 18 - Ślężna 2-24 (Naprzeciwko CH Wroclawia), 53-302 Wrocław'
+const olga3 = 'Liceum Ogólnokształcące nr V - Kuronia 14, 50-550 Wrocław'
 const olga4 = 'Szkoła Podstawowa NR 9 - Nyska 66, 50-505 Wrocław'
 const olga5 = 'Klub Samuraj - Bałtycka 19, 51-109 Wrocław'
 const olga6 = 'Liceum Ogólnokształcące nr VII - Krucza 49, 53-410 Wrocław'
@@ -25,6 +25,8 @@ const liza2 = 'Szkoła Podstawowa nr 61 - Skarbowców 8, 53-025 Wrocław'
 const liza3 = 'Szkoła Podstawowa nr 33 - Kolista 17, 43-152 Wrocław'
 const liza4 = 'Świetlica Wiejska - Główna 47, 55-080 Smolec'
 const liza5 = 'Szkoła Podstawowa W Kobierzycach - Parkowa 7, 55-040 Kobierzyce'
+const liza6 = 'Szkoła Podstawowa nr 42 - Wałbrzyska 50, 52-314 Wrocław'
+const liza7 = 'Szkoła Podstawowa nr 83 - Boya-Żeleńskiego 32, 51-160 Wrocław'
 
 //---PACKAGE OPTIONS------
 const gp60 = 'GRUPA POCZĄTKUJĄCA (60 min)'
@@ -56,6 +58,8 @@ const initialState = {
         {site: liza3, id:9},
         {site: liza4, id:10},
         {site: liza5, id:11},
+        {site: liza6, id:12},
+        {site: liza7, id:13},
     ],
     prices: {
         priceJun60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
@@ -102,7 +106,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             const newState = {...state}
             newState.chosenSite = action.valueSite
             newState.chosenPackage = ''
-            if ((newState.chosenSite === liza1) || (newState.chosenSite ===liza2) || (newState.chosenSite ===liza3) || (newState.chosenSite ===liza4) || (newState.chosenSite ===liza5)) {
+            if ((newState.chosenSite === liza1) || (newState.chosenSite ===liza2) || (newState.chosenSite ===liza3) || (newState.chosenSite ===liza4) || (newState.chosenSite ===liza5) || (newState.chosenSite ===liza6) || (newState.chosenSite ===liza7)) {
                 newState.companyName = 'CG-Olimpic Ielyzaveta Kanarova'
                 newState.bankAccount = '72 1050 1575 1000 0092 8876 4427'
                 newState.companyNip = '8992904995'
@@ -120,16 +124,16 @@ export const mainStateDataReducer = (state = initialState, action) => {
             if ((newState.chosenSite === olga1) || (newState.chosenSite === olga2)){
                  newState.package = [gp60, gk60, gk90]
             }
-            if ((newState.chosenSite === olga3) || (newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
+            if ((newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
                 newState.package = [gp60, gk90]
             }
             if (newState.chosenSite === olga4) {
                 newState.package = [gp60, gk60]
             }
-            if ((newState.chosenSite === olga5) || (newState.chosenSite === liza4)) {
+            if ((newState.chosenSite === olga5) || (newState.chosenSite === liza4) || (newState.chosenSite === liza6) || (newState.chosenSite === liza7)) {
                 newState.package = [gp60, gp90]
             }
-            if (newState.chosenSite === olga6) {
+            if ((newState.chosenSite === olga6) || (newState.chosenSite === olga3)) {
                 newState.package = [gp60]
             }
             if (newState.chosenSite === liza5) {
