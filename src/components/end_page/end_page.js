@@ -7,7 +7,7 @@ const EndPage = (props) => {
         <div className={props.lastPage ? `${styles.container}` : `${styles.visibleDiv}`}>
             <img src={okPicture}/>
             <p> Udało się! Umowa zawarta!</p> 
-            <p className={styles.warning}>Pamiętaj, aby ję aktywować - wpłać wpisowe (CJK)!</p> 
+            <p className={styles.warning}>Pamiętaj, aby ją aktywować - wpłać wpisowe (CJK)!</p> 
             <span>Teraz możesz zamknąć to okno.</span>
         </div>
     )
