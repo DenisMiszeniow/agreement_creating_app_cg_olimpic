@@ -33,11 +33,13 @@ const gp60 = 'GRUPA POCZĄTKUJĄCA (60 min)'
 const gp90 = 'GRUPA POCZĄTKUJĄCA (90 min)'
 const gk60 = 'GRUPA KONTYNUUJĄCA (60 min)'
 const gk90 = 'GRUPA KONTYNUUJĄCA (90 min)'
+const gz = 'GRUPA ZAAWANSOWANA'
 
 //---FREQUENCY OPTIONS----
 const x1 = '1-x w tygodniu'
 const x2 = '2-x w tygodniu'
 const x3 = '3-x w tygodniu'
+const x4 = '4-x w tygodniu'
 
 const initialState = {
     forecastDate: new Date(),
@@ -56,10 +58,10 @@ const initialState = {
         {site: olga6, id:7},
         {site: liza2, id:8},
         {site: liza3, id:9},
-        {site: liza4, id:10},
-        {site: liza5, id:11},
         {site: liza6, id:12},
         {site: liza7, id:13},
+        {site: liza4, id:10},
+        {site: liza5, id:11},
     ],
     prices: {
         priceJun60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
@@ -106,6 +108,8 @@ export const mainStateDataReducer = (state = initialState, action) => {
             const newState = {...state}
             newState.chosenSite = action.valueSite
             newState.chosenPackage = ''
+            newState.chosenFrequency = ''
+            newState.frequency = ''
             if ((newState.chosenSite === liza1) || (newState.chosenSite ===liza2) || (newState.chosenSite ===liza3) || (newState.chosenSite ===liza4) || (newState.chosenSite ===liza5) || (newState.chosenSite ===liza6) || (newState.chosenSite ===liza7)) {
                 newState.companyName = 'CG-Olimpic Ielyzaveta Kanarova'
                 newState.bankAccount = '72 1050 1575 1000 0092 8876 4427'
@@ -121,14 +125,20 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState.companyAdress ='52-129 Wrocław, ul. Johanna Straussa 28/2'
                 newState.ownerName = 'Olga Mishenova'
             }
-            if ((newState.chosenSite === olga1) || (newState.chosenSite === olga2)){
+            if (newState.chosenSite === olga1){
                  newState.package = [gp60, gk60, gk90]
             }
-            if ((newState.chosenSite === liza1) || (newState.chosenSite === liza2) || (newState.chosenSite === liza3)) {
+            if (newState.chosenSite === olga2){
+                newState.package = [gp60, gk60, gk90, gz]
+           }
+            if (newState.chosenSite === liza3) {
                 newState.package = [gp60, gk90]
             }
+            if ((newState.chosenSite === liza1) || (newState.chosenSite === liza2)) {
+                newState.package = [gp60, gk90, gz]
+            }
             if (newState.chosenSite === olga4) {
-                newState.package = [gp60, gk60]
+                newState.package = [gp60, gk60, gz]
             }
             if ((newState.chosenSite === olga5) || (newState.chosenSite === liza4) || (newState.chosenSite === liza6) || (newState.chosenSite === liza7)) {
                 newState.package = [gp60, gp90]
@@ -146,8 +156,10 @@ export const mainStateDataReducer = (state = initialState, action) => {
             newState1.chosenFrequency = ''
             if ((newState1.chosenPackage === gp60) || (newState1.chosenPackage === gp90)) {
                 newState1.frequency = [x1, x2]
-            } else {
+            } else if ((newState1.chosenPackage === gk60) || (newState1.chosenPackage === gk90)) {
                 newState1.frequency = [x1, x2, x3]
+            } else {
+                newState1.frequency = [x3, x4]
             }
         return newState1
         case VALUE_FREQUENCY: 
@@ -192,6 +204,14 @@ export const mainStateDataReducer = (state = initialState, action) => {
             if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x3)){
                 newState2.calculatePrice = newState2.prices.priceMed90Triple.price
                 newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
+            }
+            if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x3)){
+                newState2.calculatePrice = newState2.prices.priceMed90Triple.price
+                newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
+            }
+            if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x4)){
+                newState2.calculatePrice = newState2.prices.priceSeniorQuatro.price
+                newState2.calculatePriceInWords = newState2.prices.priceSeniorQuatro.letter
             }
         return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
