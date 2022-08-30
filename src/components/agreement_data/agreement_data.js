@@ -27,7 +27,7 @@ const AgreementData = (props) => {
             <div className={styles.sectionForm__Form__Alone}>
                 <label>Wybierz placówkę:</label>
                 <select className={styles.selectSite} onChange={localonChangeSite} value={props.chosenSite} key={props.chosenSiteId}>
-                    <option value="" selected disabled hidden>Nie wybrano</option>
+                    <option value="" disabled hidden>Nie wybrano</option>
                     {props.sites.map(site => {
                         return (
                             <option value={site.siteName} key={site.key}>{site.siteName}</option>
@@ -42,13 +42,13 @@ const AgreementData = (props) => {
                     {
                         !props.package
                             ? <select onChange={localonChangePackage} value={props.chosenPackage}>
-                                <option value="" selected disabled hidden>najpierw placówkę :)</option>
+                                <option value="" disabled hidden>najpierw placówkę :)</option>
                             </select>
                             : <select onChange={localonChangePackage} value={props.chosenPackage}>
                                 <option value="" selected disabled hidden>wybierz grupę</option>
                                 {props.package.map(packageName => {
                                     return (
-                                        <option value={packageName}>{packageName}</option>
+                                        <option value={packageName} key={packageName}>{packageName}</option>
                                     )
                                 })}
                             </select>
@@ -59,13 +59,13 @@ const AgreementData = (props) => {
                     {
                         !props.frequency
                             ? <select onChange={localonChangeFrequency} value={props.chosenFrequency}>
-                                <option value="" selected disabled hidden>najpierw grupę :)</option>
+                                <option value="" disabled hidden>najpierw grupę :)</option>
                             </select>
                             : <select onChange={localonChangeFrequency} value={props.chosenFrequency}>
-                                <option value="" selected disabled hidden>wybierz</option>
+                                <option value="" disabled hidden>wybierz</option>
                                 {props.frequency.map(frequencyItem => {
                                     return (
-                                        <option value={frequencyItem}>{frequencyItem}</option>
+                                        <option value={frequencyItem} key={frequencyItem}>{frequencyItem}</option>
                                     )
                                 })}
                             </select>
@@ -75,7 +75,7 @@ const AgreementData = (props) => {
                     <label>Rok szkolny:</label>
                     <select onChange={localonChangeSchoolYear} value={props.chosenSchoolYear}>
                         {
-                            props.schoolYear.map(year => <option value={year}>{year}</option>)
+                            props.schoolYear.map(year => <option value={year} key={year}>{year}</option>)
                         }
                     </select>
                 </div>
