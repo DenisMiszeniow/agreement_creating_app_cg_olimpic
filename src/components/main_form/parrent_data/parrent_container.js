@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onParrentName, onParrentIdCard, onParrentCity, onParrentZipCode, onParrentAddress} from "../../BLL/parrent_data_reducer";
+import { onParrentName, onParrentIdCard, onParrentCity, onParrentZipCode, onParrentAddress} from "../../../BLL/parrent_data_reducer";
 import ParrentData from "./parrent_data";
 
 export const mapStateToProps = (state) => {

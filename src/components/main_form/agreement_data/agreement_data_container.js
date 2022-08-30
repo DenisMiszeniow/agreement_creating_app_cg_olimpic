@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear } from "../../BLL/main_state_data_reducer";
+import { onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear } from "../../../BLL/main_state_data_reducer";
 import AgreementData from "./agreement_data";
 
 export const mapStateToProps = (state) => {

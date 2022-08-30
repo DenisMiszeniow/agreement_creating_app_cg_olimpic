@@ -1,6 +1,6 @@
 import styles from "./agreement_section.module.css"
 import React from "react"
-import Step2 from "../step_2_div"
+import Step2 from "../steps/step_2_div"
 import { NavLink } from "react-router-dom"
 
 const Agreement = (props) => {

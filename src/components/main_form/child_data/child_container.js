@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onChildCheckbox, onChildDayOfBirth, onChildName } from "../../BLL/child_data_reducer";
+import { onChildCheckbox, onChildDayOfBirth, onChildName } from "../../../BLL/child_data_reducer";
 import ChildData from "./child_data";
 
 export const mapStateToProps = (state) => {

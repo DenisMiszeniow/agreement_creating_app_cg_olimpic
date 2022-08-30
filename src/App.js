@@ -1,7 +1,7 @@
 import './App.css';
-import Header from './components/header';
+import Header from './components/header/header';
 
-import Bottom from './components/bottom'
+import Bottom from './components/bottom/bottom'
 
 import { RoutersContainer } from './components/routers/routers_container';
 

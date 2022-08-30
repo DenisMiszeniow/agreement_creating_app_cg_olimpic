@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { onTestingForm, onTestingFormText } from "../../BLL/main_state_data_reducer";
-import { onMotherPhoneNumber, onFatherPhoneNumber, onParrentEmail} from "../../BLL/parrent_data_reducer";
+import { onTestingForm, onTestingFormText } from "../../../BLL/main_state_data_reducer";
+import { onMotherPhoneNumber, onFatherPhoneNumber, onParrentEmail} from "../../../BLL/parrent_data_reducer";
 import ContactData from "./contact_data";
 
 export const mapStateToProps = (state) => {

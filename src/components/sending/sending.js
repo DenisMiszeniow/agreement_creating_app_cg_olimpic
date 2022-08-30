@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { EndPageContainer } from '../end_page/end_page_container';
-import Step4 from "../step_4_div";
+import Step4 from "../steps/step_4_div";
 import styles from './sending.module.css';
 
 const Sending = (props) => {
