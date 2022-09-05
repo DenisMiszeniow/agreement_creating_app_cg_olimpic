@@ -1,4 +1,9 @@
+import { LocalizationProvider } from "@mui/x-date-pickers"
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import TextField from '@mui/material/TextField'
 import styles from "../main_form.module.css"
+import classes from "./child_data.module.css"
 
 const ChildData = (props) => {
     
@@ -7,16 +12,18 @@ const ChildData = (props) => {
         props.onChildName(value)
     }
 
-    //-------------child date of birth--------------
-    const localOnChildDayOfBirth = ({ target: { value } }) => {
-        props.onChildDayOfBirth(value)
-    }
+    //------------DatePickerHandler-----------------
+    const handleChange = (newValue) => {
+       props.onChildDayOfBirth(newValue)
+      }
+
     
+    // Accept on Child Foto--------------------------
     const localOnCheck = () => {
         props.onChildCheckbox()
 
     }
-
+    
     return (
         <>
             <h3>Dane dziecka</h3>
@@ -27,7 +34,18 @@ const ChildData = (props) => {
                         </div>
                         <div>
                             <label>Data urodzenia:</label>
-                            <input name='child_birthday' type='date' onChange={localOnChildDayOfBirth} value={props.childDayOfBirth} required />
+                            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <DesktopDatePicker
+                                    className={classes.datePicker}
+                                    inputFormat="DD/MM/YYYY"
+                                    value={props.childDayOfBirthParam}
+                                    minDate='01-01-2000'
+                                    maxDate='31-12-2050'
+                                    onChange={handleChange}
+                                    renderInput={(params) => <TextField {...params} />}/>
+                                    
+                            </LocalizationProvider>
+                            {/* <input name='child_birthday' type='date' onChange={localOnChildDayOfBirth} value={props.childDayOfBirth} required /> */}
                         </div>
                     </div>
                     <div className={styles.sectionForm__Form__Alone}>

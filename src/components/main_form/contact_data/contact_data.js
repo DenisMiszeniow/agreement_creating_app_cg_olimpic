@@ -30,8 +30,8 @@ const ContactData = (props) => {
             props.onTestingFormText ('WYBIERZ ROK SZKOLNY')
         } else if (props.childName === '') {
             props.onTestingFormText ('WPROWADŹ IMIĘ I NAZWISKO DZIECKA')
-        } else if (props.childDayOfBirth === '') {
-            props.onTestingFormText ('WPROWADŹ DATĘ URODZENIA DZIECKA')
+        } else if ((props.childDayOfBirth === '') || (props.childDayOfBirth === 'Invalid date')) {
+            props.onTestingFormText ('WPROWADŹ DATĘ URODZENIA DZIECKA, FORMAT: DD-MM-RRRR')
         } else if (props.parrentName === '') {
             props.onTestingFormText ('WPROWADŹ IMIĘ I NAZWISKO RODZCA / OPIEKUNA PRAWNEGO')
         } else if (props.parrentIdCard === '') {

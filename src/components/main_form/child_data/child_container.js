@@ -8,6 +8,7 @@ export const mapStateToProps = (state) => {
             childName: state.childData.childName,
             childDayOfBirth: state.childData.childDayOfBirth,
             childCheckbox: state.childData.childCheckbox,
+            childDayOfBirthParam: state.childData.childDayOfBirthParam
         }
     )
 }

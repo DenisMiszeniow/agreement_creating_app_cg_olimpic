@@ -1,0 +1,16 @@
+.datePicker {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.dataPicker:focus {
+    outline: none !important;
+    border:2px solid red!important;
+    box-sizing: border-box;
+    height: 30px; 
+}
+
+.datePicker input {
+    border: none;
+    padding: 6px 0 6px 0;
+}
