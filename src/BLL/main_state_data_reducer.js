@@ -237,7 +237,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newStateClear.acceptAgreement = false
             return newStateClear
             case LOADER: return {...state, loader: true, sendingText: ''}
-            case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
+            case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: action.errorStatus === 426 ? 'ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!' : 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
             case DOWNLOAD_ROUTE: 
                 const newStateDownloading = {...state}
                 newStateDownloading.downloadRoute = '/download'
@@ -256,5 +256,5 @@ export const onTestingForm = () => ({type: TESTING_FORM})
 export const onTestingFormText = (text) => ({type: TESTING_FORM_TEXT, text})
 export const onSendingMainClear = () => ({type: SENDING_OK})
 export const onLoader = () => ({type: LOADER})
-export const onErrorSending = () => ({type: ERROR_SENDING})
+export const onErrorSending = (errorStatus) => ({type: ERROR_SENDING, errorStatus})
 export const onDownloadRoute = () => ({type: DOWNLOAD_ROUTE})

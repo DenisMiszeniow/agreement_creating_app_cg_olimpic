@@ -45,7 +45,7 @@ export const mapDispatchToProps = (dispatch) => {
             onSendingParrentDataClear: () => {dispatch(onSendingParrentDataClear())},
             onSendingChildDataClear: () => {dispatch(onSendingChildDataClear())},
             onLoader: () => {dispatch(onLoader())},
-            onErrorSending: () => {dispatch(onErrorSending())}
+            onErrorSending: (errorStatus) => {dispatch(onErrorSending(errorStatus))}
         }
     )
 }

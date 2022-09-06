@@ -20,8 +20,8 @@ const Sending = (props) => {
                 props.onSendingParrentDataClear()
                 props.onSendingChildDataClear()
                 setFile(null)
-            }, () => {
-                props.onErrorSending()
+            }, (error) => {
+                props.onErrorSending(error.status)
             })
     }
 
@@ -61,7 +61,7 @@ const Sending = (props) => {
                                     types={fileTypes}
                                     label={file ? `${file[0].name}` : ""}
                                     hoverTitle = ''
-                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Kliknij aby załączyć umowę"}</p></div>}
+                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Kliknij aby załączyć umowę (Nie może przekraczać 2Mb)"}</p></div>}
                                 />
                             </div>
                             
