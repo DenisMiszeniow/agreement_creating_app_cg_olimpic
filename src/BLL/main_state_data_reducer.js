@@ -31,8 +31,10 @@ const liza7 = 'Szkoła Podstawowa nr 83 - Boya-Żeleńskiego 32, 51-160 Wrocław
 //---PACKAGE OPTIONS------
 const gp60 = 'GRUPA POCZĄTKUJĄCA (60 min)'
 const gp90 = 'GRUPA POCZĄTKUJĄCA (90 min)'
+const gp901 = 'GRUPA POCZĄTKUJĄCA  (90 min)'
 const gk60 = 'GRUPA KONTYNUUJĄCA (60 min)'
 const gk90 = 'GRUPA KONTYNUUJĄCA (90 min)'
+const gk902 = 'GRUPA KONTYNUUJĄCA  (90 min)'
 const gz = 'GRUPA ZAAWANSOWANA'
 
 //---FREQUENCY OPTIONS----
@@ -147,7 +149,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState.package = [gp60]
             }
             if (newState.chosenSite === liza5) {
-                newState.package = [gp90]
+                newState.package = [gp901, gk90]
             }
         return newState
         case VALUE_PACKAGE:
@@ -158,7 +160,12 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState1.frequency = [x1, x2]
             } else if ((newState1.chosenPackage === gk60) || (newState1.chosenPackage === gk90)) {
                 newState1.frequency = [x1, x2, x3]
-            } else {
+            } else if (newState1.chosenPackage === gp901) {
+                newState1.frequency = [x1]
+            } else if (newState1.chosenPackage === gk902) {
+                newState1.frequency = [x1, x2]
+            }
+             else {
                 newState1.frequency = [x3, x4]
             }
         return newState1
@@ -170,6 +177,10 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState2.calculatePriceInWords = newState2.prices.priceJun60Ones.letter
             }
             if ((newState2.chosenPackage === gp90) && (newState2.chosenFrequency === x1)){
+                newState2.calculatePrice = newState2.prices.priceJun90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.priceJun90Ones.letter
+            }
+            if ((newState2.chosenPackage === gp901) && (newState2.chosenFrequency === x1)){
                 newState2.calculatePrice = newState2.prices.priceJun90Ones.price
                 newState2.calculatePriceInWords = newState2.prices.priceJun90Ones.letter
             }
