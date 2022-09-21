@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type"
-
 const VALUE_SITE = 'VALUE_SITE'
 const VALUE_PACKAGE = 'VALUE PACKAGE'
 const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
@@ -166,7 +164,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState1.frequency = [x1, x2]
             }
              else {
-                newState1.frequency = [x3, x4]
+                newState1.frequency = [x2, x3, x4]
             }
         return newState1
         case VALUE_FREQUENCY: 
@@ -216,9 +214,13 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState2.calculatePrice = newState2.prices.priceMed90Triple.price
                 newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
             }
+            if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x2)){
+                newState2.calculatePrice = newState2.prices.priceSeniorTwise.price
+                newState2.calculatePriceInWords = newState2.prices.priceSeniorTwise.letter
+            }
             if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x3)){
-                newState2.calculatePrice = newState2.prices.priceMed90Triple.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
+                newState2.calculatePrice = newState2.prices.priceSeniorTriple.price
+                newState2.calculatePriceInWords = newState2.prices.priceSeniorTriple.letter
             }
             if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x4)){
                 newState2.calculatePrice = newState2.prices.priceSeniorQuatro.price
