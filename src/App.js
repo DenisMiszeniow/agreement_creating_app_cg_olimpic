@@ -3,7 +3,7 @@ import Header from './components/header/header';
 
 import Bottom from './components/bottom/bottom'
 
-import { RoutersContainer } from './components/routers/routers_container';
+import { RoutersContainer } from './components/routers/routers_container'
 
 function App(props) {
   return (

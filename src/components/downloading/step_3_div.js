@@ -1,19 +1,29 @@
 import styles from './step3.module.css'
 import html2pdf from 'html2pdf.js'
 import { NavLink } from "react-router-dom"
+import { useState } from 'react'
 
 
 const Step3 = (props) => {
+    const [closeTab, setClosetab] = useState(true)
     
     const onClickDownload = () => {
         const opt = {filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`}
         html2pdf(document.getElementById('element-to-print'), opt)
+        setClosetab(false)
     }
+    // window.onbeforeunload = function() {
+    //     if (closeTab) {
+    //       return "Umowa jeszcze nie jest zawarta! Nadal chcesz zamknąć okno?"
+    //     }
+    // }
+    
     return (
         <div className={styles.discription}>
-            <h2>Krok 3: Ściągnij umowę, jeśli chcesz wydrukuj, podpisz i zeskanuj (nie obowiązkowo)</h2>
+            <h1>Krok: 3 / 4</h1> 
+            <h2>Ściągnij umowę, jeśli chcesz - wydrukuj, podpisz i zeskanuj (nie obowiązkowo)</h2>
             <p>Na tym etapie musimy upewnić się, że jesteś: a) człowiekiem i b) jesteś dorosłą osobą i świadomie podpisujesz umowę.</p>
-            <p>W nastęnym kroku dodaj ściągniętą (podpisaną) umowę do formularza i wyślij.</p>
+            <p className={styles.warning}>W nastęnym kroku dodaj ściągniętą umowę do formularza i wciśnij przycisk "PODPISUJĘ".</p>
             <div className={styles.agreement_container} >
                 <div className='styles.downloadContainer' id='element-to-print'>
                     <div className={`html2pdf__page-break ${styles.pageContainer}`}>
@@ -123,7 +133,7 @@ const Step3 = (props) => {
                     </div>
                 </div>
             </div>
-            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>ŚCIĄGAM I PRZECHODZĘ DALEJ</NavLink>
+            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>ŚCIĄGAM / NASTĘPNY KROK</NavLink>
         </div>
     )
 }

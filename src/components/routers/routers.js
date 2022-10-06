@@ -3,8 +3,9 @@ import { AgreementReadyContainer } from '../agreement_ready/agreement_ready_cont
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Step3Container } from '../downloading/step_3_container';
 import { SendingContainer } from '../sending/sending_container';
-import store from '../../BLL/store'
 import MainForm from '../main_form/main_form'
+import { EndPageContainer } from '../end_page/end_page_container';
+import EndPage from '../end_page/end_page';
 
 
 

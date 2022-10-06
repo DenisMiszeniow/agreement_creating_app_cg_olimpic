@@ -1,6 +1,6 @@
 import styles from './steps.module.css'
 
-const Step1 = (props) => {
+const Instruction = (props) => {
     return (
         <div className={styles.discription}>
             <h1>Krok: 1 / 4</h1> 
@@ -10,4 +10,4 @@ const Step1 = (props) => {
     )
 }
 
-export default Step1
+export default Instruction

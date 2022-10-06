@@ -16,6 +16,7 @@ const olga3 = 'Liceum Ogólnokształcące nr V - Kuronia 14, 50-550 Wrocław'
 const olga4 = 'Szkoła Podstawowa NR 9 - Nyska 66, 50-505 Wrocław'
 const olga5 = 'Klub Samuraj - Bałtycka 19, 51-109 Wrocław'
 const olga6 = 'Liceum Ogólnokształcące nr VII - Krucza 49, 53-410 Wrocław'
+const olga7 = 'Zespół Szkolno-Przedszkolny Nr 17 - Wieczysta 105, 50-550 Wrocław'
 
 //---LIZA SITES-----------
 const liza1 = 'Zespół Szkół NR 3 - Szkocka 64, 54-402 Wrocław'
@@ -60,6 +61,7 @@ const initialState = {
         {site: liza3, id:9},
         {site: liza6, id:12},
         {site: liza7, id:13},
+        {site: olga7, id:14},
         {site: liza4, id:10},
         {site: liza5, id:11},
     ],
@@ -93,7 +95,7 @@ const initialState = {
     companyRegon: '',
     ownerName: '',
     bankAccount: '',
-    sendingText: 'WYŚLIJ',
+    sendingText: 'PODPISUJĘ :)',
     errorText: '',
     loader: false,
     lastPage: false,
@@ -128,6 +130,9 @@ export const mainStateDataReducer = (state = initialState, action) => {
             if (newState.chosenSite === olga1){
                  newState.package = [gp60, gk60, gk90]
             }
+            if (newState.chosenSite === olga7){
+                newState.package = [gp90]
+           }
             if (newState.chosenSite === olga2){
                 newState.package = [gp60, gk60, gk90, gz]
            }

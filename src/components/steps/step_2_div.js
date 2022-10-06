@@ -3,9 +3,9 @@ import styles from './steps.module.css'
 const Step2 = (props) => {
     return (
         <div className={styles.discription}>
-            <h2>Krok 2: Dokładnie przeczytaj umowę i podpisz na końcu</h2>
-            <p>Jeśli zauważysz pomyłkę - cofnij i popraw ję w pierwszym kroku.</p> 
-            <p>Pamiętaj! Umowa zostanie aktywowana TYLKO po wpłacie wpisowych (CJK)!</p>
+            <h1>Krok: 2 / 4</h1> 
+            <h2>Dokładnie przeczytaj umowę!</h2>
+            <p>Jeśli zauważysz pomyłkę - cofnij i popraw dane w pierwszym kroku.</p> 
         </div>
     )
 }
