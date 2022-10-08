@@ -4,8 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Step3Container } from '../downloading/step_3_container';
 import { SendingContainer } from '../sending/sending_container';
 import MainForm from '../main_form/main_form'
-import { EndPageContainer } from '../end_page/end_page_container';
-import EndPage from '../end_page/end_page';
+import Instruction from '../instruction/instruction';
 
 
 
@@ -13,11 +12,12 @@ const Routers = (props) => {
     return (
         <>
         <Routes>
-          <Route path='/' element={<MainForm/>}/>
+          <Route path="/" element={<Instruction/>} />
+          <Route path="/main-form" element={<MainForm/>}/>
           <Route path={props.agreementRoute} element={<AgreementReadyContainer/>}/>
           <Route path={props.downloadRoute} element={<Step3Container/>}/>
           <Route path="/sending" element={<SendingContainer/>}/>
-          <Route path='*' element={<Navigate to="/" replace/>}/>
+          <Route path='*' element={<Navigate to="/main-form" replace/>}/>
         </Routes>
         </>
     )

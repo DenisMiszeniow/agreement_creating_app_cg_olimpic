@@ -95,7 +95,7 @@ const initialState = {
     companyRegon: '',
     ownerName: '',
     bankAccount: '',
-    sendingText: 'PODPISUJĘ :)',
+    sendingText: 'ZAWIERAM UMOWĘ',
     errorText: '',
     loader: false,
     lastPage: false,

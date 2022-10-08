@@ -12,18 +12,14 @@ const Step3 = (props) => {
         html2pdf(document.getElementById('element-to-print'), opt)
         setClosetab(false)
     }
-    // window.onbeforeunload = function() {
-    //     if (closeTab) {
-    //       return "Umowa jeszcze nie jest zawarta! Nadal chcesz zamknąć okno?"
-    //     }
-    // }
     
     return (
         <div className={styles.discription}>
             <h1>Krok: 3 / 4</h1> 
-            <h2>Ściągnij umowę, jeśli chcesz - wydrukuj, podpisz i zeskanuj (nie obowiązkowo)</h2>
+            <h2>Ściągnij umowę i zachowaj w dowolnym miejscu na komputerze.</h2>
+            <h2>NIE DRUKUJ I NIE PODPISUJ RĘCNIE, WSZYSTKO ODBYWA SIĘ ELEKTRONICZNIE!</h2>
             <p>Na tym etapie musimy upewnić się, że jesteś: a) człowiekiem i b) jesteś dorosłą osobą i świadomie podpisujesz umowę.</p>
-            <p className={styles.warning}>W nastęnym kroku dodaj ściągniętą umowę do formularza i wciśnij przycisk "PODPISUJĘ".</p>
+            <p className={styles.warning}>W nastęnym kroku załącz ściągniętą umowę i wciśnij przycisk "ZAWIERAM UMOWĘ".</p>
             <div className={styles.agreement_container} >
                 <div className='styles.downloadContainer' id='element-to-print'>
                     <div className={`html2pdf__page-break ${styles.pageContainer}`}>

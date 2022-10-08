@@ -85,7 +85,7 @@ const ContactData = (props) => {
                     {
                         !props.testingForm 
                         ? <input className={styles.buttonActive} type="button" onClick={localTestForm} value="SPRAWDŹ DANE" />
-                        : <NavLink to={props.agreementRoute} onClick={onLocalInvertTestStatus} className={styles.linkActive} href="#">NASTĘPNY KROK</NavLink>
+                        : <NavLink to={props.agreementRoute} onClick={onLocalInvertTestStatus} className={styles.linkActive}>NASTĘPNY KROK</NavLink>
                     }
                 </div>
             </div>
