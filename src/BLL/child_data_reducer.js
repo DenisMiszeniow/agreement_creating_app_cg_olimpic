@@ -22,7 +22,7 @@ export const childDataReducer = (state = initialState, action) => {
             newStateBirthday.childDayOfBirthParam = action.valueDayOfBirth
             !newStateBirthday.childDayOfBirthParam 
                 ? newStateBirthday.childDayOfBirthParam = '' 
-                : newStateBirthday.childDayOfBirth = moment(newStateBirthday.childDayOfBirthParam.$d).format('DD-MM-YYYY')
+                : newStateBirthday.childDayOfBirth = moment(newStateBirthday.childDayOfBirthParam.$d).format('YYYY-MM-DD')
         return newStateBirthday
         
         case CHILD_DATA_CLEAR:

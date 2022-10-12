@@ -40,7 +40,7 @@ const ChildData = (props) => {
                                     inputFormat="DD/MM/YYYY"
                                     value={props.childDayOfBirthParam}
                                     minDate='01-01-2000'
-                                    maxDate='31-12-2050'
+                                    maxDate='01-01-2050'
                                     onChange={handleChange}
                                     renderInput={(params) => <TextField {...params} />}/>
                                     
