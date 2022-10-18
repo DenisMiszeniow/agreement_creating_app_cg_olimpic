@@ -11,11 +11,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-        }
-    )
-}
-
-export const EndPageContainer = connect(mapStateToProps, mapDispatchToProps)(EndPage)
+export const EndPageContainer = connect(mapStateToProps)(EndPage)

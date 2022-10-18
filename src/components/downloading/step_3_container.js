@@ -41,11 +41,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-        }
-    )
-}
-
-export const Step3Container = connect(mapStateToProps, mapDispatchToProps)(Step3)
+export const Step3Container = connect(mapStateToProps)(Step3)

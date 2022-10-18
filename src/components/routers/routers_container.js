@@ -13,11 +13,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-        }
-    )
-}
-
-export const RoutersContainer = connect(mapStateToProps, mapDispatchToProps)(Routers)
+export const RoutersContainer = connect(mapStateToProps)(Routers)

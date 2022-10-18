@@ -38,16 +38,5 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onSendingMainClear: () => {dispatch(onSendingMainClear())},
-            onSendingParrentDataClear: () => {dispatch(onSendingParrentDataClear())},
-            onSendingChildDataClear: () => {dispatch(onSendingChildDataClear())},
-            onLoader: () => {dispatch(onLoader())},
-            onErrorSending: (errorStatus) => {dispatch(onErrorSending(errorStatus))}
-        }
-    )
-}
-
-export const SendingContainer = connect(mapStateToProps, mapDispatchToProps)(Sending)
+export const SendingContainer = connect(mapStateToProps, {onSendingMainClear, onSendingParrentDataClear, onSendingChildDataClear, 
+    onLoader, onErrorSending})(Sending)

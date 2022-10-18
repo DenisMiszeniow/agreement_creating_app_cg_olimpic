@@ -22,15 +22,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onChosenSite: (valueSite) => {dispatch(onChosenSite(valueSite))},
-            onChosenPackage: (valuePackage) => {dispatch(onChosenPackage(valuePackage))},
-            onChosenFrequency: (valueFrequency) => {dispatch(onChosenFrequency(valueFrequency))},
-            onChosenSchoolYear: (valueYear) => {dispatch(onChosenSchoolYear(valueYear))}
-        }
-    )
-}
-
-export const AgreementDataContainer = connect(mapStateToProps, mapDispatchToProps)(AgreementData)
+export const AgreementDataContainer = connect(mapStateToProps, {onChosenSite, onChosenPackage, onChosenFrequency, onChosenSchoolYear})(AgreementData)

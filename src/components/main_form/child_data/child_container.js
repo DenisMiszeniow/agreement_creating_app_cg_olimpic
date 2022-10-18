@@ -13,14 +13,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onChildName: (valueChildName) => {dispatch(onChildName(valueChildName))},
-            onChildDayOfBirth: (valueDayOfBirth) => {dispatch(onChildDayOfBirth(valueDayOfBirth))},
-            onChildCheckbox: () => {dispatch(onChildCheckbox())}
-        }
-    )
-}
-
-export const ChildDataContainer = connect(mapStateToProps, mapDispatchToProps)(ChildData)
+export const ChildDataContainer = connect(mapStateToProps, {onChildName, onChildDayOfBirth, onChildCheckbox})(ChildData)

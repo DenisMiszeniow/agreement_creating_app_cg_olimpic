@@ -27,16 +27,5 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onMotherPhoneNumber: (valueMotherPhoneNumber) => {dispatch(onMotherPhoneNumber(valueMotherPhoneNumber))},
-            onFatherPhoneNumber: (valueFatherPhoneNumber) => {dispatch(onFatherPhoneNumber(valueFatherPhoneNumber))},
-            onParrentEmail: (valueParrentEmail) => {dispatch(onParrentEmail(valueParrentEmail))},
-            onTestingForm: () => {dispatch(onTestingForm())},
-            onTestingFormText: (text) => {dispatch(onTestingFormText(text))}
-        }
-    )
-}
-
-export const ContactDataContainer = connect(mapStateToProps, mapDispatchToProps)(ContactData)
+export const ContactDataContainer = connect(mapStateToProps, {onMotherPhoneNumber, onFatherPhoneNumber, 
+    onParrentEmail, onTestingForm, onTestingFormText})(ContactData)

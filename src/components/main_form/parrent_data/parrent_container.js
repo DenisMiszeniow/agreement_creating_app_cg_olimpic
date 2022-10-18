@@ -26,4 +26,5 @@ export const mapDispatchToProps = (dispatch) => {
     )
 }
 
-export const ParrentDataContainer = connect(mapStateToProps, mapDispatchToProps)(ParrentData)
+export const ParrentDataContainer = connect(mapStateToProps, {onParrentName, onParrentIdCard, onParrentZipCode, 
+    onParrentCity, onParrentAddress})(ParrentData)

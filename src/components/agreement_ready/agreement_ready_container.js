@@ -46,12 +46,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onDownloadRoute: () => {dispatch(onDownloadRoute())}
-        }
-    )
-}
-
-export const AgreementReadyContainer = connect(mapStateToProps, mapDispatchToProps)(Agreement)
+export const AgreementReadyContainer = connect(mapStateToProps, {onDownloadRoute})(Agreement)
