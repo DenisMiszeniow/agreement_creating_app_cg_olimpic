@@ -1,0 +1,75 @@
+.discription {
+    width: 90%;
+    padding: 0 5% 0 5%;
+    section {
+        width: 95%;
+        padding-left: 5%;
+        padding-top: 20px;
+        margin-bottom: 30px;
+        border: 2px solid rgb(24, 23, 23);
+        border-radius: 10px;
+        background-color: rgb(230, 219, 219);
+        text-align: start;
+        h3 {
+            padding-bottom: 20px;
+            font-size: 1.5rem;
+            color: darkgreen;
+            font-weight: 900;
+            font-style: italic;
+        }
+        p {
+            color: rgb(31, 29, 29);
+            padding: 0 20px 0 20px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+            &.warning {
+                text-decoration: underline;
+                font-size: 1.25rem;
+                text-align: center;
+            }
+            span {
+                display: inline-block;
+                padding: 3px 30px;
+                margin-top: -3px;
+                border: 1px solid #000;
+                border-radius: 4px;
+                background-color: #f1c452;
+            }
+            img {
+                display: block;
+                width: 80%;
+                margin: 0 auto 30px auto;
+                border: 3px dashed darkgreen;
+                border-radius: 10px;
+            }
+        }
+        &.rodo {
+            padding-top: 0;
+            text-align: center;
+            h3 {
+                padding-bottom: 0;
+            }
+            p {
+                color: darkred;
+                line-height: 2rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+.linkActive {
+    display: block;
+    padding: 9px 30px 11px 30px;
+    margin: 15px auto 30px auto;
+    width: 50%;
+    font-size: 26px;
+    background-color: #f7c33e;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}

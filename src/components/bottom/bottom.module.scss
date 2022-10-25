@@ -1,0 +1,18 @@
+.main {
+    width: 1360px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: black;
+    p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 20px 20px 0 20px;
+    }
+    @media (max-width: 1360px) {
+        width: 90%;
+    }
+    @media (max-width: 850px) {
+        width: 95%;
+    }
+}

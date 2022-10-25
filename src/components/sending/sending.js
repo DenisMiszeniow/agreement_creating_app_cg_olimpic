@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { EndPageContainer } from '../end_page/end_page_container';
 import Step4 from "../steps/step_4_div";
-import styles from './sending.module.css';
+import styles from './sending.module.scss';
 
 const Sending = (props) => {
 
@@ -32,7 +32,7 @@ const Sending = (props) => {
             <form ref={form} onSubmit={sendEmail}>
                 <div className={styles.sectionForm}>
                     <div className={styles.sectionForm__Form}>
-                        <div className={`${styles.sectionForm__Form__DoubleSame} ${styles.sectionForm__Form__Alone}`}>
+                        <div className={styles.sectionForm__Form__DoubleSame}>
                             <div className={styles.visibility}><input name="mother_tel" value={props.motherPhoneNumber} readOnly/></div>
                             <div className={styles.visibility}><input name="father_tel" value={props.fatherPhoneNumber} readOnly/></div>
                             <div className={styles.visibility}><input name="child_name" value={props.childName} readOnly/></div>
@@ -67,7 +67,7 @@ const Sending = (props) => {
                             
                             <div>
                             {
-                            file && props.parrentEmail != ''
+                            file && props.parrentEmail !== ''
                             ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={props.onLoader} type="submit" value={props.sendingText} />
                             : <span className={styles.linkActive}>{props.sendingText}</span>
                             }

@@ -1,4 +1,4 @@
-import styles from "../main_form.module.css"
+import styles from "../main_form.module.scss"
 
 const AgreementData = (props) => {
     //-------------select site-----------------

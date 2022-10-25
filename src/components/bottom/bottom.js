@@ -1,4 +1,4 @@
-import styles from './bottom.module.css'
+import styles from './bottom.module.scss'
 
 const Bottom = (props) => {
     return (

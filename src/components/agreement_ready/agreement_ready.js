@@ -1,4 +1,4 @@
-import styles from "./agreement_section.module.css"
+import styles from "./agreement_section.module.scss"
 import React from "react"
 import Step2 from "../steps/step_2_div"
 import { NavLink } from "react-router-dom"

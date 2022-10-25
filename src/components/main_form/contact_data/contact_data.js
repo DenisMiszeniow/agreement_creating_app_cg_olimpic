@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import styles from "../main_form.module.css"
+import styles from "../main_form.module.scss"
 
 const ContactData = (props) => {
 

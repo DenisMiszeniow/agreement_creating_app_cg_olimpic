@@ -1,4 +1,4 @@
-import styles from './steps.module.css'
+import styles from './steps.module.scss'
 
 const Step1 = (props) => {
     return (

@@ -9,65 +9,45 @@
     border: 1px solid #000;
     border-radius: 5px;
     padding-bottom: 10px;
+    @media (max-width: 1360px) {
+        width: 90%;
+    }
+    .sectionForm__Form {
+        background-color: #fff;
+        padding-bottom: 20px;
+        margin-top: 20px;
+        width: 100%;
+        input {
+            width: 100%;
+            height: 20px;
+            padding: 5px 0;
+            margin: 0;
+            font-size: 16px;
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            border: 1px solid;
+        }
+        label {
+            display: block;
+            width: 100%;
+            padding: 0 0 5px 10px;
+            font-size: 16px;
+            text-align: left;
+        }
+    }
 }
 
-.sectionForm__Form {
-    background-color: #fff;
-    padding-bottom: 20px;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.sectionForm__Form input {
-    width: 100%;
-    height: 20px;
-    padding: 5px 0;
-    margin: 0;
-    font-size: 16px;
-    text-align: center;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-.sectionForm__Form label {
-    display: block;
-    width: 100%;
-    padding: 0 0 5px 10px;
-    font-size: 16px;
-    text-align: left;
-}
-
-/*Form Alone*/
-.sectionForm__Form__Alone {
+.sectionForm__Form__DoubleSame {
+    display: grid;
     width: 90%;
     margin: 20px auto 0 auto;
-}
-/*--------------------------------*/
-
-/*Form Double Same*/
-.sectionForm__Form__DoubleSame {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-}
-
-@media only screen and (max-width: 1360px) {
-    .sectionForm, .discription, .container{
-        width: 50%;
-    }
-
-/*Form Double Same*/
-.sectionForm__Form__DoubleSame {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-}
-
-@media only screen and (max-width: 850px) {
-    .sectionForm, .discription, .container{
-        width: 90%;
+    @media (max-width: 850px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -76,7 +56,7 @@ input[type="file"] {
 }
 
 .fileDropDiv label {
-    padding: 0;
+    padding: 0!important;
 }
 
 .customFileUpload {
@@ -100,16 +80,14 @@ input[type="file"] {
     background-color: #f7c33e!important;
     font-weight: bold;
     cursor: pointer;
-}
-.buttonActive:active {
-    background-color: #dbad38!important;
+    &:active {
+        background-color: #dbad38!important;
+    }
 }
 .buttonSending {
     height: 64px!important;
-    
     background: url(../../images/navy_for-light_bg.webp) center center no-repeat;
     background-size: auto 100%;
-    
 }
 
 .linkActive {
@@ -117,7 +95,6 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     height: 62px;
-    
     background-color:gray!important;
     font-weight: bold;
     border: 1px solid #000;

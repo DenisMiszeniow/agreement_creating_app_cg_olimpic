@@ -2,8 +2,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers"
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField'
-import styles from "../main_form.module.css"
-import classes from "./child_data.module.css"
+import styles from "../main_form.module.scss"
+import classes from "./child_data.module.scss"
 
 const ChildData = (props) => {
     

@@ -4,7 +4,6 @@ import Sending from "./sending";
 import { onErrorSending, onLoader, onSendingMainClear } from '../../BLL/main_state_data_reducer'
 import { onSendingParrentDataClear } from "../../BLL/parrent_data_reducer";
 import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
-import { useNavigate } from "react-router-dom";
 
 
 

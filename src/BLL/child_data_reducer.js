@@ -17,7 +17,7 @@ export const childDataReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHILD_NAME: return ({...state, childName: action.valueChildName})
         case CHILD_DAY_OF_BIRTH_PARAM: 
-            const newStateBirthday = {... state}
+            const newStateBirthday = {...state}
             
             newStateBirthday.childDayOfBirthParam = action.valueDayOfBirth
             !newStateBirthday.childDayOfBirthParam 

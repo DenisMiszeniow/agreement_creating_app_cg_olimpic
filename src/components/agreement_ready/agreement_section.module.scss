@@ -1,0 +1,159 @@
+@mixin tpl-link ($bgc, $cl) {
+    padding: 9px 30px 11px 30px;
+    margin: 15px auto 30px auto;
+    width: 50%;
+    font-size: 26px;
+    background-color: $bgc;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: $cl;
+}
+
+.container {
+    width: 94%;
+    margin: 0 auto 20px auto;
+    background-color: cornsilk;
+    padding: 15px 0 0 0;
+    border: 2px solid #000;
+    border-radius: 10px;
+    @media (max-width: 1360px) {
+        width: 96%;
+        border: 1% solid #000;
+    }
+    p {
+        text-align: left;
+        padding: 0 20px 0 20px;
+        font-size: 18px;
+        line-height: 30px;
+        a {
+            text-align: left;
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    h4 {
+        font-size: 20px;
+        text-align: left;
+        padding: 0 20px 0 40px;
+        color: brown;
+        text-decoration: underline;
+    }
+}
+
+.linkActive {
+    @include tpl-link (#f7c33e, #000);
+    display: block;
+    cursor: pointer;
+}
+
+.linkPassive {
+    @include tpl-link (gray, lightgray);
+}
+
+.separator {
+    width: 90%;
+    height: 1px;
+    border-top: 1px double #000;
+    padding: 5px 0 5px 0;
+    margin: 0 auto;
+}
+
+.paragraph {
+    display: block;
+    font-size: 20px;
+    text-align: center!important;
+    padding: 20px 20px 0 40px;
+    color: brown;
+    font-weight: bold;
+}
+
+p.signatures {
+    padding: 50px 100px 0 100px!important;
+}
+p.signaturesDiscription {
+    padding: 0 100px 20px 100px!important;
+    span {
+        border-top: 3px dotted #000;
+    }
+}
+
+.clientSignature {
+    text-align: left;
+    font-size: 24px;
+
+}
+
+.ownerSignature {
+    float: right;
+    font-size: 24px;  
+}
+
+
+.checkboxContainer {
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    .checkboxContainer__checkbox {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 20px 0 0;
+        font-size: 16px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        border: 1px solid;
+    }
+    .checkboxContainer__Span {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        padding-top: 3px;
+    }
+}
+
+@media (max-width: 850px) {
+    p.signatures {
+        padding: 50px 20px 0 20px!important;
+    }
+    p.signaturesDiscription {
+        padding: 0 20px 20px 20px!important;
+    }
+    
+    .clientSignature {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .ownerSignature {
+        font-size: 18px;
+        font-weight: bold;  
+    }
+    .linkActive, .linkPassive {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .clientSignature {
+        font-size: 16px;
+        font-weight:normal;
+    }
+    
+    .ownerSignature {
+        font-size: 16px;
+        font-weight:normal; 
+    }
+
+    p.signaturesDiscription span {
+        border-top: 2px dotted #000;
+    }
+}

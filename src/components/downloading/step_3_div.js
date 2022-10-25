@@ -1,16 +1,12 @@
-import styles from './step3.module.css'
+import styles from './step3.module.scss'
 import html2pdf from 'html2pdf.js'
 import { NavLink } from "react-router-dom"
-import { useState } from 'react'
 
 
 const Step3 = (props) => {
-    const [closeTab, setClosetab] = useState(true)
-    
     const onClickDownload = () => {
         const opt = {filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`}
         html2pdf(document.getElementById('element-to-print'), opt)
-        setClosetab(false)
     }
     
     return (
