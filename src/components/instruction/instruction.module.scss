@@ -36,13 +36,6 @@
                 border-radius: 4px;
                 background-color: #f1c452;
             }
-            img {
-                display: block;
-                width: 80%;
-                margin: 0 auto 30px auto;
-                border: 3px dashed darkgreen;
-                border-radius: 10px;
-            }
         }
         &.rodo {
             padding-top: 0;
@@ -55,6 +48,13 @@
                 line-height: 2rem;
                 font-size: 1.25rem;
             }
+        }
+        img {
+            display: block;
+            width: 80%;
+            margin: 0 auto 30px auto;
+            border: 3px dashed darkgreen;
+            border-radius: 10px;
         }
     }
 }
@@ -72,4 +72,17 @@
     text-decoration: none;
     color: #000;
     cursor: pointer;
+    transition-duration: 0.3s;
+    box-shadow: 5px 5px 10px #554315;
+    &:hover {
+        background-color: #cfa334;
+        box-shadow: 7px 7px 15px #554315;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(1, -0.55, 0.265, 1.55);
+        transform: scale(1.2) rotate(1.5deg);
+    }
+    &:active {
+        transition-duration: 0s;
+        background-color: #f7c33e;
+    }
 }
