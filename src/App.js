@@ -5,7 +5,7 @@ import Bottom from './components/bottom/bottom'
 
 import { RoutersContainer } from './components/routers/routers_container'
 
-function App(props) {
+const App = () => {
   return (
     <div className="App">
       <Header/>
@@ -14,7 +14,7 @@ function App(props) {
       </div>
       <Bottom/>
     </div>
-  );
+  )
 }
 
 export default App;

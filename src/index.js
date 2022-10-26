@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
     <Provider store={store}>
-      <App store={store} dispatch={store.dispatch.bind(store)} />
+      <App />
     </Provider>
   </HashRouter>
 
