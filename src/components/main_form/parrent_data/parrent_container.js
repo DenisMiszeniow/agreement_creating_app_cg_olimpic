@@ -14,17 +14,5 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            onParrentName: (valueName) => {dispatch(onParrentName(valueName))},
-            onParrentIdCard: (valueIdCard) => {dispatch(onParrentIdCard(valueIdCard))},
-            onParrentCity: (valueCity) => {dispatch(onParrentCity(valueCity))},
-            onParrentZipCode: (valueZipCode) => {dispatch(onParrentZipCode(valueZipCode))},
-            onParrentAddress: (valueAddress) => {dispatch(onParrentAddress(valueAddress))},
-        }
-    )
-}
-
 export const ParrentDataContainer = connect(mapStateToProps, {onParrentName, onParrentIdCard, onParrentZipCode, 
     onParrentCity, onParrentAddress})(ParrentData)

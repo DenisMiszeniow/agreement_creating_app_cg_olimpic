@@ -7,6 +7,8 @@ const MOTHER_PHONE_NUMBER = 'MOTHER_PHONE_NUMBER'
 const FATHER_PHONE_NUMBER = 'FATHER_PHONE_NUMBER'
 const PARRENT_EMAIL = 'PARRENT_EMAIL'
 const PARRENT_DATA_CLEAR = 'PARRENT_DATA_CLEAR'
+//---TEST PARRENT------------
+const TEST_PARRENT = 'TEST_PARRENT'
 
 
 const initialState = {
@@ -41,7 +43,7 @@ export const parrentDataReducer = (state = initialState, action) => {
                 newStateParrentDataCleaer.fatherPhoneNumber = ''
                 newStateParrentDataCleaer.parrentEmail = ''
             return newStateParrentDataCleaer
-
+        case TEST_PARRENT: return {...state, parrentName: 'Denis', parrentIdCard: 'ASD123456', parrentCity: 'Wro', parrentAddress: 'Kolorowa 2', parrentZipCode: '25-123', motherPhoneNumber: '126-125-856', parrentEmail: 'example@site.com'}
         default: return {...state}
     }
 }
@@ -55,3 +57,4 @@ export const onMotherPhoneNumber = (valueMotherPhoneNumber) => ({type:MOTHER_PHO
 export const onFatherPhoneNumber = (valueFatherPhoneNumber) => ({type: FATHER_PHONE_NUMBER, valueFatherPhoneNumber})
 export const onParrentEmail = (valueParrentEmail) => ({type: PARRENT_EMAIL, valueParrentEmail})
 export const onSendingParrentDataClear = () => ({type: PARRENT_DATA_CLEAR})
+export const testParrent = () => ({type: TEST_PARRENT})

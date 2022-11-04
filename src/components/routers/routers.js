@@ -1,4 +1,3 @@
-
 import { AgreementReadyContainer } from '../agreement_ready/agreement_ready_container';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Step3Container } from '../downloading/step_3_container';

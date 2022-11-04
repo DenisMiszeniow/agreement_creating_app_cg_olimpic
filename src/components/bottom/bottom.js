@@ -1,5 +1,4 @@
 import styles from './bottom.module.scss'
-
 const Bottom = (props) => {
     return (
         <div className={styles.main}>

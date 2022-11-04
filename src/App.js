@@ -1,9 +1,8 @@
 import './App.scss';
 import Header from './components/header/header';
-
 import Bottom from './components/bottom/bottom'
-
 import { RoutersContainer } from './components/routers/routers_container'
+import React from 'react';
 
 const App = () => {
   return (

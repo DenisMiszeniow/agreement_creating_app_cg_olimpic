@@ -8,6 +8,9 @@ const SENDING_OK = 'SENDING_OK'
 const LOADER = 'LOADER'
 const ERROR_SENDING = 'ERROR_SENDING'
 const DOWNLOAD_ROUTE = 'DOWNLOAD_ROUTE'
+//---TEST BUTTON----------
+const TEST_MAIN = 'TEST_MAIN'
+
 
 //---OLGA SITES-----------
 const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
@@ -154,7 +157,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             if (newState.chosenSite === liza5) {
                 newState.package = [gp901, gk90]
             }
-        return newState
+            return newState
         case VALUE_PACKAGE:
             const newState1 = {...state}
             newState1.chosenPackage = action.valuePackage
@@ -171,7 +174,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
              else {
                 newState1.frequency = [x2, x3, x4]
             }
-        return newState1
+            return newState1
         case VALUE_FREQUENCY: 
             const newState2 = {...state}
             newState2.chosenFrequency = action.valueFrequency
@@ -231,7 +234,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newState2.calculatePrice = newState2.prices.priceSeniorQuatro.price
                 newState2.calculatePriceInWords = newState2.prices.priceSeniorQuatro.letter
             }
-        return newState2
+            return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
         case TESTING_FORM: return ({...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)', agreementRoute: '/agreement'})
         case TESTING_FORM_TEXT: return ({...state, testingFormText: action.text})
@@ -254,13 +257,18 @@ export const mainStateDataReducer = (state = initialState, action) => {
                 newStateClear.downloadRoute = ''
                 newStateClear.acceptAgreement = false
             return newStateClear
-            case LOADER: return {...state, loader: true, sendingText: ''}
-            case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: action.errorStatus === 426 ? 'ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!' : 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
-            case DOWNLOAD_ROUTE: 
+        case LOADER: return {...state, loader: true, sendingText: ''}
+        case ERROR_SENDING: return {...state, loader: false, sendingText: 'WYŚLIJ', errorText: action.errorStatus === 426 ? 'ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!' : 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!'}
+        case DOWNLOAD_ROUTE: 
                 const newStateDownloading = {...state}
                 newStateDownloading.downloadRoute = '/download'
                 newStateDownloading.acceptAgreement = !newStateDownloading.acceptAgreement
             return newStateDownloading
+        case TEST_MAIN: return {...state, 
+            chosenSite: olga1, 
+            chosenPackage: gp60, 
+            chosenFrequency: x1,
+            }
         default: return {...state}
     }
 
@@ -276,3 +284,4 @@ export const onSendingMainClear = () => ({type: SENDING_OK})
 export const onLoader = () => ({type: LOADER})
 export const onErrorSending = (errorStatus) => ({type: ERROR_SENDING, errorStatus})
 export const onDownloadRoute = () => ({type: DOWNLOAD_ROUTE})
+export const testMain = () => ({type: TEST_MAIN})

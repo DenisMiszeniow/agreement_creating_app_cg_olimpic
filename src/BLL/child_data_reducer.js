@@ -4,6 +4,8 @@ const CHILD_NAME = 'CHILD_NAME'
 const CHILD_DAY_OF_BIRTH_PARAM = 'CHILD_DAY_OF_BIRTH_PARAM'
 const CHILD_DATA_CLEAR = 'CHILD_DATA_CLEAR'
 const CHILD_CHECKBOX = 'CHILD_CHECKBOX'
+//---TEST CHILD--------------
+const TEST_CHILD = 'TEST_CHILD'
 
 const initialState = {
     childName: '',
@@ -36,6 +38,7 @@ export const childDataReducer = (state = initialState, action) => {
             const newState = {...state}
             newState.childCheckbox = !newState.childCheckbox
             return newState
+        case TEST_CHILD: return {...state, childName: 'Eliza', childDayOfBirth: '23/06/2012'}
         default: return {...state}
     }
 
@@ -45,3 +48,4 @@ export const onChildName = (valueChildName) => ({type: CHILD_NAME, valueChildNam
 export const onChildDayOfBirth = (valueDayOfBirth) => ({type: CHILD_DAY_OF_BIRTH_PARAM, valueDayOfBirth})
 export const onSendingChildDataClear = () => ({type: CHILD_DATA_CLEAR})
 export const onChildCheckbox = () => ({type: CHILD_CHECKBOX})
+export const testChild = () => ({type: TEST_CHILD})
