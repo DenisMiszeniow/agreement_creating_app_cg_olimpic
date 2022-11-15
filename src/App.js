@@ -10,11 +10,6 @@ const App = () => {
     <div className="App">
       <Header/>
       <OsTester />
-      {/* {navigator.appVersion.indexOf('iPhone') !== -1 || navigator.appVersion.indexOf('Mac') !== -1 
-      ? <div>NO</div>
-      : <div className='content-container'>
-      <RoutersContainer />
-    </div>} */}
       <Bottom/>
     </div>
   )

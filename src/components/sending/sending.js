@@ -1,6 +1,7 @@
-import emailjs from '@emailjs/browser';
+
 import { useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
+import { sendEmailJs } from '../../API/api';
 import { EndPageContainer } from '../end_page/end_page_container';
 import Step4 from "../steps/step_4_div";
 import styles from './sending.module.scss';
@@ -14,15 +15,13 @@ const Sending = (props) => {
     
     const sendEmail = (e) => {
         e.preventDefault()
-        emailjs.sendForm('service_weofkil', 'template_jpopojg', form.current, 'rB9N2zoV8qvOchXfR')
-            .then(() => {
-                props.onSendingMainClear()
-                props.onSendingParrentDataClear()
-                props.onSendingChildDataClear()
-                setFile(null)
-            }, (error) => {
-                props.onErrorSending(error.status)
-            })
+        sendEmailJs(form).then(() => {
+                        props.onSendingMainClear()
+                        props.onSendingParrentDataClear()
+                        props.onSendingChildDataClear()
+                        setFile(null)
+                    }, (error) => {props.onErrorSending(error.status)}
+                    )
     }
 
     return (

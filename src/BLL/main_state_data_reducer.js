@@ -69,19 +69,12 @@ const initialState = {
         {site: liza5, id:11},
     ],
     prices: {
-        priceJun60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
-        priceJun90Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
-        priceJun60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
-        priceJun90Twise: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
-        priceMed60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
-        priceMed90Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
-        priceMed60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
-        priceMed90Twice: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
-        priceMed60Triple: { price: 300, letter: 'Trzysta zł 00/100' },
-        priceMed90Triple: { price: 300, letter: 'Trzysta zł 00/100' },
-        priceSeniorTwise: { price: 275, letter: 'Dwieśćie Siedemdziesiąt Pięć zł 00/100' },
-        priceSeniorTriple: { price: 300, letter: 'Trzysta zł 00/100' },
-        priceSeniorQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
+        price60Ones: { price: 140, letter: 'Sto Czterdzieści zł 00/100' },
+        price90Ones: { price: 175, letter: 'Sto Siedemdziesiąt Pięć zł 00/100' },
+        price60Twise: { price: 240, letter: 'Dwieście Czterdzieści zł 00/100' },
+        price90Twise: { price: 275, letter: 'Dwieście Siedemdziesiąt Pięć zł 00/100' },
+        priceTriple: { price: 300, letter: 'Trzysta zł 00/100' },
+        priceQuatro: { price: 350, letter: 'Trzysta Pięćdziesiąt zł 00/100' }
     },
     priceCjk: 100,
     priceCjkWord: 'sto zł 00/100',
@@ -179,60 +172,60 @@ export const mainStateDataReducer = (state = initialState, action) => {
             const newState2 = {...state}
             newState2.chosenFrequency = action.valueFrequency
             if ((newState2.chosenPackage === gp60) && (newState2.chosenFrequency === x1)){
-                newState2.calculatePrice = newState2.prices.priceJun60Ones.price
-                newState2.calculatePriceInWords = newState2.prices.priceJun60Ones.letter
+                newState2.calculatePrice = newState2.prices.price60Ones.price
+                newState2.calculatePriceInWords = newState2.prices.price60Ones.letter
             }
             if ((newState2.chosenPackage === gp90) && (newState2.chosenFrequency === x1)){
-                newState2.calculatePrice = newState2.prices.priceJun90Ones.price
-                newState2.calculatePriceInWords = newState2.prices.priceJun90Ones.letter
+                newState2.calculatePrice = newState2.prices.price90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.price90Ones.letter
             }
             if ((newState2.chosenPackage === gp901) && (newState2.chosenFrequency === x1)){
-                newState2.calculatePrice = newState2.prices.priceJun90Ones.price
-                newState2.calculatePriceInWords = newState2.prices.priceJun90Ones.letter
+                newState2.calculatePrice = newState2.prices.price90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.price90Ones.letter
             }
             if ((newState2.chosenPackage === gp60) && (newState2.chosenFrequency === x2)){
-                newState2.calculatePrice = newState2.prices.priceJun60Twise.price
-                newState2.calculatePriceInWords = newState2.prices.priceJun60Twise.letter
+                newState2.calculatePrice = newState2.prices.price60Twise.price
+                newState2.calculatePriceInWords = newState2.prices.price60Twise.letter
             }
             if ((newState2.chosenPackage === gp90) && (newState2.chosenFrequency === x2)){
-                newState2.calculatePrice = newState2.prices.priceJun90Twise.price
-                newState2.calculatePriceInWords = newState2.prices.priceJun90Twise.letter
+                newState2.calculatePrice = newState2.prices.price90Twise.price
+                newState2.calculatePriceInWords = newState2.prices.price90Twise.letter
             }
             if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x1)){
-                newState2.calculatePrice = newState2.prices.priceMed60Ones.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed60Ones.letter
+                newState2.calculatePrice = newState2.prices.price60Ones.price
+                newState2.calculatePriceInWords = newState2.prices.price60Ones.letter
             }
             if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x2)){
-                newState2.calculatePrice = newState2.prices.priceMed60Twise.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed60Twise.letter
+                newState2.calculatePrice = newState2.prices.price60Twise.price
+                newState2.calculatePriceInWords = newState2.prices.price60Twise.letter
             }
             if ((newState2.chosenPackage === gk60) && (newState2.chosenFrequency === x3)){
-                newState2.calculatePrice = newState2.prices.priceMed60Triple.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed60Triple.letter
+                newState2.calculatePrice = newState2.prices.price90Triple.price
+                newState2.calculatePriceInWords = newState2.prices.priceTriple.letter
             }
             if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x1)){
-                newState2.calculatePrice = newState2.prices.priceMed90Ones.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed90Ones.letter
+                newState2.calculatePrice = newState2.prices.price90Ones.price
+                newState2.calculatePriceInWords = newState2.prices.price90Ones.letter
             }
             if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x2)){
-                newState2.calculatePrice = newState2.prices.priceMed90Twice.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed90Twice.letter
+                newState2.calculatePrice = newState2.prices.price90Twice.price
+                newState2.calculatePriceInWords = newState2.prices.price90Twice.letter
             }
             if ((newState2.chosenPackage === gk90) && (newState2.chosenFrequency === x3)){
-                newState2.calculatePrice = newState2.prices.priceMed90Triple.price
-                newState2.calculatePriceInWords = newState2.prices.priceMed90Triple.letter
+                newState2.calculatePrice = newState2.prices.priceTriple.price
+                newState2.calculatePriceInWords = newState2.prices.priceTriple.letter
             }
             if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x2)){
-                newState2.calculatePrice = newState2.prices.priceSeniorTwise.price
-                newState2.calculatePriceInWords = newState2.prices.priceSeniorTwise.letter
+                newState2.calculatePrice = newState2.prices.price90Twise.price
+                newState2.calculatePriceInWords = newState2.prices.price90Twise.letter
             }
             if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x3)){
-                newState2.calculatePrice = newState2.prices.priceSeniorTriple.price
-                newState2.calculatePriceInWords = newState2.prices.priceSeniorTriple.letter
+                newState2.calculatePrice = newState2.prices.priceTriple.price
+                newState2.calculatePriceInWords = newState2.prices.priceTriple.letter
             }
             if ((newState2.chosenPackage === gz) && (newState2.chosenFrequency === x4)){
-                newState2.calculatePrice = newState2.prices.priceSeniorQuatro.price
-                newState2.calculatePriceInWords = newState2.prices.priceSeniorQuatro.letter
+                newState2.calculatePrice = newState2.prices.priceQuatro.price
+                newState2.calculatePriceInWords = newState2.prices.priceQuatro.letter
             }
             return newState2
         case VALUE_SCHOOL_YEAR: return ({...state, chosenSchoolYear: action.valueYear})
@@ -285,3 +278,10 @@ export const onLoader = () => ({type: LOADER})
 export const onErrorSending = (errorStatus) => ({type: ERROR_SENDING, errorStatus})
 export const onDownloadRoute = () => ({type: DOWNLOAD_ROUTE})
 export const testMain = () => ({type: TEST_MAIN})
+
+export const getSites = () => {
+    return (dispatch) => {
+
+    }
+}
+    
