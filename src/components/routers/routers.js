@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Step3Container } from '../downloading/step_3_container';
 import { SendingContainer } from '../sending/sending_container';
 import MainForm from '../main_form/main_form'
-import Instruction from '../instruction/instruction';
+import { InstructionContainer } from '../instruction/instruction_container';
 
 
 
@@ -11,7 +11,7 @@ const Routers = (props) => {
     return (
         <>
         <Routes>
-          <Route path="/" element={<Instruction/>} />
+          <Route path="/" element={<InstructionContainer/>} />
           <Route path="/main-form" element={<MainForm/>}/>
           <Route path={props.agreementRoute} element={<AgreementReadyContainer/>}/>
           <Route path={props.downloadRoute} element={<Step3Container/>}/>

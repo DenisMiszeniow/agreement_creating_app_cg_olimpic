@@ -3,20 +3,23 @@ import emailjs from '@emailjs/browser';
 
 const instance = axios.create({
     withCredentials: true,
-    baseURL: 'https://generator.cg-olimpic.pl/api/',
+    baseURL: './asset/',
     headers: {}, 
 })
-
 export const MainDataApi = {
-    getSitesOlga () {
-        return instance.get('olga_sites')
+    // getSitesOlga () {
+    //     return instance.get('olga_sites')
+    //     .then (response => response.data)
+    // },
+    // getSitesLiza () {
+    //     return instance.get('liza_sites')
+    //     .then (response => response.data)
+    //  },
+    
+    setLocales (locales) {
+        return instance.get(`/locales/${locales}/translation.json`)
         .then (response => response.data)
-    },
-    getSitesLiza () {
-        return instance.get('liza_sites')
-        .then (response => response.data)
-
-     }
+    }
 }
 
 
