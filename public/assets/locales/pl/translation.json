@@ -44,6 +44,15 @@
                 "warningLine1": "Aż do momentu zawarcia umowy wszystkie wprawodzone przez Ciebie dane przechowywane są w twojej przeglądarce internetowej, nie mamy dostępu do nich (RODO).",
                 "warningLine2": "Dlatego NIE restartuj a NIE zamykaj okna przeglądarki, wtedy unikniesz powtórnego wprowadzania danych!"
             }
+        },
+        "groupTexts": {
+            "gp60" : "GRUPA POCZĄTKUJĄCA (60 min)",
+            "gp90" : "GRUPA POCZĄTKUJĄCA (90 min)'",
+            "gp901" : "GRUPA POCZĄTKUJĄCA  (90 min)", 
+            "gk60" : "GRUPA KONTYNUUJĄCA (60 min)", 
+            "gk90" : "GRUPA KONTYNUUJĄCA (90 min)",
+            "gk902": "GRUPA KONTYNUUJĄCA  (90 min)",
+            "gz" : "GRUPA ZAAWANSOWANA"
         }
     }
 }

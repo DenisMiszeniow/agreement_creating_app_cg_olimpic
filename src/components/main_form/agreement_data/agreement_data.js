@@ -1,9 +1,13 @@
+import { useEffect } from "react"
 import styles from "../main_form.module.scss"
 
 const AgreementData = (props) => {
+    debugger
+    useEffect(()=> props.getSites(), [props.onceEffect])
+
     //-------------select site-----------------
     const localonChangeSite = ({ target: { value } }) => {
-        props.onChosenSite(value)
+        props.onChosenSite({value})
     }
 
     //-------------select packege--------------
@@ -26,11 +30,11 @@ const AgreementData = (props) => {
             <h3>Wybór placówki</h3>
             <div className={styles.sectionForm__Form__Alone}>
                 <label>Wybierz placówkę:</label>
-                <select className={styles.selectSite} onChange={localonChangeSite} value={props.chosenSite} key={props.chosenSiteId}>
+                <select className={styles.selectSite} onChange={localonChangeSite} value={props.chosenSite}>
                     <option value="" disabled hidden>Nie wybrano</option>
-                    {props.sites.map(site => {
+                    {props.sites.map((site, id) => {
                         return (
-                            <option value={site.siteName} key={site.key}>{site.siteName}</option>
+                            <option value={id} key={id}>{site.site}</option>
                         )
                     })}
 
