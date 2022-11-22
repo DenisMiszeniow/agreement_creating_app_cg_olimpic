@@ -53,7 +53,8 @@ const initialState = {
                 warningLine1: '',
                 warningLine2: ''
             }
-        }
+        },
+        groupTexts:{},
     }
 }
 

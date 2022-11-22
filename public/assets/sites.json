@@ -4,42 +4,25 @@
       "site": "OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław",
       "groupOption": [
         {
-          "gp60": "",
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         },
         {
-          "gk60": "",
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         },
         {
-          "gk90": "",
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
           ]
         }
       ]
@@ -49,56 +32,33 @@
       "site": "ZSEO we Wrocławiu - Drukarska 50, 53-310 Wrocław",
       "groupOption": [
         {
-          "gp60": "",
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         },
         {
-          "gk60": "",
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         },
         {
-          "gk90": "",
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
           ]
         },
         {
-          "gz": "",
+          "group": "GRUPA ZAAWANSOWANA",
           "freq": [
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            },
-            {
-              "x4": ""
-            }
+            "2-x w tygodniu",
+            "3-x w tygodniu",
+            "4-x w tygodniu"
           ]
         }
       ]
@@ -108,42 +68,243 @@
       "site": "Zespół Szkół NR 3 - Szkocka 64, 54-402 Wrocław",
       "groupOption": [
         {
-          "gp60": "",
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         },
         {
-          "gk90": "",
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
-            {
-              "x1": ""
-            },
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            }
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
           ]
         },
         {
-          "gz": "",
+          "group": "GRUPA ZAAWANSOWANA",
           "freq": [
-            {
-              "x2": ""
-            },
-            {
-              "x3": ""
-            },
-            {
-              "x4": ""
-            }
+            "2-x w tygodniu",
+            "3-x w tygodniu",
+            "4-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "olga",
+      "site": "Liceum Ogólnokształcące nr V - Kuronia 14, 50-550 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "olga",
+      "site": "Szkoła Podstawowa NR 9 - Nyska 66, 50-505 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA ZAAWANSOWANA",
+          "freq": [
+            "2-x w tygodniu",
+            "3-x w tygodniu",
+            "4-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "olga",
+      "site": "Klub Samuraj - Bałtycka 19, 51-109 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "olga",
+      "site": "Liceum Ogólnokształcące nr VII - Krucza 49, 53-410 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Szkoła Podstawowa nr 61 - Skarbowców 8, 53-025 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA ZAAWANSOWANA",
+          "freq": [
+            "2-x w tygodniu",
+            "3-x w tygodniu",
+            "4-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Szkoła Podstawowa nr 33 - Kolista 17, 43-152 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu",
+            "3-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Szkoła Podstawowa nr 42 - Wałbrzyska 50, 52-314 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Szkoła Podstawowa nr 83 - Boya-Żeleńskiego 32, 51-160 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "olga",
+      "site": "Zespół Szkolno-Przedszkolny Nr 17 - Wieczysta 105, 50-550 Wrocław",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Świetlica Wiejska - Główna 47, 55-080 Smolec",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        }
+      ]
+    },
+    {
+      "owner": "liza",
+      "site": "Szkoła Podstawowa W Kobierzycach - Parkowa 7, 55-040 Kobierzyce",
+      "groupOption": [
+        {
+          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         }
       ]

@@ -10,7 +10,32 @@ export const MainDataApi = {
         return instance.get('sites.json')
         .then (response => response.data)
     },
-    
+
+    getPackages () {
+        return instance.get('packages.json')
+        .then (response => response.data)
+    },
+
+    getFrequences () {
+        return instance.get('frequences.json')
+        .then (response => response.data)
+    },
+
+    getPrices () {
+        return instance.get('prices.json')
+        .then(response => response.data)
+    },
+
+    getCompanyData (owner) {
+        return instance.get(`owner/${owner}.json`)
+        .then (response => response.data)
+    },
+
+    getSchoolYerars () {
+        return instance.get('school-years.json')
+        .then (response => response.data)
+    },
+
     setLocales (locales) {
         return instance.get(`locales/${locales}/translation.json`)
         .then (response => response.data)

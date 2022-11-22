@@ -2,7 +2,6 @@
 const TestButton = (props) => {
 
     const feelInputs = () => {
-        props.testMain()
         props.testChild()
         props.testParrent()
     }

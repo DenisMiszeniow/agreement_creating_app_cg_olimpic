@@ -7,7 +7,6 @@ import Step4 from "../steps/step_4_div";
 import styles from './sending.module.scss';
 
 const Sending = (props) => {
-
     const [file, setFile] = useState(null);
     const handleChange = (file) => { setFile(file) };
     const fileTypes = ["PDF"]
