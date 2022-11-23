@@ -5,8 +5,10 @@ import step1 from '..//..//images/step1.gif'
 import step2 from '..//..//images/step2.gif'
 import step3 from '..//..//images/step3.gif'
 import step4 from '..//..//images/step4.gif'
+import { useEffect } from 'react'
 
 const Instruction = (props) => {
+    useEffect (() => {props.initialInsructionLocalesThunk(props.language, props.section)}, [props.language])
     return (
         <div className={styles.discription}>
             <h1>{props.instructionText.shortInstruction}</h1>

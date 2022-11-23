@@ -36,8 +36,8 @@ export const MainDataApi = {
         .then (response => response.data)
     },
 
-    setLocales (locales) {
-        return instance.get(`locales/${locales}/translation.json`)
+    setLocales (locales, section) {
+        return instance.get(`locales/${locales}/${section}.json`)
         .then (response => response.data)
     }
 }
