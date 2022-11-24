@@ -2,9 +2,12 @@ import styles from './downloading.module.scss'
 import html2pdf from 'html2pdf.js'
 import { NavLink } from "react-router-dom"
 import { Step3Container } from '../steps/steps_container'
+import { useEffect } from 'react'
 
 
 const Downloading = (props) => {
+    useEffect(() => {props.downloadLocalesThunk(props.language, props.downloadSection)}, [props.language])
+
     const onClickDownload = () => {
         const opt = {filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`}
         html2pdf(document.getElementById('element-to-print'), opt)
@@ -122,7 +125,7 @@ const Downloading = (props) => {
                     </div>
                 </div>
             </div>
-            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>ŚCIĄGAM / NASTĘPNY KROK</NavLink>
+            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>{props.localesTexts.downloadText}</NavLink>
         </div>
     )
 }

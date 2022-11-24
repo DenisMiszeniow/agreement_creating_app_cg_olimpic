@@ -1,9 +1,12 @@
 
 import { connect } from "react-redux";
+import { compose } from "redux";
 import { onDownloadRoute } from "../../BLL/main_state_data_reducer";
+import { withLocales } from "../../HOC/withLocales";
 import Agreement from "./agreement_ready";
+import { agreementReadyLocalesThunk } from '../../BLL/locales_reducer'
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = state => {
     return (
         {
             //mainData
@@ -41,9 +44,12 @@ export const mapStateToProps = (state) => {
             //routing
             downloadRoute: state.mainData.downloadRoute,
             acceptAgreement: state.mainData.acceptAgreement,
-
+            //section
+            agreementReady: state.localesReducer.section.agreementReady,
+            //locales data
+            localesTexts: state.localesReducer.agreementReadyTexts
         }
     )
 }
 
-export const AgreementReadyContainer = connect(mapStateToProps, {onDownloadRoute})(Agreement)
+export const AgreementReadyContainer = compose(connect(mapStateToProps, {onDownloadRoute, agreementReadyLocalesThunk}), withLocales)(Agreement) 

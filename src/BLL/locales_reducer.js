@@ -4,6 +4,8 @@ const INITIAL_HEADER_LOCALIZE = 'INITIAL_HEADER_LOCALIZE'
 const INITIAL_INSTRUCTION_LOCALES = 'INITIAL_INSTRUCTION_LOCALES'
 const INITIAL_STEPS_LOCALES = 'INITIAL_STEPS_LOCALES'
 const INITIAL_MAIN_FORM_LOCALES = 'INITIAL_MAIN_FORM_LOCALES'
+const AGREEMENT_READY_LOCALES = 'AGREEMENT_READY_LOCALES'
+const DOWNLOAD_LOCALES = 'DOWNLOAD_LOCALES'
 
 
 const SWITCH_LOCALIZE = 'SWITCH_LOCALIZE'
@@ -18,7 +20,9 @@ const initialState = {
     section: {
         header: 'header',
         instruction: 'instruction',
-        mainForm: 'form'
+        mainForm: 'form',
+        agreementReady: 'agreement',
+        download: 'download'
     },
     headerTexts: {
         nameText: '',
@@ -142,6 +146,13 @@ const initialState = {
             allRightText: ''
         },
     },
+    agreementReadyTexts: {
+        acceptAgreementText: '',
+        nextStepText: ''
+    },
+    downloadTexts: {
+        downloadText: '',
+    }
 }
 
 export const localesReducer = (state = initialState, action) => {
@@ -150,6 +161,8 @@ export const localesReducer = (state = initialState, action) => {
         case INITIAL_STEPS_LOCALES: return {...state, stepTexts: action.data}
         case INITIAL_INSTRUCTION_LOCALES: return { ...state, instructionTexts: action.data}
         case INITIAL_MAIN_FORM_LOCALES: return {...state, mainFormTexts: action.data}
+        case AGREEMENT_READY_LOCALES: return {...state, agreementReadyTexts: action.data}
+        case DOWNLOAD_LOCALES: return {...state, downloadTexts: action.data}
 
         case SWITCH_LOCALIZE:
             const newState = { ...state }
@@ -163,7 +176,7 @@ export const localesReducer = (state = initialState, action) => {
 }
 
 export const localesSwitch = () => ({ type: SWITCH_LOCALIZE})
-const buttonDisable = (event) => ({type: BUTTON_DISABLE, event})
+const buttonDisable = event => ({type: BUTTON_DISABLE, event})
 
 
 //HEADER LOCALES
@@ -174,15 +187,12 @@ export const initialHeaderLocalesThunk = (language, section) => dispatch => {
     MainDataApi.setLocales(language, section)
     .then(data => dispatch(initialHeaderLocales(data)))
     .then (MainDataApi.setStepsLocales(language)
-            .then(data => {
-                dispatch(initialStepsLocales(data))
-                console.log(data)
-            })
+            .then(data => dispatch(initialStepsLocales(data)))
     )
 }
 
 //INSTRUCTION LOCALES
-const initialInstructionLocales = (data) => ({ type: INITIAL_INSTRUCTION_LOCALES, data })
+const initialInstructionLocales = data => ({ type: INITIAL_INSTRUCTION_LOCALES, data })
 
 export const initialInsructionLocalesThunk = (language, section) => dispatch => {
     dispatch(buttonDisable(true))
@@ -194,7 +204,7 @@ export const initialInsructionLocalesThunk = (language, section) => dispatch => 
 }
 
 //MAIN FORM LOCALES
-const initialMainFormLocales = (data) => ({ type: INITIAL_MAIN_FORM_LOCALES, data })
+const initialMainFormLocales = data => ({ type: INITIAL_MAIN_FORM_LOCALES, data })
 
 export const initialMainFormLocalesThunk = (language, section) => dispatch => {
     dispatch(buttonDisable(true))
@@ -204,6 +214,31 @@ export const initialMainFormLocalesThunk = (language, section) => dispatch => {
         dispatch(buttonDisable(false))
     })
 }
+
+//AGREEMENT READY LOCALES
+const agreementReadyLocales = data => ({ type: AGREEMENT_READY_LOCALES, data })
+
+export const agreementReadyLocalesThunk = (language, section) => dispatch => {
+    dispatch(buttonDisable(true))
+    MainDataApi.setLocales(language, section)
+    .then(data => {
+        dispatch(agreementReadyLocales(data))
+        dispatch(buttonDisable(false))
+    })
+}
+
+//DOWNLOAD LOCALES
+const downloadLocales = data => ({ type: DOWNLOAD_LOCALES, data })
+
+export const downloadLocalesThunk = (language, section) => dispatch => {
+    dispatch(buttonDisable(true))
+    MainDataApi.setLocales(language, section)
+    .then(data => {
+        dispatch(downloadLocales(data))
+        dispatch(buttonDisable(false))
+    })
+}
+
 
 
 

@@ -1,6 +1,9 @@
 
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { withLocales } from "../../HOC/withLocales";
 import Downloading from "./downloading";
+import { downloadLocalesThunk } from '../../BLL/locales_reducer'
 
 export const mapStateToProps = (state) => {
     return (
@@ -36,9 +39,12 @@ export const mapStateToProps = (state) => {
             childCheckbox: state.childData.childCheckbox,
             //agreementVisibility
             agreementVisibility: state.mainData.agreementVisibility,
+            //locales texts
+            localesTexts: state.localesReducer.downloadTexts,
+            downloadSection: state.localesReducer.section.download,
 
         }
     )
 }
 
-export const DownloadingContainer = connect(mapStateToProps)(Downloading)
+export const DownloadingContainer = compose(connect(mapStateToProps, {downloadLocalesThunk}), withLocales)(Downloading)
