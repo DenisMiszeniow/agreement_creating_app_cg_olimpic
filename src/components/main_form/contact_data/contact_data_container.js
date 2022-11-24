@@ -23,6 +23,8 @@ export const mapStateToProps = (state) => {
             testingFormText: state.mainData.testingFormText,
             testingForm: state.mainData.testingForm,
             agreementRoute: state.mainData.agreementRoute,
+            localesTexts: state.localesReducer.mainFormTexts.contactDataText,
+            checkLocalesTexts: state.localesReducer.mainFormTexts.checkFormText
         }
     )
 }

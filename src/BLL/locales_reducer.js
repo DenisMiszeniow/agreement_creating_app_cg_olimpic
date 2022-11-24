@@ -100,7 +100,47 @@ const initialState = {
             packageFirst: '',
             choseFrequency: '',
             schoolYear: '',
-        }
+        },
+        childDataText: {
+            h3Text: '',
+            nameText: '',
+            dateText: '',
+            agreeText: '',
+            lineText: '',
+        },
+        parrentDataText: {
+            h3Text: '',
+            nameText: '',
+            idText: '',
+            cityText: '',
+            zipText: '',
+            addressText: ''
+        },
+        contactDataText: {
+            h3Text: '',
+            motherTelText: '',
+            fatherTelText: '',
+            mailText: '',
+            checkDataText: '',
+            nextStepText: ''
+        },
+        checkFormText: {
+            siteText: '',
+            packageText: '',
+            frequencyText: '',
+            schoolYearText: '',
+            childNameText: '',
+            childDateText: '',
+            parrentNameText: '',
+            parrentIdText: '',
+            parrentCityText: '',
+            parrentZipText: '',
+            parrentAddressText: '',
+            telText: '',
+            mailText: '',
+            checkMailText: '',
+            allRightText: ''
+        },
     },
 }
 
@@ -161,7 +201,6 @@ export const initialMainFormLocalesThunk = (language, section) => dispatch => {
     MainDataApi.setLocales(language, section)
     .then(data => {
         dispatch(initialMainFormLocales(data))
-        console.log(data)
         dispatch(buttonDisable(false))
     })
 }

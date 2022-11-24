@@ -22,30 +22,8 @@ const DOWNLOAD_ROUTE = 'DOWNLOAD_ROUTE'
 //---TEST BUTTON----------
 const TEST_MAIN = 'TEST_MAIN'
 
-
-//---OLGA SITES-----------
-const olga1 = 'OKiDZ Edukacja Sp. z o.o. - Krakowska 56-62, 50-425 Wrocław'
-const olga2 = 'ZSEO we Wrocławiu - Drukarska 50, 53-310 Wrocław'
-const olga3 = 'Liceum Ogólnokształcące nr V - Kuronia 14, 50-550 Wrocław'
-const olga4 = 'Szkoła Podstawowa NR 9 - Nyska 66, 50-505 Wrocław'
-const olga5 = 'Klub Samuraj - Bałtycka 19, 51-109 Wrocław'
-const olga6 = 'Liceum Ogólnokształcące nr VII - Krucza 49, 53-410 Wrocław'
-const olga7 = 'Zespół Szkolno-Przedszkolny Nr 17 - Wieczysta 105, 50-550 Wrocław'
-
-//---LIZA SITES-----------
-const liza1 = 'Zespół Szkół NR 3 - Szkocka 64, 54-402 Wrocław'
-const liza2 = 'Szkoła Podstawowa nr 61 - Skarbowców 8, 53-025 Wrocław'
-const liza3 = 'Szkoła Podstawowa nr 33 - Kolista 17, 43-152 Wrocław'
-const liza4 = 'Świetlica Wiejska - Główna 47, 55-080 Smolec'
-const liza5 = 'Szkoła Podstawowa W Kobierzycach - Parkowa 7, 55-040 Kobierzyce'
-const liza6 = 'Szkoła Podstawowa nr 42 - Wałbrzyska 50, 52-314 Wrocław'
-const liza7 = 'Szkoła Podstawowa nr 83 - Boya-Żeleńskiego 32, 51-160 Wrocław'
-
 const initialState = {
-    // LOCALES
-    textsUa: {},
-    textsLocales: {},
-
+    
     //Dates
     currentDate: new Date(),
     schoolYear: [],
@@ -75,6 +53,9 @@ const initialState = {
     prices: {},
     calculatePrice: 0,
     calculatePriceInWords: '',
+
+    //TESTING FORM TEXT
+    testingFormText: '',
     
     sendingText: 'ZAWIERAM UMOWĘ',
     errorText: '',
@@ -159,7 +140,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             return setPriceState
 
         case VALUE_SCHOOL_YEAR: return ({ ...state, chosenSchoolYear: action.valueYear })
-        case TESTING_FORM: return ({ ...state, testingForm: !state.testingForm, testingFormText: 'WSZYSTKO SIĘ ZGADZA :)', agreementRoute: '/agreement' })
+        case TESTING_FORM: return ({ ...state, testingForm: !state.testingForm, testingFormText: action.text, agreementRoute: '/agreement' })
         case TESTING_FORM_TEXT: return ({ ...state, testingFormText: action.text })
         case SENDING_OK: return {...state,
             chosenSite: '',
@@ -191,7 +172,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
 export const onChosenSite = (valueSite) => ({ type: VALUE_SITE, valueSite })
 export const onChosenFrequency = (valueFrequency) => ({ type: VALUE_FREQUENCY, valueFrequency })
 export const onChosenSchoolYear = (valueYear) => ({ type: VALUE_SCHOOL_YEAR, valueYear })
-export const onTestingForm = () => ({ type: TESTING_FORM })
+export const onTestingForm = (text) => ({ type: TESTING_FORM, text })
 export const onTestingFormText = (text) => ({ type: TESTING_FORM_TEXT, text })
 export const onSendingMainClear = () => ({ type: SENDING_OK })
 export const onLoader = () => ({ type: LOADER })

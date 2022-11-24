@@ -9,7 +9,8 @@ export const mapStateToProps = (state) => {
             parrentIdCard: state.parrentData.parrentIdCard,
             parrentCity: state.parrentData.parrentCity,
             parrentZipCode: state.parrentData.parrentZipCode,
-            parrentAddress: state.parrentData.parrentAddress
+            parrentAddress: state.parrentData.parrentAddress,
+            localesTexts: state.localesReducer.mainFormTexts.parrentDataText
         }
     )
 }

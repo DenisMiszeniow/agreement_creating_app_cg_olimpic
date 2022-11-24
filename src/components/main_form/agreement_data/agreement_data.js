@@ -77,7 +77,7 @@ const AgreementData = (props) => {
                     }
                 </div>
                 <div>
-                    <label>Rok szkolny:</label>
+                    <label>{props.localesTexts.schoolYear}</label>
                     <select onChange={localonChangeSchoolYear} value={props.chosenSchoolYear}>
                         {
                             props.schoolYear.map(year => <option value={year} key={year}>{year}</option>)

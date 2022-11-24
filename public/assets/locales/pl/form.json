@@ -10,5 +10,45 @@
         "packageFirst": "najpierw grupę",
         "choseFrequency": "wybierz",
         "schoolYear": "Rok szkolny"
+    },
+    "childDataText": {
+        "h3Text": "Dane dziecka",
+        "nameText": "Imię i Nazwisko dziecka",
+        "dateText": "Data urodzenia",
+        "agreeText": "Zgoda na wykorzystanie wizеrunku dziecka*",
+        "lineText": "*Zachęcamy do pozostawienіa tego punktu zaznaczonego aby mogliście Państwo cieszyć się zdjęciami swojej pociechy w naszych profilach spółecznościowych."
+    },
+    "parrentDataText": {
+        "h3Text": "Dane rodzica / opiekuna prawnego",
+        "nameText": "Imię Nazwisko",
+        "idText": "Nr dokumentu tożsamości",
+        "cityText": "Miejscowość",
+        "zipText": "Kod pocztowy",
+        "addressText": "Ulica, nr domu / nr mieszkania"
+    },
+    "contactDataText": {
+        "h3Text": "Dane kontaktowe",
+        "motherTelText": "tel. matki / opiekuna prawnego",
+        "fatherTelText": "tel. ojca / opiekuna prawnego",
+        "mailText": "Adres e-mail do kontaktu",
+        "checkDataText": "SPRAWDŹ DANE",
+        "nextStepText": "NASTĘPNY KROK"
+    },
+    "checkFormText": {
+        "siteText": "WYBIERZ PLACÓWKĘ",
+        "packageText": "WYBIERZ GRUPĘ",
+        "frequencyText": "WYBIERZ CZEŚTOTLIWOŚĆ ZAJĘĆ",
+        "schoolYearText": "WYBIERZ ROK SZKOLNY",
+        "childNameText": "WPROWADŹ IMIĘ I NAZWISKO DZIECKA",
+        "childDateText": "WPROWADŹ DATĘ URODZENIA DZIECKA, FORMAT: DD-MM-RRRR",
+        "parrentNameText": "WPROWADŹ IMIĘ I NAZWISKO RODZICA / OPIEKUNA PRAWNEGO",
+        "parrentIdText": "WPROWADŹ SERIE I NUMER DOWODU TOŻSAMOŚCI",
+        "parrentCityText": "WPROWADŹ MIEJSCOWOŚĆ",
+        "parrentZipText": "WPROWADŹ KOD POCZTOWY",
+        "parrentAddressText": "WPROWADŹ ADRES ZAMIESZKANIA",
+        "telText": "WPROWADŹ NUMER TELEFONU PRZYNAJMNIEJ JEDNEGO Z RODZICÓW / OPIEKUNA PRAWNEGO",
+        "mailText": "WPROWADŹ ADRES EMAIL",
+        "checkMailText": "SPRAWDŹ POPRAWNOŚĆ EMAIL",
+        "allRightText": "WSZYSTKO SIĘ ZGADZA :)"
     }
 }
