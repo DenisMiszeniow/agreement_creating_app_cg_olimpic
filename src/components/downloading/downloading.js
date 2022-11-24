@@ -1,9 +1,10 @@
-import styles from './step3.module.scss'
+import styles from './downloading.module.scss'
 import html2pdf from 'html2pdf.js'
 import { NavLink } from "react-router-dom"
+import { Step3Container } from '../steps/steps_container'
 
 
-const Step3 = (props) => {
+const Downloading = (props) => {
     const onClickDownload = () => {
         const opt = {filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`}
         html2pdf(document.getElementById('element-to-print'), opt)
@@ -11,11 +12,7 @@ const Step3 = (props) => {
     
     return (
         <div className={styles.discription}>
-            <h1>Krok: 3 / 4</h1> 
-            <h2>Ściągnij umowę i zachowaj w dowolnym miejscu na komputerze.</h2>
-            <h2>NIE DRUKUJ I NIE PODPISUJ RĘCNIE, WSZYSTKO ODBYWA SIĘ ELEKTRONICZNIE!</h2>
-            <p>Na tym etapie musimy upewnić się, że jesteś: a) człowiekiem i b) jesteś dorosłą osobą i świadomie podpisujesz umowę.</p>
-            <p className={styles.warning}>W nastęnym kroku załącz ściągniętą umowę i wciśnij przycisk "ZAWIERAM UMOWĘ".</p>
+            <Step3Container />
             <div className={styles.agreement_container} >
                 <div className='styles.downloadContainer' id='element-to-print'>
                     <div className={`html2pdf__page-break ${styles.pageContainer}`}>
@@ -130,4 +127,4 @@ const Step3 = (props) => {
     )
 }
 
-export default Step3
+export default Downloading

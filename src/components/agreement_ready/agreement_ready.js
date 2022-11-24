@@ -1,6 +1,6 @@
 import styles from "./agreement_section.module.scss"
-import Step2 from "../steps/step_2_div"
 import { NavLink } from "react-router-dom"
+import { Step2Container } from "../steps/steps_container"
 
 const Agreement = (props) => {
 
@@ -9,7 +9,7 @@ const Agreement = (props) => {
         }
         return (
                 <div>
-                        <Step2 />
+                        <Step2Container />
                         <div className={styles.container}>
                                 {/* --- Dane firmy --- */}
                                 <h2>CENTRUM GIMNASTYCZNE OLIMPIC</h2>

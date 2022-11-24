@@ -3,10 +3,10 @@ import styles from './steps.module.scss'
 const Step4 = (props) => {
     return (
         <div className={styles.discription}>
-            <h1>Krok: 4 / 4</h1> 
-            <h2>Załącz ściągniętą umowę i naciśnij przycisck "ZAWIERAM UMOWĘ"</h2>
-            <p>Jeśli wszystko wykonasz prawidłowo otrzymasz za chwilę maile potwierdzające zawarcie umowy.</p> 
-            <p>Pamiętaj! Umowa zostanie aktywowana TYLKO po wpłacie wpisowych (CJK)!</p>
+            <h1>{props.step4Texts.step4Text}</h1> 
+            <h2>{props.step4Texts.h2Text}</h2>
+            <p>{props.step4Texts.pTextLine1}</p>
+            <p>{props.step4Texts.pTextLine2}</p>
         </div>
     )
 }

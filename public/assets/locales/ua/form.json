@@ -1,0 +1,14 @@
+{
+    "choseSiteText" : {
+        "h3Text": "Вибір об'єкту",
+        "site": "Об'єкт",
+        "siteChosenText": "не обрано",
+        "package": "обери групу",
+        "siteFirst": "спочатку об'єкт :)",
+        "chosePackage": "Група",
+        "frequency": "Періодичність",
+        "packageFirst": "спочатку група",
+        "choseFrequency": "обери",
+        "schoolYear": "Шкільний рік"
+    }
+}

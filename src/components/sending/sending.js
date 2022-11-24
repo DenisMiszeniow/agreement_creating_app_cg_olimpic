@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { sendEmailJs } from '../../API/api';
 import { EndPageContainer } from '../end_page/end_page_container';
-import Step4 from "../steps/step_4_div";
+import { Step4Container } from "../steps/steps_container";
 import styles from './sending.module.scss';
 
 const Sending = (props) => {
@@ -26,7 +26,7 @@ const Sending = (props) => {
     return (
         <>
         <div className={props.lastPage ? `${styles.visibleDiv}` : ''}>
-            <Step4 />
+            <Step4Container/>
             <form ref={form} onSubmit={sendEmail}>
                 <div className={styles.sectionForm}>
                     <div className={styles.sectionForm__Form}>

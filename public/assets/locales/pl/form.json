@@ -1,0 +1,14 @@
+{
+    "choseSiteText" : {
+        "h3Text": "Wybór placówki",
+        "site": "Placówka",
+        "siteChosenText": "nie wybrano",
+        "package": "wybierz grupę",
+        "siteFirst": "najpierw placówkę :)",
+        "chosePackage": "Grupa",
+        "frequency": "Częstotliwość",
+        "packageFirst": "najpierw grupę",
+        "choseFrequency": "wybierz",
+        "schoolYear": "Rok szkolny"
+    }
+}

@@ -3,9 +3,9 @@ import styles from './steps.module.scss'
 const Step2 = (props) => {
     return (
         <div className={styles.discription}>
-            <h1>Krok: 2 / 4</h1> 
-            <h2>Dokładnie przeczytaj umowę!</h2>
-            <p>Jeśli zauważysz pomyłkę - cofnij i popraw dane w pierwszym kroku.</p> 
+            <h1>{props.step2Texts.step2Text}</h1> 
+            <h2>{props.step2Texts.h2Text}</h2>
+            <p>{props.step2Texts.pText}</p>
         </div>
     )
 }

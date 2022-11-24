@@ -15,7 +15,7 @@ export const mapStateToProps = (state) => {
             chosenSchoolYear: state.mainData.chosenSchoolYear, 
             siteOwner: state.mainData.chosenSiteFullData.owner,
             onceRequest: state.mainData.onceRequest,
-            locales: state.localesReducer.language,
+            localesTexts: state.localesReducer.mainFormTexts.choseSiteText
         }
     )
 }

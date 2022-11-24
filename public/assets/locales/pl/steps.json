@@ -1,13 +1,25 @@
 {
     "step1Texts": {
-        "step1Text": "Krok: 1",
+        "step1Text": "Krok: 1/4",
         "h2Text": "Wypełnij pola poniżej",
         "pText": "Pamiętaj! Przy wypełnieniu danych osobowych zgadzasz się na przetwarzanie ich przez CG Olimpic w celu stworzenia oraz przechowywania umowy do momentu jej wygaśnięcia!"
     },
     "step2Texts": {
-
+        "step2Text": "Krok: 2/4",
+        "h2Text": "Dokładnie przeczytaj umowę!",
+        "pText": "Jeśli zauważysz pomyłkę - cofnij i popraw dane w pierwszym kroku."
     },
-    "Step4Texts": {
-        
+    "step3Texts": {
+        "step3Text": "Krok: 3 / 4",
+        "h2TextLine1": "Ściągnij umowę i zachowaj w dowolnym miejscu na komputerze.",
+        "h2TextLine2": "NIE DRUKUJ I NIE PODPISUJ RĘCNIE, WSZYSTKO ODBYWA SIĘ ELEKTRONICZNIE!",
+        "pTextLine1": "Na tym etapie musimy upewnić się, że jesteś: a) człowiekiem i b) jesteś dorosłą osobą i świadomie podpisujesz umowę.",
+        "pTextLine2": "W nastęnym kroku załącz ściągniętą umowę i wciśnij przycisk ZAWIERAM UMOWĘ."
+    },
+    "step4Texts": {
+        "step4Text": "Krok: 4 / 4",
+        "h2Text": "Załącz ściągniętą umowę i naciśnij przycisck ZAWIERAM UMOWĘ",
+        "pTextLine1": "Jeśli wszystko wykonasz prawidłowo otrzymasz za chwilę maile potwierdzające zawarcie umowy.",
+        "pTextLine2": "Pamiętaj! Umowa zostanie aktywowana TYLKO po wpłacie wpisowych (CJK)!."
     }
 }

@@ -3,16 +3,16 @@ import { AgreementDataContainer } from "./agreement_data/agreement_data_containe
 import { ChildDataContainer } from "./child_data/child_container"
 import { ContactDataContainer } from "./contact_data/contact_data_container"
 import { ParrentDataContainer } from "./parrent_data/parrent_container"
-import Step1 from "../steps/step_1_div"
 import styles from "./main_form.module.scss"
 import { TestButtonContainer } from './TEST-BUTTON/test_button_container';
-
+import { Step1Container } from "../steps/steps_container"
+import { useEffect } from "react"
 
 const MainForm = (props) => {
-
+    useEffect(() => {props.initialMainFormLocalesThunk(props.language, props.section)},[props.language])
     return (
         <div className={styles.container}>
-            <Step1/>
+            <Step1Container/>
             <TestButtonContainer/>
             <div className={styles.sectionForm}>
                 <div className={styles.sectionForm__Form}>

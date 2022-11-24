@@ -1,6 +1,6 @@
 
 import { connect } from "react-redux";
-import Step3 from "./step_3_div";
+import Downloading from "./downloading";
 
 export const mapStateToProps = (state) => {
     return (
@@ -41,4 +41,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const Step3Container = connect(mapStateToProps)(Step3)
+export const DownloadingContainer = connect(mapStateToProps)(Downloading)
