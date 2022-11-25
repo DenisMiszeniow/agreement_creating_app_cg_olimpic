@@ -12,8 +12,8 @@ const MainForm = (props) => {
     useEffect(() => {props.initialMainFormLocalesThunk(props.language, props.section)},[props.language])
     return (
         <div className={styles.container}>
-            {/* <Step1Container/> */}
-            <TestButtonContainer/>
+            <Step1Container/>
+            {/* <TestButtonContainer/> */}
             <div className={styles.sectionForm}>
                 <div className={styles.sectionForm__Form}>
                     <AgreementDataContainer/>
