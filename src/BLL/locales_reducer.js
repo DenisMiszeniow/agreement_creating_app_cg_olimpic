@@ -1,14 +1,16 @@
 import { MainDataApi } from "../API/api"
 
-const INITIAL_HEADER_LOCALIZE = 'INITIAL_HEADER_LOCALIZE'
-const INITIAL_INSTRUCTION_LOCALES = 'INITIAL_INSTRUCTION_LOCALES'
-const INITIAL_STEPS_LOCALES = 'INITIAL_STEPS_LOCALES'
-const INITIAL_MAIN_FORM_LOCALES = 'INITIAL_MAIN_FORM_LOCALES'
+const HEADER_LOCALIZE = 'HEADER_LOCALIZE'
+const INSTRUCTION_LOCALES = 'INSTRUCTION_LOCALES'
+const STEPS_LOCALES = 'STEPS_LOCALES'
+const MAIN_FORM_LOCALES = 'MAIN_FORM_LOCALES'
 const AGREEMENT_READY_LOCALES = 'AGREEMENT_READY_LOCALES'
 const DOWNLOAD_LOCALES = 'DOWNLOAD_LOCALES'
 const SENDING_LOCALES = 'SENDING_LOCALES'
 const ERROR_SENDING = 'ERROR_SENDING'
 const SENDING_TEXT = 'SENDING_TEXT'
+const OS_TEST_LOCALES ='OS_TEST_LOCALES'
+
 
 
 const SWITCH_LOCALIZE = 'SWITCH_LOCALIZE'
@@ -29,6 +31,7 @@ const initialState = {
         agreementReady: 'agreement',
         download: 'download',
         sending: 'sending',
+        osTest: 'ostest',
     },
     headerTexts: {
         nameText: '',
@@ -170,15 +173,20 @@ const initialState = {
         endPagetextLine2: '',
         endPagetextLine2: '',
         endPagetextSpan: '',
+    },
+    osTestTexts: {
+        h3Text: '',
+        pText: ''
     }
 }
 
 export const localesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INITIAL_HEADER_LOCALIZE: return { ...state, headerTexts: action.data}
-        case INITIAL_STEPS_LOCALES: return {...state, stepTexts: action.data}
-        case INITIAL_INSTRUCTION_LOCALES: return { ...state, instructionTexts: action.data}
-        case INITIAL_MAIN_FORM_LOCALES: return {...state, mainFormTexts: action.data}
+        case OS_TEST_LOCALES: return {...state, osTestTexts: action.data}
+        case HEADER_LOCALIZE: return { ...state, headerTexts: action.data}
+        case STEPS_LOCALES: return {...state, stepTexts: action.data}
+        case INSTRUCTION_LOCALES: return { ...state, instructionTexts: action.data}
+        case MAIN_FORM_LOCALES: return {...state, mainFormTexts: action.data}
         case AGREEMENT_READY_LOCALES: return {...state, agreementReadyTexts: action.data}
         case DOWNLOAD_LOCALES: return {...state, downloadTexts: action.data}
         case SENDING_LOCALES:
@@ -205,8 +213,8 @@ const buttonDisable = event => ({type: BUTTON_DISABLE, event})
 
 
 //HEADER LOCALES
-const initialHeaderLocales = data => ({ type: INITIAL_HEADER_LOCALIZE, data })
-const initialStepsLocales = data => ({type:INITIAL_STEPS_LOCALES, data})
+const initialHeaderLocales = data => ({ type: HEADER_LOCALIZE, data })
+const initialStepsLocales = data => ({type:STEPS_LOCALES, data})
 
 export const initialHeaderLocalesThunk = (language, section) => dispatch => {
     MainDataApi.setLocales(language, section)
@@ -217,7 +225,7 @@ export const initialHeaderLocalesThunk = (language, section) => dispatch => {
 }
 
 //INSTRUCTION LOCALES
-const initialInstructionLocales = data => ({ type: INITIAL_INSTRUCTION_LOCALES, data })
+const initialInstructionLocales = data => ({ type: INSTRUCTION_LOCALES, data })
 
 export const initialInsructionLocalesThunk = (language, section) => dispatch => {
     dispatch(buttonDisable(true))
@@ -229,7 +237,7 @@ export const initialInsructionLocalesThunk = (language, section) => dispatch => 
 }
 
 //MAIN FORM LOCALES
-const initialMainFormLocales = data => ({ type: INITIAL_MAIN_FORM_LOCALES, data })
+const initialMainFormLocales = data => ({ type: MAIN_FORM_LOCALES, data })
 
 export const initialMainFormLocalesThunk = (language, section) => dispatch => {
     dispatch(buttonDisable(true))
@@ -277,6 +285,14 @@ export const sendingLocalesThunk = (languge, section) => dispatch => {
         dispatch(buttonDisable(false))
     })
 } 
+
+//OS TEST LOCALES
+const osTestLocales = (data) => ({type: OS_TEST_LOCALES, data})
+
+export const osTestLocalesThunk = (language, section) => dispatch => {
+    MainDataApi.setLocales(language, section)
+    .then (data => dispatch(osTestLocales(data)))
+}
 
 
 

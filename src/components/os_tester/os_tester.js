@@ -1,11 +1,14 @@
+import { useEffect } from "react"
+import { propTypes } from "react-bootstrap/esm/Image"
 import { RoutersContainer } from "../routers/routers_container"
 
-const OsTester = () => {
+const OsTester = (props) => {
+    useEffect(()=> {props.osTestLocalesThunk(props.language, props.section)}, [props.language])
     if ((navigator.appVersion.indexOf('iPhone') !== -1) || (navigator.appVersion.indexOf('iPad') !== -1)) {
         return (
             <div>
-                <h3>Korzystasz ze Smartfona bądź Tableta</h3> 
-                <p>Umowę podpiszesz tylko na komputerze bądź laptopie!</p>
+                <h3>{props.localesTexts.h3Text}</h3> 
+                <p>{props.localesTexts.pText}</p>
                 <a href="https://cg-olimpic.pl">CG-OlIMPIC.PL</a>
             </div>
         )
@@ -17,21 +20,6 @@ const OsTester = () => {
             
         )
     }
-
-
-
-    // return (
-
-    // navigator.appVersion.indexOf('iPhone')  === -1
-    //   ? <div className='content-container'>
-    //         <RoutersContainer />
-    //     </div>
-    //   : <div>
-    //       <h3>Korzystasz ze Smartfona bądź Tableta</h3> 
-    //       <p>Umowę podpiszesz tylko na komputerze bądź laptopie!</p>
-    //       <a href="https://cg-olimpic.pl">CG-OlIMPIC.PL</a>
-    //     </div>
-    // )
 }
 
 export default OsTester

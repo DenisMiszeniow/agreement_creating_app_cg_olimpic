@@ -4,6 +4,7 @@ import { DownloadingContainer } from '../downloading/downloading_container';
 import { SendingContainer } from '../sending/sending_container';
 import { InstructionContainer } from '../instruction/instruction_container';
 import { MainFormContainer } from '../main_form/main_form_container';
+import { OsTesterContainer } from '../os_tester/os_tester_container';
 
 
 
@@ -17,6 +18,7 @@ const Routers = (props) => {
           <Route path={props.downloadRoute} element={<DownloadingContainer/>}/>
           <Route path="/sending" element={<SendingContainer/>}/>
           <Route path='*' element={<Navigate to="/main-form" replace/>}/>
+          <Route path='/phone' element={<OsTesterContainer/>}/>
         </Routes>
         </>
     )

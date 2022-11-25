@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import { initialLocalesThunk } from "../BLL/locales_reducer"
 
 const MapStateToProps = state => ({language: state.localesReducer.language, initialized: state.localesReducer.initialized})
 
