@@ -6,10 +6,10 @@ const EndPage = (props) => {
     return (
         <div className={props.lastPage ? `${styles.container}` : `${styles.visibleDiv}`}>
             <img src={okPicture} alt='umowa zawarta'/>
-            <p> Udało się! Umowa zawarta!</p> 
-            <p className={styles.warning}>Za chwilę otrymasz mailowe potwierdzenie zawarcia umowy.</p> 
-            <p className={styles.warning}>Pamiętaj, aby ją aktywować - wpłać wpisowe (CJK)!</p> 
-            <span>Teraz możesz zamknąć to okno.</span>
+            <p>{props.texts.endPagetextLine1}</p> 
+            <p className={styles.warning}>{props.texts.endPagetextLine2}</p> 
+            <p className={styles.warning}>{props.texts.endPagetextLine3}</p> 
+            <span>{props.texts.endPagetextSpan}</span>
         </div>
     )
 }

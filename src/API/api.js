@@ -48,10 +48,10 @@ export const MainDataApi = {
 }
 
 
-// export const sendEmailJs = (form) => {
-//     return emailjs.sendForm('service_weofkil', 'template_jpopojg', form.current, 'rB9N2zoV8qvOchXfR')    
-// }
-
 export const sendEmailJs = (form) => {
-    return emailjs.sendForm('service_weofkil', 'template_44oeoxb', form.current, 'rB9N2zoV8qvOchXfR')    
+    return emailjs.sendForm('service_weofkil', 'template_jpopojg', form.current, 'rB9N2zoV8qvOchXfR')    
 }
+
+// export const sendEmailJs = (form) => {
+//     return emailjs.sendForm('service_weofkil', 'template_44oeoxb', form.current, 'rB9N2zoV8qvOchXfR')    
+// }

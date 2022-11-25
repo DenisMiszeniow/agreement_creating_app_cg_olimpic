@@ -88,7 +88,7 @@ const Sending = (props) => {
                 </div>
             </form>
         </div>
-        <EndPageContainer/>
+        <EndPageContainer texts={props.localesTexts}/>
         </>
     )
 }

@@ -166,6 +166,10 @@ const initialState = {
         limitText: '',
         errorText: '',
         bottonText: '',
+        endPagetextLine1: '',
+        endPagetextLine2: '',
+        endPagetextLine2: '',
+        endPagetextSpan: '',
     }
 }
 

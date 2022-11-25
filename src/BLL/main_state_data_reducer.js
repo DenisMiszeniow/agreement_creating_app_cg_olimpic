@@ -57,12 +57,15 @@ const initialState = {
     //TESTING FORM TEXT
     testingFormText: '',
     
-    
-    errorText: '',
+    //SEND LOADER AND LAST PAGE VISIBLE
     loader: false,
     lastPage: false,
+
+    // ROUTING
     agreementRoute: '',
     downloadRoute: '',
+
+    //AGREEMENT ACCEPT
     acceptAgreement: false,
 
     //ONCE Request UseEffect
