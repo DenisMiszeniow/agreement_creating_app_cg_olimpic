@@ -1,5 +1,5 @@
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { sendEmailJs } from '../../API/api';
 import { EndPageContainer } from '../end_page/end_page_container';
@@ -7,10 +7,18 @@ import { Step4Container } from "../steps/steps_container";
 import styles from './sending.module.scss';
 
 const Sending = (props) => {
+    useEffect(() => {props.sendingLocalesThunk(props.language, props.section)}, [props.language])
     const [file, setFile] = useState(null);
-    const handleChange = (file) => { setFile(file) };
+    const handleChange = (file) => {
+        file.length ? setFile(file) : setFile(null)
+        
+    };
     const fileTypes = ["PDF"]
     const form = useRef();
+    const handleSending = () => {
+        props.onLoader()
+        props.sendingText()
+    }
     
     const sendEmail = (e) => {
         e.preventDefault()
@@ -19,10 +27,12 @@ const Sending = (props) => {
                         props.onSendingParrentDataClear()
                         props.onSendingChildDataClear()
                         setFile(null)
-                    }, (error) => {props.onErrorSending(error.status)}
+                    }, (error) => {
+                        props.onErrorSending()
+                        props.ErrorSendingText(error.status)
+                    }
                     )
     }
-
     return (
         <>
         <div className={props.lastPage ? `${styles.visibleDiv}` : ''}>
@@ -44,30 +54,31 @@ const Sending = (props) => {
                             <div className={styles.visibility}><input name="owner_account" value={props.bankAccount} readOnly/></div>
                             <div className={styles.visibility}><input name="user_cjk" value={props.priceCjk} readOnly/></div>
                             <div>
-                                <label> Twoje Imię i Nazwisko:</label>
+                                <label>{props.localesTexts.yourNameText}</label>
                                 <input name="user_name" readOnly type='text' value={props.parrentName} />
                             </div>
                             <div>
-                                <label>twój adres e-mail:</label>
+                                <label>{props.localesTexts.yourEmailText}</label>
                                 <input name="user_email" readOnly type="email" value={props.parrentEmail} />
                             </div>
                             <div className={styles.fileDropDiv}>
                                 <FileUploader
                                     multiple={true}
+                                    
                                     onSelect={handleChange}
                                     name="my_file"
                                     types={fileTypes}
                                     label={file ? `${file[0].name}` : ""}
                                     hoverTitle = ''
-                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : "Kliknij aby załączyć umowę (Nie może przekraczać 2Mb)"}</p></div>}
+                                    children={<div className={styles.customFileUpload}><p>{file ? <u>{file[0].name}</u> : props.localesTexts.fileText}</p></div>}
                                 />
                             </div>
                             
                             <div>
                             {
                             file && props.parrentEmail !== ''
-                            ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={props.onLoader} type="submit" value={props.sendingText} />
-                            : <span className={styles.linkActive}>{props.sendingText}</span>
+                            ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={handleSending} type="submit" value={props.sendingButtonText} />
+                            : <span className={styles.linkActive}>{props.sendingButtonText}</span>
                             }
                             </div>
 

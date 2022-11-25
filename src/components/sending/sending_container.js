@@ -4,6 +4,9 @@ import Sending from "./sending";
 import { onErrorSending, onLoader, onSendingMainClear } from '../../BLL/main_state_data_reducer'
 import { onSendingParrentDataClear } from "../../BLL/parrent_data_reducer";
 import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
+import { compose } from "redux";
+import {withLocales} from '../../HOC/withLocales' 
+import {sendingLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_reducer'
 
 
 
@@ -29,13 +32,20 @@ export const mapStateToProps = (state) => {
             childDayOfBirth: state.childData.childDayOfBirth,
             childCheckbox: state.childData.childCheckbox,
             //otherData
-            sendingText: state.mainData.sendingText,
-            errorText: state.mainData.errorText,
+            // sendingText: state.mainData.sendingText,
+            // errorText: state.mainData.errorText,
             loader: state.mainData.loader,
-            lastPage: state.mainData.lastPage
+            lastPage: state.mainData.lastPage,
+            //locales
+            localesTexts: state.localesReducer.sendingTexts,
+            section: state.localesReducer.section.sending,
+            sendingButtonText: state.localesReducer.sendingButtonText,
+            errorText: state.localesReducer.errorSendingText
         }
     )
 }
 
-export const SendingContainer = connect(mapStateToProps, {onSendingMainClear, onSendingParrentDataClear, onSendingChildDataClear, 
-    onLoader, onErrorSending})(Sending)
+
+
+export const SendingContainer = compose(connect(mapStateToProps, {onSendingMainClear, onSendingParrentDataClear, onSendingChildDataClear, 
+    onLoader, onErrorSending, sendingLocalesThunk, ErrorSendingText, sendingText}), withLocales)(Sending)

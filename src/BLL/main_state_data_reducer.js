@@ -57,7 +57,7 @@ const initialState = {
     //TESTING FORM TEXT
     testingFormText: '',
     
-    sendingText: 'ZAWIERAM UMOWĘ',
+    
     errorText: '',
     loader: false,
     lastPage: false,
@@ -149,7 +149,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             companyData: {},
             prices: {},
             calculatePrice: 0,
-            sendingText: 'WYŚLIJ',
+            sendingText: '',
             loader: false,
             errorText: '',
             lastPage: true,
@@ -158,7 +158,7 @@ export const mainStateDataReducer = (state = initialState, action) => {
             acceptAgreement: false
         }
         case LOADER: return { ...state, loader: true, sendingText: '' }
-        case ERROR_SENDING: return { ...state, loader: false, sendingText: 'WYŚLIJ', errorText: action.errorStatus === 426 ? 'ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!' : 'COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!' }
+        case ERROR_SENDING: return { ...state, loader: false }
         case DOWNLOAD_ROUTE:
             const newStateDownloading = { ...state }
             newStateDownloading.downloadRoute = '/download'
@@ -176,7 +176,7 @@ export const onTestingForm = (text) => ({ type: TESTING_FORM, text })
 export const onTestingFormText = (text) => ({ type: TESTING_FORM_TEXT, text })
 export const onSendingMainClear = () => ({ type: SENDING_OK })
 export const onLoader = () => ({ type: LOADER })
-export const onErrorSending = (errorStatus) => ({ type: ERROR_SENDING, errorStatus })
+export const onErrorSending = () => ({ type: ERROR_SENDING})
 export const onDownloadRoute = () => ({ type: DOWNLOAD_ROUTE })
 
 
