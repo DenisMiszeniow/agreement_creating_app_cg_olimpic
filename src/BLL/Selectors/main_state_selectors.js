@@ -27,7 +27,7 @@ export const getBankAccount = state => state.mainData.companyData.bankAccount
 export const getDownloadRoute = state => state.mainData.downloadRoute
 export const getAcceptAgreement = state => state.mainData.acceptAgreement
 export const getLoader = state => state.mainData.loader
-export const getShowLastPage = state => state.mainData.loader
-export const getLastPage = state => state.mainData.lastPage
+export const getShowLastPage = state => state.mainData.lastPage
+
 
 

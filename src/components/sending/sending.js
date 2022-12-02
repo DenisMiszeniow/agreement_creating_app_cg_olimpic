@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { sendEmailJs } from '../../API/api';
-import { EndPageContainer } from '../end_page/end_page_container';
+import EndPage from "../end_page/end_page";
 import { Step4Container } from "../steps/steps_container";
 import styles from './sending.module.scss';
 
@@ -88,7 +88,7 @@ const Sending = (props) => {
                 </div>
             </form>
         </div>
-        <EndPageContainer texts={props.localesTexts}/>
+        <EndPage texts={props.localesTexts} lastPage={props.lastPage}/>
         </>
     )
 }
