@@ -1,30 +1,34 @@
 import { connect } from "react-redux";
 import { onTestingForm, onTestingFormText } from "../../../BLL/main_state_data_reducer";
 import { onMotherPhoneNumber, onFatherPhoneNumber, onParrentEmail} from "../../../BLL/parrent_data_reducer";
+import { getChildDayOfBirthSelector, getChildNameSelector } from "../../../BLL/Selectors/child_data_selectors";
+import { getCheckFormText, getContactDataText } from "../../../BLL/Selectors/locales_selectors";
+import { getAgreementRouteSelector, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getTestingFormSelector, getTestingFormTextSelector } from "../../../BLL/Selectors/main_state_selectors";
+import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../../BLL/Selectors/parent_data_selectors";
 import ContactData from "./contact_data";
 
 export const mapStateToProps = (state) => {
     return (
         {
-            motherPhoneNumber: state.parrentData.motherPhoneNumber,
-            fatherPhoneNumber: state.parrentData.fatherPhoneNumber,
-            parrentEmail: state.parrentData.parrentEmail,
-            chosenSite: state.mainData.chosenSite,
-            chosenPackage: state.mainData.chosenPackage,
-            chosenFrequency: state.mainData.chosenFrequency,
-            chosenSchoolYear: state.mainData.chosenSchoolYear,
-            parrentName: state.parrentData.parrentName,
-            parrentIdCard: state.parrentData.parrentIdCard,
-            parrentCity: state.parrentData.parrentCity,
-            parrentZipCode: state.parrentData.parrentZipCode,
-            parrentAddress: state.parrentData.parrentAddress,
-            childName: state.childData.childName,
-            childDayOfBirth: state.childData.childDayOfBirth,
-            testingFormText: state.mainData.testingFormText,
-            testingForm: state.mainData.testingForm,
-            agreementRoute: state.mainData.agreementRoute,
-            localesTexts: state.localesReducer.mainFormTexts.contactDataText,
-            checkLocalesTexts: state.localesReducer.mainFormTexts.checkFormText
+            motherPhoneNumber: getMotherNumberSelector(state),
+            fatherPhoneNumber: getFatherNumberSelector(state),
+            parrentEmail: getParentEmailSelector(state),
+            chosenSite: getChosenSiteSelector(state),
+            chosenPackage: getChosenPackageSelector(state),
+            chosenFrequency: getChosenFrequencySelector(state),
+            chosenSchoolYear: getChosenSchoolYearSelector(state),
+            parrentName: getParentNameSelector(state),
+            parrentIdCard: getParentIdCardSelector(state),
+            parrentCity: getParentCitySelector(state),
+            parrentZipCode: getParentZipCodeSelector(state),
+            parrentAddress: getParentAddressSelector(state),
+            childName: getChildNameSelector(state),
+            childDayOfBirth: getChildDayOfBirthSelector(state),
+            testingFormText: getTestingFormTextSelector(state),
+            testingForm: getTestingFormSelector(state),
+            agreementRoute: getAgreementRouteSelector(state),
+            localesTexts: getContactDataText(state),
+            checkLocalesTexts: getCheckFormText(state)
         }
     )
 }

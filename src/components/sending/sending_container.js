@@ -7,6 +7,10 @@ import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
 import { compose } from "redux";
 import {withLocales} from '../../HOC/withLocales' 
 import {sendingLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_reducer'
+import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChosenPackageSelector, getChosenSiteSelector, getShowLastPage, getLoader, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
+import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors";
+import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
+import { getErrorText, getSendingButtonText, getSendingSection, getSendingText } from "../../BLL/Selectors/locales_selectors";
 
 
 
@@ -14,33 +18,31 @@ export const mapStateToProps = (state) => {
     return (
         {
             //mainData
-            chosenSite: state.mainData.chosenSite,
-            chosenPackage: state.mainData.chosenPackage,
-            chosenFrequency: state.mainData.chosenFrequency,
-            calculatePrice: state.mainData.calculatePrice,
-            priceCjk: state.mainData.prices.priceCjk,
-            priceCjkWord: state.mainData.prices.priceCjkWord,
-            ownerName: state.mainData.companyData.ownerName,
-            bankAccount: state.mainData.companyData.bankAccount,
+            chosenSite: getChosenSiteSelector(state),
+            chosenPackage: getChosenPackageSelector(state),
+            chosenFrequency: getChosenFrequencySelector(state),
+            calculatePrice: getcalCulatePrice(state),
+            priceCjk: getPriceCjk(state),
+            priceCjkWord: getPriceCjkWord(state),
+            ownerName: getOwnerName(state),
+            bankAccount: getBankAccount(state),
             //parrentData
-            parrentName: state.parrentData.parrentName,
-            motherPhoneNumber: state.parrentData.motherPhoneNumber,
-            fatherPhoneNumber: state.parrentData.fatherPhoneNumber,
-            parrentEmail: state.parrentData.parrentEmail,
+            parrentName: getParentNameSelector(state),
+            motherPhoneNumber: getMotherNumberSelector(state),
+            fatherPhoneNumber: getFatherNumberSelector(state),
+            parrentEmail: getParentEmailSelector(state),
             //childData
-            childName: state.childData.childName,
-            childDayOfBirth: state.childData.childDayOfBirth,
-            childCheckbox: state.childData.childCheckbox,
+            childName: getChildNameSelector(state),
+            childDayOfBirth: getChildDayOfBirthSelector(state),
+            childCheckbox: getChildCheckboxSelector(state),
             //otherData
-            // sendingText: state.mainData.sendingText,
-            // errorText: state.mainData.errorText,
-            loader: state.mainData.loader,
-            lastPage: state.mainData.lastPage,
+            loader: getLoader(state),
+            lastPage: getShowLastPage(state),
             //locales
-            localesTexts: state.localesReducer.sendingTexts,
-            section: state.localesReducer.section.sending,
-            sendingButtonText: state.localesReducer.sendingButtonText,
-            errorText: state.localesReducer.errorSendingText
+            localesTexts: getSendingText(state),
+            section: getSendingSection(state),
+            sendingButtonText: getSendingButtonText(state),
+            errorText: getErrorText(state)
         }
     )
 }

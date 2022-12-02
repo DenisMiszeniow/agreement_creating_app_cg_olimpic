@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { getStep1Text, getStep2Text, getStep3Text, getStep4Text } from "../../BLL/Selectors/locales_selectors"
 import Step1 from "./step_1_div"
 import Step2 from "./step_2_div"
 import Step3 from "./step_3_div"
@@ -8,10 +9,10 @@ import Step4 from "./step_4_div"
 const mapStateToProps = (state) => {
     return (
         {
-            step1Texts: state.localesReducer.stepTexts.step1Texts,
-            step2Texts: state.localesReducer.stepTexts.step2Texts,
-            step3Texts: state.localesReducer.stepTexts.step3Texts,
-            step4Texts: state.localesReducer.stepTexts.step4Texts
+            step1Texts: getStep1Text(state),
+            step2Texts: getStep2Text(state),
+            step3Texts: getStep3Text(state),
+            step4Texts: getStep4Text(state)
         }
     )
 }

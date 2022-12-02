@@ -79,7 +79,6 @@ export const mainStateDataReducer = (state = initialState, action) => {
             const setSitesState = {...state}
             setSitesState.sites = action.data
             setSitesState.institution = setSitesState.sites.map(site => site.site)
-            setSitesState.chosenSchoolYear = setSitesState.schoolYear[0]
             return setSitesState
 
         case SET_PACKAGES: return {...state, packageOptions: action.data}
@@ -90,7 +89,11 @@ export const mainStateDataReducer = (state = initialState, action) => {
 
         case SET_OWNER: return {...state, companyData: action.data}
 
-        case SET_SCHOOL_YEARS: return {...state, schoolYear: action.data}
+        case SET_SCHOOL_YEARS: 
+            const setSchoolYearState = {...state}
+            setSchoolYearState.schoolYear = action.data
+            setSchoolYearState.chosenSchoolYear = setSchoolYearState.schoolYear[0]
+            return setSchoolYearState
 
         case VALUE_SITE:
             const choseGroupState = { ...state }
@@ -208,5 +211,6 @@ const onChosenPackage = (valuePackage) => ({ type: VALUE_PACKAGE, valuePackage }
 export const getCompanyData = (valuePackage, owner) => (dispatch) => {
     dispatch(onChosenPackage(valuePackage))
     MainDataApi.getCompanyData(owner).then(data => dispatch(setOwner(data)))
+    
 }
 

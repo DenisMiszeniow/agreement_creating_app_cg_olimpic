@@ -3,8 +3,9 @@ import { compose } from "redux"
 import { withLocales } from "../../HOC/withLocales"
 import Instruction from './instruction'
 import { initialInsructionLocalesThunk } from "../../BLL/locales_reducer"
+import { getInstructionTexts, getSectionInstruction } from "../../BLL/Selectors/locales_selectors"
 
 
-const MapStateToProps = state => ({instructionText: state.localesReducer.instructionTexts, section: state.localesReducer.section.instruction})
+const MapStateToProps = state => ({instructionText: getInstructionTexts(state), section: getSectionInstruction(state)})
 
 export const InstructionContainer = compose(connect (MapStateToProps, {initialInsructionLocalesThunk}), withLocales)(Instruction)

@@ -4,44 +4,47 @@ import { compose } from "redux";
 import { withLocales } from "../../HOC/withLocales";
 import Downloading from "./downloading";
 import { downloadLocalesThunk } from '../../BLL/locales_reducer'
+import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
+import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
+import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
+import { getDownloadSection, getDownloadText } from "../../BLL/Selectors/locales_selectors";
 
 export const mapStateToProps = (state) => {
     return (
         {
             //mainData
-            currentDate: state.mainData.currentDate,
-            chosenSite: state.mainData.chosenSite,
-            chosenPackage: state.mainData.chosenPackage,
-            chosenFrequency: state.mainData.chosenFrequency,
-            chosenSchoolYear: state.mainData.chosenSchoolYear,
-            calculatePrice: state.mainData.calculatePrice,
-            calculatePriceInWords: state.mainData.calculatePriceInWords,
-            priceCjk: state.mainData.prices.priceCjk,
-            priceCjkWord: state.mainData.prices.priceCjkWord,
-            companyName: state.mainData.companyData.companyName,
-            companyAdress: state.mainData.companyData.companyAdress,
-            companyNip: state.mainData.companyData.companyNip,
-            companyRegon: state.mainData.companyData.companyRegon,
-            ownerName: state.mainData.companyData.ownerName,
-            bankAccount: state.mainData.companyData.bankAccount,
+            currentDate: getCurrentDateSelector(state),
+            chosenSite: getChosenSiteSelector(state),
+            chosenPackage: getChosenPackageSelector(state),
+            chosenFrequency: getChosenFrequencySelector(state),
+            chosenSchoolYear: getChosenSchoolYearSelector(state),
+            calculatePrice: getcalCulatePrice(state),
+            calculatePriceInWords: getCalculatePriceInWords(state),
+            priceCjk: getPriceCjk(state),
+            priceCjkWord: getPriceCjkWord(state),
+            companyName: getCompanyName(state),
+            companyAdress: getCompanyAddress(state),
+            companyNip: getCompanyNip(state),
+            companyRegon: getCompanyRegon(state),
+            ownerName: getOwnerName(state),
+            bankAccount: getBankAccount(state),
             //parrentData
-            parrentName: state.parrentData.parrentName,
-            parrentIdCard: state.parrentData.parrentIdCard,
-            parrentCity: state.parrentData.parrentCity,
-            parrentZipCode: state.parrentData.parrentZipCode,
-            parrentAddress: state.parrentData.parrentAddress,
-            motherPhoneNumber: state.parrentData.motherPhoneNumber,
-            fatherPhoneNumber: state.parrentData.fatherPhoneNumber,
-            parrentEmail: state.parrentData.parrentEmail,
+            parrentName: getParentNameSelector(state),
+            parrentIdCard: getParentIdCardSelector(state),
+            parrentCity: getParentCitySelector(state),
+            parrentZipCode: getParentZipCodeSelector(state),
+            parrentAddress: getParentAddressSelector(state),
+            motherPhoneNumber: getMotherNumberSelector(state),
+            fatherPhoneNumber: getFatherNumberSelector(state),
+            parrentEmail: getParentEmailSelector(state),
             //childData
-            childName: state.childData.childName,
-            childDayOfBirth: state.childData.childDayOfBirth,
-            childCheckbox: state.childData.childCheckbox,
-            //agreementVisibility
-            agreementVisibility: state.mainData.agreementVisibility,
+            childName: getChildNameSelector(state),
+            childDayOfBirth: getChildDayOfBirthSelector(state),
+            childCheckbox: getChildCheckboxSelector(state),
+
             //locales texts
-            localesTexts: state.localesReducer.downloadTexts,
-            downloadSection: state.localesReducer.section.download,
+            localesTexts: getDownloadText(state),
+            downloadSection: getDownloadSection(state),
 
         }
     )

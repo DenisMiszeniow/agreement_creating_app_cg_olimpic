@@ -1,21 +1,23 @@
 import { connect } from "react-redux";
 import {onChosenSite, onChosenFrequency, onChosenSchoolYear, getSites, getCompanyData } from "../../../BLL/main_state_data_reducer";
 import AgreementData from "./agreement_data";
+import { getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getFrequencySelector, getOnceRequestSelector, getPackageSelector, getSchoolYearSelector, getSiteOwnerSelector, getSitesSelector } from "../../../BLL/Selectors/main_state_selectors";
+import { getChosenSiteTextSelector } from "../../../BLL/Selectors/locales_selectors";
 
 export const mapStateToProps = (state) => {
     return (
         {
-            sites: state.mainData.institution,
-            chosenSite: state.mainData.chosenSite,
-            package: state.mainData.package,
-            chosenPackage: state.mainData.chosenPackage,
-            frequency: state.mainData.frequency,
-            chosenFrequency: state.mainData.chosenFrequency,
-            schoolYear: state.mainData.schoolYear,
-            chosenSchoolYear: state.mainData.chosenSchoolYear, 
-            siteOwner: state.mainData.chosenSiteFullData.owner,
-            onceRequest: state.mainData.onceRequest,
-            localesTexts: state.localesReducer.mainFormTexts.choseSiteText
+            sites: getSitesSelector(state),
+            chosenSite: getChosenSiteSelector(state),
+            package: getPackageSelector(state),
+            chosenPackage: getChosenPackageSelector(state),
+            frequency: getFrequencySelector(state),
+            chosenFrequency: getChosenFrequencySelector(state),
+            schoolYear: getSchoolYearSelector(state),
+            chosenSchoolYear: getChosenSchoolYearSelector(state), 
+            siteOwner: getSiteOwnerSelector(state),
+            onceRequest: getOnceRequestSelector(state),
+            localesTexts: getChosenSiteTextSelector(state)
         }
     )
 }

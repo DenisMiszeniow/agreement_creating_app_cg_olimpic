@@ -3,13 +3,14 @@ import { compose } from "redux"
 import { withLocales } from "../../HOC/withLocales"
 import { initialHeaderLocalesThunk } from "../../BLL/locales_reducer"
 import Header from './header'
+import { getHeaderDiscriptiontext, getHeaderNameText, getSectionHeader } from "../../BLL/Selectors/locales_selectors"
 
 const mapStateToProps = (state) => {
     return (
         {
-            section: state.localesReducer.section.header,
-            nameText: state.localesReducer.headerTexts.nameText,
-            discriptionText: state.localesReducer.headerTexts.discriptionText
+            section: getSectionHeader(state),
+            nameText: getHeaderNameText(state),
+            discriptionText: getHeaderDiscriptiontext(state)
         }
     )
 }

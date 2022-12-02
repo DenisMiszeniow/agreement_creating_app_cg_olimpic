@@ -13,7 +13,7 @@ const MainForm = (props) => {
     return (
         <div className={styles.container}>
             <Step1Container/>
-            {/* <TestButtonContainer/> */}
+            <TestButtonContainer/>
             <div className={styles.sectionForm}>
                 <div className={styles.sectionForm__Form}>
                     <AgreementDataContainer/>
