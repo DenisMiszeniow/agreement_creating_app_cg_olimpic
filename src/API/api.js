@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 import emailjs from '@emailjs/browser';
 const instance = axios.create({
     withCredentials: true,

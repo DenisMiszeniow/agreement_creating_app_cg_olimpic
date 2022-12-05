@@ -4,7 +4,7 @@ import { compose } from "redux";
 import { onDownloadRoute } from "../../BLL/main_state_data_reducer";
 import { withLocales } from "../../HOC/withLocales";
 import Agreement from "./agreement_ready";
-import { agreementReadyLocalesThunk } from '../../BLL/locales_reducer'
+import { setLocalesThunk } from '../../BLL/locales_reducer'
 import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
@@ -54,4 +54,4 @@ export const mapStateToProps = state => {
     )
 }
 
-export const AgreementReadyContainer = compose(connect(mapStateToProps, {onDownloadRoute, agreementReadyLocalesThunk}), withLocales)(Agreement) 
+export const AgreementReadyContainer = compose(connect(mapStateToProps, {onDownloadRoute, setLocalesThunk}), withLocales)(Agreement) 

@@ -6,11 +6,14 @@ import step2 from '..//..//images/step2.gif'
 import step3 from '..//..//images/step3.gif'
 import step4 from '..//..//images/step4.gif'
 import { useEffect } from 'react'
+import Preloader from '../preloader/preloader'
+
 
 const Instruction = (props) => {
-    useEffect (() => {props.initialInsructionLocalesThunk(props.language, props.section)}, [props.language])
-    return (
-        <div className={styles.discription}>
+    useEffect (() => {props.setLocalesThunk(props.language, props.section)}, [props.language])
+    return !props.instructionText
+    ? <Preloader/>
+    : <div className={styles.discription}>
             <h1>{props.instructionText.shortInstruction}</h1>
             <h2>{props.instructionText.easySteps}</h2>
             <section>
@@ -50,7 +53,8 @@ const Instruction = (props) => {
             </section>
             <NavLink to="/main-form" className={styles.linkActive}>{props.instructionText.letIsGo}</NavLink>
             </div>
-    )
+    
+
 }
 
 export default Instruction

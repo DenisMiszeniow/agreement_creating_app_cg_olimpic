@@ -1,41 +1,43 @@
 {
-    "shortInstruction": "Krótka Instrukcja",
-    "easySteps": "Proste 4 kroki i umowa jest podpisana on-line. Prygotuj swój dowód osobisty i do dzieła :)",
-    "checkData": "SPRAWDŹ DANE",
-    "nextStep": "NASTĘPNY KROK",
-    "downloadText": "ŚCIĄGAM /",
-    "signAgree": "ZAWIERAM UMOWĘ",
-    "letIsGo": "ZACZYNAMY",
-    "instructionStep1": {
-        "step1": "KROK 1 - Wypełnij wszystkie pola i zweryfikuj dane",
-        "step1Line1": "- Na tym kroku wybierasz placówkę, grupę, częstotliwość zajęć oraz wypełniasz wszystkie pola.",
-        "step1Line2": "- Większość tych danych będą widnieć w umowie.",
-        "step1Line3": "- Po wypełnieniu wszystkich pól kliknij",
-        "step1Line4": "- Jeśli wstępna weryfikacja powiedzie się, kliknij",
-        "checkKontaktData": "Bardzo prosimy o dokładne sprawdzenie danych kontaktowych!"
-    },
-    "instructionStep2": {
-        "step2": "KROK 2 - Zapoznaj się z projektem umowy. Jeszcze raz sprawdź dane",
-        "step2Line1": "Na tym kroku dokładnie zapoznaj się z warunkami umowy oraz sprawdź wszystkie dane twoje oraz dziecka.",
-        "step2Line2": "Jeśli wszystko się zgadza, odchać odpowiednie pole pod projektem umowy i kliknij"
-    },
-    "instructionStep3": {
-        "step3": "KROK 3 - Ściągnij wygenerowaną umowę i zachowaj w wybranym miejscu na komputerze",
-        "step3Click": "Kliknij",
-        "step3Line1": "i zachowaj umowę w wybranym miejscu na swoim komputerze.",
-        "step3Line2": "Nie modyfikuj nazwy a nie zwiększaj rozmiaru pliku.",
-        "step3Remember": "Pamiętaj, Umowa jeszcze nie jest zawarta!"
-    },
-    "instructionStep4": {
-        "step4": "KROK 4 - Zawarcie Umowy",
-        "step4Line1": "Na tym kroku zawierasz umowę z CG-Olimpic. Ten krok jest konieczny, musimy mieć pewność, że świadomie zawierasz umowę.",
-        "step4Line2": "Kliknij w odpowiednie pole w formularzu i załącz ściągniętą umowę po czym kliknij",
-        "step4Line3": "Za chwilę otrzymasz maila z potwierdzeniem zawarcia umowy oraz warunkami jej aktywacji.",
-        "step4Line4": "To wszystko! Zapraszamy na zajęcia! :)"
-    },
-    "instructionWarning": {
-        "warningText": "!! WAŻNE !!",
-        "warningLine1": "Aż do momentu zawarcia umowy wszystkie wprawodzone przez Ciebie dane przechowywane są w twojej przeglądarce internetowej, nie mamy dostępu do nich (RODO).",
-        "warningLine2": "Dlatego NIE restartuj a NIE zamykaj okna przeglądarki, wtedy unikniesz powtórnego wprowadzania danych!"
+    "instructionTexts": {
+        "shortInstruction": "Krótka Instrukcja",
+        "easySteps": "Proste 4 kroki i umowa jest podpisana on-line. Prygotuj swój dowód osobisty i do dzieła :)",
+        "checkData": "SPRAWDŹ DANE",
+        "nextStep": "NASTĘPNY KROK",
+        "downloadText": "ŚCIĄGAM /",
+        "signAgree": "ZAWIERAM UMOWĘ",
+        "letIsGo": "ZACZYNAMY",
+        "instructionStep1": {
+            "step1": "KROK 1 - Wypełnij wszystkie pola i zweryfikuj dane",
+            "step1Line1": "- Na tym kroku wybierasz placówkę, grupę, częstotliwość zajęć oraz wypełniasz wszystkie pola.",
+            "step1Line2": "- Większość tych danych będą widnieć w umowie.",
+            "step1Line3": "- Po wypełnieniu wszystkich pól kliknij",
+            "step1Line4": "- Jeśli wstępna weryfikacja powiedzie się, kliknij",
+            "checkKontaktData": "Bardzo prosimy o dokładne sprawdzenie danych kontaktowych!"
+        },
+        "instructionStep2": {
+            "step2": "KROK 2 - Zapoznaj się z projektem umowy. Jeszcze raz sprawdź dane",
+            "step2Line1": "Na tym kroku dokładnie zapoznaj się z warunkami umowy oraz sprawdź wszystkie dane twoje oraz dziecka.",
+            "step2Line2": "Jeśli wszystko się zgadza, odchać odpowiednie pole pod projektem umowy i kliknij"
+        },
+        "instructionStep3": {
+            "step3": "KROK 3 - Ściągnij wygenerowaną umowę i zachowaj w wybranym miejscu na komputerze",
+            "step3Click": "Kliknij",
+            "step3Line1": "i zachowaj umowę w wybranym miejscu na swoim komputerze.",
+            "step3Line2": "Nie modyfikuj nazwy a nie zwiększaj rozmiaru pliku.",
+            "step3Remember": "Pamiętaj, Umowa jeszcze nie jest zawarta!"
+        },
+        "instructionStep4": {
+            "step4": "KROK 4 - Zawarcie Umowy",
+            "step4Line1": "Na tym kroku zawierasz umowę z CG-Olimpic. Ten krok jest konieczny, musimy mieć pewność, że świadomie zawierasz umowę.",
+            "step4Line2": "Kliknij w odpowiednie pole w formularzu i załącz ściągniętą umowę po czym kliknij",
+            "step4Line3": "Za chwilę otrzymasz maila z potwierdzeniem zawarcia umowy oraz warunkami jej aktywacji.",
+            "step4Line4": "To wszystko! Zapraszamy na zajęcia! :)"
+        },
+        "instructionWarning": {
+            "warningText": "!! WAŻNE !!",
+            "warningLine1": "Aż do momentu zawarcia umowy wszystkie wprawodzone przez Ciebie dane przechowywane są w twojej przeglądarce internetowej, nie mamy dostępu do nich (RODO).",
+            "warningLine2": "Dlatego NIE restartuj a NIE zamykaj okna przeglądarki, wtedy unikniesz powtórnego wprowadzania danych!"
+        }
     }
 }

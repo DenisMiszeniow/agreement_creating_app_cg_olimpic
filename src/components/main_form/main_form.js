@@ -9,7 +9,7 @@ import { Step1Container } from "../steps/steps_container"
 import { useEffect } from "react"
 
 const MainForm = (props) => {
-    useEffect(() => {props.initialMainFormLocalesThunk(props.language, props.section)},[props.language])
+    useEffect(() => {props.setLocalesThunk(props.language, props.section)},[props.language])
     return (
         <div className={styles.container}>
             <Step1Container/>

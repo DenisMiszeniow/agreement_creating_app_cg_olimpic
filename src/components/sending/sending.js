@@ -3,11 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
 import { sendEmailJs } from '../../API/api';
 import EndPage from "../end_page/end_page";
+import Preloader from "../preloader/preloader";
 import { Step4Container } from "../steps/steps_container";
 import styles from './sending.module.scss';
 
 const Sending = (props) => {
-    useEffect(() => {props.sendingLocalesThunk(props.language, props.section)}, [props.language])
+    useEffect(() => {props.setLocalesThunk(props.language, props.section)}, [props.language])
     const [file, setFile] = useState(null);
     const handleChange = (file) => {
         file.length ? setFile(file) : setFile(null)
@@ -33,8 +34,9 @@ const Sending = (props) => {
                     }
                     )
     }
-    return (
-        <>
+    return !props.localesTexts
+    ? <Preloader/>
+    :    <>
         <div className={props.lastPage ? `${styles.visibleDiv}` : ''}>
             <Step4Container/>
             <form ref={form} onSubmit={sendEmail}>
@@ -77,8 +79,8 @@ const Sending = (props) => {
                             <div>
                             {
                             file && props.parrentEmail !== ''
-                            ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={handleSending} type="submit" value={props.sendingButtonText} />
-                            : <span className={styles.linkActive}>{props.sendingButtonText}</span>
+                            ? <input className={!props.loader ? `${styles.buttonActive}` : `${styles.buttonSending}`} onClick={handleSending} type="submit" value={props.localesTexts.buttonText} />
+                            : <span className={styles.linkActive}>{props.localesTexts.buttonText}</span>
                             }
                             </div>
 
@@ -90,7 +92,7 @@ const Sending = (props) => {
         </div>
         <EndPage texts={props.localesTexts} lastPage={props.lastPage}/>
         </>
-    )
+    
 }
 
 export default Sending

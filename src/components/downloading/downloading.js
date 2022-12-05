@@ -3,18 +3,19 @@ import html2pdf from 'html2pdf.js'
 import { NavLink } from "react-router-dom"
 import { Step3Container } from '../steps/steps_container'
 import { useEffect } from 'react'
+import Preloader from '../preloader/preloader'
 
 
 const Downloading = (props) => {
-    useEffect(() => {props.downloadLocalesThunk(props.language, props.downloadSection)}, [props.language])
+    useEffect(() => { props.setLocalesThunk(props.language, props.downloadSection) }, [props.language])
 
     const onClickDownload = () => {
-        const opt = {filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`}
+        const opt = { filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf` }
         html2pdf(document.getElementById('element-to-print'), opt)
     }
-    
-    return (
-        <div className={styles.discription}>
+    return !props.localesTexts
+        ? <Preloader />
+        : <div className={styles.discription}>
             <Step3Container />
             <div className={styles.agreement_container} >
                 <div className='styles.downloadContainer' id='element-to-print'>
@@ -57,7 +58,7 @@ const Downloading = (props) => {
                         <p>6. W przypadku choroby nauczyciela lub innych zdarzeń losowych uniemożliwiających odbycie się zajęć dodatkowych w
                             ustalonym dniu Wykonawca zastrzega sobie prawo do odrobienia zajęć w innym terminie.</p>
 
-                             {/* --- §3 --- */}
+                        {/* --- §3 --- */}
                         <center><p className={styles.paragraph}>§3</p></center>
                         <p>1. Za świadczenie usług prowadzenia zajęć dodatkowych Klient ponoszą odpłatność miesięcznie z góry <b>do dnia 5-go każdego
                             miesiąca</b>.</p>
@@ -73,7 +74,7 @@ const Downloading = (props) => {
 
                     </div>
                     <div className={styles.pageContainer}>
-                       
+
                         {/* --- §5 --- */}
                         <center><p className={styles.paragraph}>§5</p></center>
                         <p>1. Wszelkie zmiany do umowy, w tym wypowiedzenie niniejszej umowy dla swej ważności wymagają formy pisemnej.</p>
@@ -125,9 +126,8 @@ const Downloading = (props) => {
                     </div>
                 </div>
             </div>
-            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>{props.localesTexts.downloadText}</NavLink>
+            <NavLink to={'/sending'} className={styles.linkActive} onClick={onClickDownload}>{props.localesTexts}</NavLink>
         </div>
-    )
 }
 
 export default Downloading

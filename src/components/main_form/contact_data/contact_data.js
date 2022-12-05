@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import Preloader from "../../preloader/preloader"
 import styles from "../main_form.module.scss"
 
 const ContactData = (props) => {
@@ -60,8 +61,9 @@ const ContactData = (props) => {
         props.onTestingFormText ('')
     }
 
-    return (
-        <>
+    return !props.localesTexts
+    ? <Preloader/>
+    :  <>
             <h3>{props.localesTexts.h3Text}</h3>
             <div className={`${styles.sectionForm__Form__DoubleSame} ${styles.sectionForm__Form__Alone}`}>
                 <div>
@@ -90,6 +92,6 @@ const ContactData = (props) => {
                 </div>
             </div>
         </>
-    )
+    
 }
 export default ContactData

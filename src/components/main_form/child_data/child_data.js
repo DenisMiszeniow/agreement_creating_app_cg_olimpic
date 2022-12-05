@@ -4,6 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField'
 import styles from "../main_form.module.scss"
 import classes from "./child_data.module.scss"
+import Preloader from "../../preloader/preloader"
 
 const ChildData = (props) => {
     
@@ -24,8 +25,9 @@ const ChildData = (props) => {
 
     }
     
-    return (
-        <>
+    return !props.localesTexts
+    ? <Preloader/>
+    : <>
             <h3>{props.localesTexts.h3Text}</h3>
                     <div className={`${styles.sectionForm__Form__Double} ${styles.sectionForm__Form__Alone}`}>
                         <div>
@@ -57,6 +59,6 @@ const ChildData = (props) => {
                         
                     </div>
         </>
-    )
+    
 }
 export default ChildData

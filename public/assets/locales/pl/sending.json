@@ -1,12 +1,14 @@
 {
-    "yourNameText": "Twoje Imię i Nazwisko",
-    "yourEmailText": "Twój adres e-mail",
-    "fileText": "Kliknij aby załączyć umowę (Nie może przekraczać 2Mb)",
-    "limitText": "ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!",
-    "errorText": "COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!",
-    "bottonText": "ZAWIERAM UMOWĘ",
-    "endPagetextLine1": "Udało się! Umowa zawarta!",
-    "endPagetextLine2": "Za chwilę otrymasz mailowe potwierdzenie zawarcia umowy.",
-    "endPagetextLine3": "Pamiętaj, aby ją aktywować - wpłać wpisowe (CJK)!",
-    "endPagetextSpan": "Teraz możesz zamknąć to okno."
+    "sendingTexts": {
+        "yourNameText": "Twoje Imię i Nazwisko",
+        "yourEmailText": "Twój adres e-mail",
+        "fileText": "Kliknij aby załączyć umowę (Nie może przekraczać 2Mb)",
+        "limitText": "ZA DUŻY ROZMIAR PLIKU, NIE MOŻE PRZEKRACZAĆ 2MB!",
+        "errorText": "COŚ POSZŁO NIE TAK. SPRÓBUJ JESZCZE RAZ!",
+        "buttonText": "ZAWIERAM UMOWĘ",
+        "endPagetextLine1": "Udało się! Umowa zawarta!",
+        "endPagetextLine2": "Za chwilę otrymasz mailowe potwierdzenie zawarcia umowy.",
+        "endPagetextLine3": "Pamiętaj, aby ją aktywować - wpłać wpisowe (CJK)!",
+        "endPagetextSpan": "Teraz możesz zamknąć to okno."
+    }
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import Preloader from "../../preloader/preloader"
 import styles from "../main_form.module.scss"
 
 const AgreementData = (props) => {
@@ -26,8 +27,9 @@ const AgreementData = (props) => {
     const localonChangeSchoolYear = ({ target: { value } }) => {
         props.onChosenSchoolYear(value)
     }
-    return (
-        <>
+    return !props.localesTexts
+    ? <Preloader/>
+    :    <>
             <h3>{props.localesTexts.h3Text}</h3>
             <div className={styles.sectionForm__Form__Alone}>
                 <label>{props.localesTexts.site}</label>
@@ -86,6 +88,6 @@ const AgreementData = (props) => {
                 </div>
             </div>
         </>
-    )
+    
 }
 export default AgreementData

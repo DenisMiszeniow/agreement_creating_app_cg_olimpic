@@ -1,4 +1,6 @@
 {
-    "nameText": "Generator Umowy CG-Olimpic",
-    "discriptionText": "TYLKO DLA URZĄDZEŃ DESKTOPOWYCH (Komputery stacjonarne, Laptopy)"
+    "headerTexts": {
+        "nameText": "Generator Umowy CG-Olimpic",
+        "discriptionText": "TYLKO DLA URZĄDZEŃ DESKTOPOWYCH (Komputery stacjonarne, Laptopy)"
+    }
 }

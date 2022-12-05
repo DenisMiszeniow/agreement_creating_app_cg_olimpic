@@ -6,7 +6,7 @@ import { onSendingParrentDataClear } from "../../BLL/parrent_data_reducer";
 import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
 import { compose } from "redux";
 import {withLocales} from '../../HOC/withLocales' 
-import {sendingLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_reducer'
+import {setLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_reducer'
 import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChosenPackageSelector, getChosenSiteSelector, getShowLastPage, getLoader, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
@@ -41,7 +41,6 @@ export const mapStateToProps = (state) => {
             //locales
             localesTexts: getSendingText(state),
             section: getSendingSection(state),
-            sendingButtonText: getSendingButtonText(state),
             errorText: getErrorText(state)
         }
     )
@@ -50,4 +49,4 @@ export const mapStateToProps = (state) => {
 
 
 export const SendingContainer = compose(connect(mapStateToProps, {onSendingMainClear, onSendingParrentDataClear, onSendingChildDataClear, 
-    onLoader, onErrorSending, sendingLocalesThunk, ErrorSendingText, sendingText}), withLocales)(Sending)
+    onLoader, onErrorSending, setLocalesThunk, ErrorSendingText, sendingText}), withLocales)(Sending)
