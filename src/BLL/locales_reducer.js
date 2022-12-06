@@ -11,7 +11,6 @@ const BUTTON_DISABLE = 'BUTTON_DISABLE'
 
 
 const initialState = {
-    initialized: true,
     localize: true,
     language: 'pl',
     buttonDisable: false,
@@ -34,18 +33,13 @@ export const localesReducer = (state = initialState, action) => {
         case SET_LOCALES: return { ...state, ...action.data}
         case ERROR_SENDING: return {...state, errorSendingText: action.errorStatus === 426 ? state.sendingTexts.limitText : state.sendingTexts.errorText, sendingButtonText: state.sendingTexts.bottonText}
         case SENDING_TEXT: return {...state, sendingButtonText: ''}
-
-        case SWITCH_LOCALIZE:
-            const newState = { ...state }
-            newState.localize = !newState.localize
-            newState.headerInstructionTexts = action.data
-            newState.localize ? newState.language = 'pl' : newState.language = 'ua'
-            return newState
+        case SWITCH_LOCALIZE: return {...state, localize: !state.localize, language: !state.localize ? 'pl' : 'ua'}
         case BUTTON_DISABLE: return {...state, buttonDisable: action.event}
         default: return { ...state }
     }
 }
 
+// SWITCH LANGUAGE
 export const localesSwitch = () => ({ type: SWITCH_LOCALIZE})
 const buttonDisable = event => ({type: BUTTON_DISABLE, event})
 

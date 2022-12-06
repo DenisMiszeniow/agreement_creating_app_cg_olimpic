@@ -32,17 +32,8 @@ export const parrentDataReducer = (state = initialState, action) => {
         case MOTHER_PHONE_NUMBER: return({...state, motherPhoneNumber: action.valueMotherPhoneNumber})
         case FATHER_PHONE_NUMBER: return({...state, fatherPhoneNumber: action.valueFatherPhoneNumber})
         case PARRENT_EMAIL: return({...state, parrentEmail: action.valueParrentEmail})
-        case PARRENT_DATA_CLEAR:
-            const newStateParrentDataCleaer = {...state}
-                newStateParrentDataCleaer.parrentName = ''
-                newStateParrentDataCleaer.parrentIdCard = ''
-                newStateParrentDataCleaer.parrentCity = ''
-                newStateParrentDataCleaer.parrentZipCode = ''
-                newStateParrentDataCleaer.parrentAddress = ''
-                newStateParrentDataCleaer.motherPhoneNumber = ''
-                newStateParrentDataCleaer.fatherPhoneNumber = ''
-                newStateParrentDataCleaer.parrentEmail = ''
-            return newStateParrentDataCleaer
+        case PARRENT_DATA_CLEAR: return {...state, parrentName : '', parrentIdCard : '', parrentCity : '', parrentZipCode : '',
+                parrentAddress : '', motherPhoneNumber : '', fatherPhoneNumber : '', parrentEmail : ''}
         case TEST_PARRENT: return {...state, parrentName: 'Denis', parrentIdCard: 'ASD123456', parrentCity: 'Wro', parrentAddress: 'Kolorowa 2', parrentZipCode: '25-123', motherPhoneNumber: '126-125-856', parrentEmail: 'example@site.com'}
         default: return {...state}
     }

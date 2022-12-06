@@ -75,44 +75,21 @@ const initialState = {
 
 export const mainStateDataReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_SITES:
-            const setSitesState = {...state}
-            setSitesState.sites = action.data
-            setSitesState.institution = setSitesState.sites.map(site => site.site)
-            return setSitesState
-
-        case SET_PACKAGES: return {...state, packageOptions: action.data}
-
-        case SET_FREQUENCES: return {...state, frequencyOptions: action.data}
-
-        case SET_PRICES: return {...state, prices: action.data}
-
-        case SET_OWNER: return {...state, companyData: action.data}
-
-        case SET_SCHOOL_YEARS: 
-            const setSchoolYearState = {...state}
-            setSchoolYearState.schoolYear = action.data
-            setSchoolYearState.chosenSchoolYear = setSchoolYearState.schoolYear[0]
-            return setSchoolYearState
-
+        case SET_SITES: return {...state, sites: [...action.data], institution: [...action.data.map(site => site.site)]}
+        case SET_PACKAGES: return {...state, packageOptions: {...action.data}}
+        case SET_FREQUENCES: return {...state, frequencyOptions: {...action.data}}
+        case SET_PRICES: return {...state, prices: {...action.data}}
+        case SET_OWNER: return {...state, companyData: {...action.data}}
+        case SET_SCHOOL_YEARS: return {...state, schoolYear: [...action.data], chosenSchoolYear: action.data[0]}
         case VALUE_SITE:
-            const choseGroupState = { ...state }
-            choseGroupState.chosenSite = action.valueSite
+            const choseGroupState = { ...state, chosenPackage: '', chosenFrequency: '', frequency: '', chosenSite: action.valueSite}
             choseGroupState.sites.forEach(el => (el.site === choseGroupState.chosenSite) && (choseGroupState.chosenSiteFullData = el))
-            choseGroupState.chosenPackage = ''
-            choseGroupState.chosenFrequency = ''
-            choseGroupState.frequency = ''
             choseGroupState.package = choseGroupState.chosenSiteFullData.groupOption.map(el=> el.group)
             return choseGroupState
-
         case VALUE_PACKAGE:
-            const choseFrequencyState = { ...state }
-            choseFrequencyState.chosenPackage = action.valuePackage
-            choseFrequencyState.chosenFrequency = ''
+            const choseFrequencyState = { ...state, chosenFrequency: '', chosenPackage: action.valuePackage}
             choseFrequencyState.chosenSiteFullData.groupOption.forEach(el => {
-                if(el.group === choseFrequencyState.chosenPackage){
-                    choseFrequencyState.frequency = el.freq
-                }
+                (el.group === choseFrequencyState.chosenPackage) && (choseFrequencyState.frequency = el.freq)
             })            
             return choseFrequencyState
         case VALUE_FREQUENCY:
@@ -144,32 +121,15 @@ export const mainStateDataReducer = (state = initialState, action) => {
                         }
                     }
             return setPriceState
-
         case VALUE_SCHOOL_YEAR: return ({ ...state, chosenSchoolYear: action.valueYear })
         case TESTING_FORM: return ({ ...state, testingForm: !state.testingForm, testingFormText: action.text, agreementRoute: '/agreement' })
         case TESTING_FORM_TEXT: return ({ ...state, testingFormText: action.text })
-        case SENDING_OK: return {...state,
-            chosenSite: '',
-            chosenPackage: '',
-            chosenFrequency: '',
-            companyData: {},
-            prices: {},
-            calculatePrice: 0,
-            sendingText: '',
-            loader: false,
-            errorText: '',
-            lastPage: true,
-            agreementRoute: '',
-            downloadRoute: '',
-            acceptAgreement: false
-        }
+        case SENDING_OK: return {...state, chosenSite: '', chosenPackage: '', chosenFrequency: '', companyData: {...{}},
+            prices: {...{}}, calculatePrice: 0, sendingText: '', loader: false, errorText: '', lastPage: true, agreementRoute: '',
+            downloadRoute: '', acceptAgreement: false}
         case LOADER: return { ...state, loader: true, sendingText: '' }
         case ERROR_SENDING: return { ...state, loader: false }
-        case DOWNLOAD_ROUTE:
-            const newStateDownloading = { ...state }
-            newStateDownloading.downloadRoute = '/download'
-            newStateDownloading.acceptAgreement = !newStateDownloading.acceptAgreement
-            return newStateDownloading
+        case DOWNLOAD_ROUTE: return {...state, downloadRoute: '/download', acceptAgreement: !state.acceptAgreement}
         default: return { ...state }
     }
 
@@ -184,10 +144,6 @@ export const onSendingMainClear = () => ({ type: SENDING_OK })
 export const onLoader = () => ({ type: LOADER })
 export const onErrorSending = () => ({ type: ERROR_SENDING})
 export const onDownloadRoute = () => ({ type: DOWNLOAD_ROUTE })
-
-
-
-
 
 // THUNK GET SITES, PACKAGES, FREQUENCES, SCHOOL YEARS
 const setSites = (data) => ({ type: SET_SITES, data})
