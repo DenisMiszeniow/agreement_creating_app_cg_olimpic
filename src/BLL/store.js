@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
+import { applyMiddleware, combineReducers, compose, legacy_createStore } from "redux";
 import { childDataReducer } from "./child_data_reducer";
 import { mainStateDataReducer } from "./main_state_data_reducer";
 import { parrentDataReducer } from "./parrent_data_reducer";
@@ -14,6 +14,7 @@ const reducers = combineReducers(
     }
 )
 
-const store = legacy_createStore(reducers, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = legacy_createStore(reducers, composeEnhancers(applyMiddleware(thunk)))
 window.store = store;
 export default store

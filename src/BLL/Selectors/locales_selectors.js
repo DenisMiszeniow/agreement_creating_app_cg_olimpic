@@ -34,3 +34,4 @@ export const getStep1Text = state => state.localesReducer.step1Texts
 export const getStep2Text = state => state.localesReducer.step2Texts
 export const getStep3Text = state => state.localesReducer.step3Texts
 export const getStep4Text = state => state.localesReducer.step4Texts
+export const getStepSection = state => state.localesReducer.section.steps

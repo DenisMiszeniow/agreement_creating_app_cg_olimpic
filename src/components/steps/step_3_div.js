@@ -3,7 +3,7 @@ import Preloader from '../preloader/preloader'
 import styles from './steps.module.scss'
 
 const Step3 = (props) => {
-    useEffect(() => { props.setStepsLocalesThunk(props.language) }, [props.language])
+    useEffect(() => { props.setLocalesThunk(props.language, props.section) }, [props.language])
     return !props.step3Texts
         ? <Preloader />
         : <div className={styles.discription}>

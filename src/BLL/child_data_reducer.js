@@ -1,9 +1,9 @@
 import moment from "moment"
 
-const CHILD_NAME = 'CHILD_NAME'
-const CHILD_DAY_OF_BIRTH_PARAM = 'CHILD_DAY_OF_BIRTH_PARAM'
-const CHILD_DATA_CLEAR = 'CHILD_DATA_CLEAR'
-const CHILD_CHECKBOX = 'CHILD_CHECKBOX'
+const CHILD_NAME = 'child_data_reducer/CHILD_NAME'
+const CHILD_DAY_OF_BIRTH_PARAM = 'child_data_reducer/CHILD_DAY_OF_BIRTH_PARAM'
+const CHILD_DATA_CLEAR = 'child_data_reducer/CHILD_DATA_CLEAR'
+const CHILD_CHECKBOX = 'child_data_reducer/CHILD_CHECKBOX'
 //---TEST CHILD--------------
 const TEST_CHILD = 'TEST_CHILD'
 

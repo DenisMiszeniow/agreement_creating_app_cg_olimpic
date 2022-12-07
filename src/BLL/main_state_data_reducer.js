@@ -1,26 +1,26 @@
 import { MainDataApi } from "../API/api"
 
 
-const SET_SITES = 'SET_SITES'
-const SET_PACKAGES = 'SET_PACKAGES'
-const SET_FREQUENCES = 'SET_FREQUENCES'
-const SET_PRICES = 'SET_PRICES'
-const VALUE_SITE = 'VALUE_SITE'
-const SET_OWNER = 'SET_OWNER'
-const SET_SCHOOL_YEARS = 'SET_SCHOOL_YEARS'
+const SET_SITES = 'main_state_data_reducer/SET_SITES'
+const SET_PACKAGES = 'main_state_data_reducer/SET_PACKAGES'
+const SET_FREQUENCES = 'main_state_data_reducer/SET_FREQUENCES'
+const SET_PRICES = 'main_state_data_reducer/SET_PRICES'
+const VALUE_SITE = 'main_state_data_reducer/VALUE_SITE'
+const SET_OWNER = 'main_state_data_reducer/SET_OWNER'
+const SET_SCHOOL_YEARS = 'main_state_data_reducer/SET_SCHOOL_YEARS'
 
-const VALUE_PACKAGE = 'VALUE PACKAGE'
-const VALUE_FREQUENCY = 'VALUE_FREQUENCY'
-const VALUE_SCHOOL_YEAR = 'VALUE_SCHOOL_YEAR'
-const TESTING_FORM = 'TESTING_FORM'
-const TESTING_FORM_TEXT = 'TESTING_FORM_TEXT'
-const SENDING_OK = 'SENDING_OK'
-const LOADER = 'LOADER'
-const ERROR_SENDING = 'ERROR_SENDING'
-const DOWNLOAD_ROUTE = 'DOWNLOAD_ROUTE'
+const VALUE_PACKAGE = 'main_state_data_reducer/VALUE PACKAGE'
+const VALUE_FREQUENCY = 'main_state_data_reducer/VALUE_FREQUENCY'
+const VALUE_SCHOOL_YEAR = 'main_state_data_reducer/VALUE_SCHOOL_YEAR'
+const TESTING_FORM = 'main_state_data_reducer/TESTING_FORM'
+const TESTING_FORM_TEXT = 'main_state_data_reducer/TESTING_FORM_TEXT'
+const SENDING_OK = 'main_state_data_reducer/SENDING_OK'
+const LOADER = 'main_state_data_reducer/LOADER'
+const ERROR_SENDING = 'main_state_data_reducer/ERROR_SENDING'
+const DOWNLOAD_ROUTE = 'main_state_data_reducer/DOWNLOAD_ROUTE'
 
 //---TEST BUTTON----------
-const TEST_MAIN = 'TEST_MAIN'
+const TEST_MAIN = 'main_state_data_reducer/TEST_MAIN'
 
 const initialState = {
     
@@ -152,21 +152,18 @@ const setFrequences = (data) => ({type: SET_FREQUENCES, data})
 const setPrices = (data) => ({type: SET_PRICES, data})
 const setOwner = (data) => ({type: SET_OWNER, data})
 const setSchoolYears = (data) => ({type: SET_SCHOOL_YEARS, data})
-
-export const getSites = () => (dispatch) => {
-    MainDataApi.getSites().then(data => dispatch(setSites(data)))
-    MainDataApi.getPackages().then (data => dispatch(setPackages(data)))
-    MainDataApi.getFrequences().then (data => dispatch(setFrequences(data)))
-    MainDataApi.getPrices().then (data => dispatch(setPrices(data)))
-    MainDataApi.getSchoolYerars().then (data => dispatch(setSchoolYears(data)))
+export const getSites = () => async dispatch => {
+    dispatch(setSites(await MainDataApi.getSites()))
+    dispatch(setPackages(await MainDataApi.getPackages()))
+    dispatch(setFrequences(await MainDataApi.getFrequences()))
+    dispatch(setPrices(await MainDataApi.getPrices()))
+    dispatch(setSchoolYears(await MainDataApi.getSchoolYerars()))
 }
 
 //THUNK SET PACKAGE AND SITE OWNER
 const onChosenPackage = (valuePackage) => ({ type: VALUE_PACKAGE, valuePackage })
-
-export const getCompanyData = (valuePackage, owner) => (dispatch) => {
+export const getCompanyData = (valuePackage, owner) => async dispatch => {
     dispatch(onChosenPackage(valuePackage))
-    MainDataApi.getCompanyData(owner).then(data => dispatch(setOwner(data)))
-    
+    dispatch(setOwner(await MainDataApi.getCompanyData(owner)))
 }
 
