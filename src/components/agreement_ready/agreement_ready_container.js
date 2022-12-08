@@ -5,7 +5,7 @@ import { onDownloadRoute } from "../../BLL/main_state_data_reducer";
 import { withLocales } from "../../HOC/withLocales";
 import Agreement from "./agreement_ready";
 import { setLocalesThunk } from '../../BLL/locales_reducer'
-import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
+import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord, getCompanyData } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
 import { getAgreementReadySection, getAgreementReadyText } from "../../BLL/Selectors/locales_selectors";
@@ -23,6 +23,7 @@ export const mapStateToProps = state => {
             calculatePriceInWords: getCalculatePriceInWords(state),
             priceCjk: getPriceCjk(state),
             priceCjkWord: getPriceCjkWord(state),
+            companyData: getCompanyData(state),
             companyName: getCompanyName(state),
             companyAdress: getCompanyAddress(state),
             companyNip: getCompanyNip(state),

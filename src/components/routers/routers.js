@@ -10,7 +10,7 @@ import { OsTesterContainer } from '../os_tester/os_tester_container';
 
 const Routers = (props) => {
     return (
-        <>
+        <div className='content-container'>
         <Routes>
           <Route path="/" element={<InstructionContainer/>} />
           <Route path="/main-form" element={<MainFormContainer/>}/>
@@ -20,7 +20,7 @@ const Routers = (props) => {
           <Route path='*' element={<Navigate to="/main-form" replace/>}/>
           <Route path='/phone' element={<OsTesterContainer/>}/>
         </Routes>
-        </>
+        </div>
     )
 }
 

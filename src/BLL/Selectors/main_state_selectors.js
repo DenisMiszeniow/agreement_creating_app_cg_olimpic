@@ -18,6 +18,7 @@ export const getcalCulatePrice = state => state.mainData.calculatePrice
 export const getCalculatePriceInWords = state => state.mainData.calculatePriceInWords
 export const getPriceCjk = state => state.mainData.prices.priceCjk
 export const getPriceCjkWord = state => state.mainData.prices.priceCjkWord
+export const getCompanyData = state => state. mainData.companyData
 export const getCompanyName = state => state.mainData.companyData.companyName
 export const getCompanyAddress = state => state.mainData.companyData.companyAdress
 export const getCompanyNip = state => state.mainData.companyData.companyNip
@@ -28,6 +29,8 @@ export const getDownloadRoute = state => state.mainData.downloadRoute
 export const getAcceptAgreement = state => state.mainData.acceptAgreement
 export const getLoader = state => state.mainData.loader
 export const getShowLastPage = state => state.mainData.lastPage
+export const getPackages = state => state.mainData.packageOptions
+export const getFrequency = state => state.mainData.frequencyOptions
 
 
 

@@ -9,7 +9,7 @@ const Agreement = (props) => {
         const onLocalDownloadRoute = () => {
                 props.onDownloadRoute()
         }
-        return !props.localesTexts
+        return !props.localesTexts || (Object.keys(props.companyData).length === 0)
                 ? <Preloader />
                 : <div>
                         <Step2Container />

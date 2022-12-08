@@ -6,15 +6,16 @@ const ERROR_SENDING = 'locales_reducer/ERROR_SENDING'
 const SENDING_TEXT = 'locales_reducer/SENDING_TEXT'
 
 const SWITCH_LOCALIZE = 'locales_reducer/SWITCH_LOCALIZE'
-const BUTTON_DISABLE = 'locales_reducer/BUTTON_DISABLE'
+const IS_ANY_ASYNC_FN_RUN = 'locales_reducer/IS_ANY_ASYNC_FN_RUN'
 
 
 const initialState = {
     localize: true,
     language: 'pl',
-    buttonDisable: false,
+    asyncFnRunCounter: 0,
     errorSendingText:'',
     sendingButtonText: '',
+    buttonDisable: false,
     section: {
         header: 'header',
         instruction: 'instruction',
@@ -33,22 +34,26 @@ export const localesReducer = (state = initialState, action) => {
         case ERROR_SENDING: return {...state, errorSendingText: action.errorStatus === 426 ? state.sendingTexts.limitText : state.sendingTexts.errorText, sendingButtonText: state.sendingTexts.bottonText}
         case SENDING_TEXT: return {...state, sendingButtonText: ''}
         case SWITCH_LOCALIZE: return {...state, localize: !state.localize, language: !state.localize ? 'pl' : 'ua'}
-        case BUTTON_DISABLE: return {...state, buttonDisable: action.event}
+
+        case IS_ANY_ASYNC_FN_RUN: return {...state, 
+            asyncFnRunCounter: action.event ? state.asyncFnRunCounter += 1 : state.asyncFnRunCounter -= 1, 
+            buttonDisable: state.asyncFnRunCounter > 0 ? true : false}
+
         default: return { ...state }
     }
 }
 
 // SWITCH LANGUAGE
 export const localesSwitch = () => ({ type: SWITCH_LOCALIZE})
-const buttonDisable = event => ({type: BUTTON_DISABLE, event})
+const asyncFnRunStatus = event => ({type: IS_ANY_ASYNC_FN_RUN, event})
 
 // SET LOCALES
 const setLocales = data => ({ type: SET_LOCALES, data })
 export const setLocalesThunk = (language, section) => async dispatch => {
-    dispatch(buttonDisable(true))
+    dispatch(asyncFnRunStatus(true))
     const data = await MainDataApi.setLocales(language, section)
     dispatch(setLocales(data))
-    dispatch(buttonDisable(false))
+    dispatch(asyncFnRunStatus(false))
 }
 
 // SENDING LOCALES

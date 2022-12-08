@@ -5,7 +5,7 @@ import styles from "../main_form.module.scss"
 const AgreementData = (props) => {
     
 
-    useEffect(()=> props.getSites(), [props.onceRequest])
+    useEffect(() => {props.getSites()}, [props.onceRequest])
     
     //-------------select site-----------------
     const localonChangeSite = ({ target: { value } }) => {
@@ -31,7 +31,11 @@ const AgreementData = (props) => {
     ? <Preloader/>
     :    <>
             <h3>{props.localesTexts.h3Text}</h3>
-            <div className={styles.sectionForm__Form__Alone}>
+            {!props.schoolYear.length || !props.sites.length 
+            || (Object.keys(props.packageOptions).length === 0) 
+            || (Object.keys(props.frequencyOptions).length === 0)
+            ? <Preloader/>
+            : <><div className={styles.sectionForm__Form__Alone}>
                 <label>{props.localesTexts.site}</label>
                 <select className={styles.selectSite} onChange={localonChangeSite} value={props.chosenSite} key={props.chosenSite}>
                     <option value="" disabled hidden>{props.localesTexts.siteChosenText}</option>
@@ -86,8 +90,8 @@ const AgreementData = (props) => {
                         }
                     </select>
                 </div>
-            </div>
+            </div></>}
         </>
-    
 }
+
 export default AgreementData
