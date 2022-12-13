@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { onDownloadRoute } from "../../BLL/main_state_data_reducer";
 import { withLocales } from "../../HOC/withLocales";
-import Agreement from "./agreement_ready";
 import { setLocalesThunk } from '../../BLL/locales_reducer'
 import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord, getCompanyData } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
 import { getAgreementReadySection, getAgreementReadyText } from "../../BLL/Selectors/locales_selectors";
+import { withLazyLoading } from "../../HOC/withLazyLoading";
+import { lazy } from "react";
+
+const Agreement = lazy(() => import ('./agreement_ready'))
 
 export const mapStateToProps = state => {
     return (
@@ -55,4 +58,4 @@ export const mapStateToProps = state => {
     )
 }
 
-export const AgreementReadyContainer = compose(connect(mapStateToProps, {onDownloadRoute, setLocalesThunk}), withLocales)(Agreement) 
+export const AgreementReadyContainer = compose(connect(mapStateToProps, {onDownloadRoute, setLocalesThunk}), withLocales)(withLazyLoading(Agreement)) 

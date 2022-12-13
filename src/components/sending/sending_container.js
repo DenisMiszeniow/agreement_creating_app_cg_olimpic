@@ -1,6 +1,5 @@
 
 import { connect } from "react-redux";
-import Sending from "./sending";
 import { onErrorSending, onLoader, onSendingMainClear } from '../../BLL/main_state_data_reducer'
 import { onSendingParrentDataClear } from "../../BLL/parrent_data_reducer";
 import { onSendingChildDataClear } from "../../BLL/child_data_reducer";
@@ -11,6 +10,10 @@ import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChose
 import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
 import { getErrorText, getSendingButtonText, getSendingSection, getSendingText } from "../../BLL/Selectors/locales_selectors";
+import { lazy } from "react";
+import { withLazyLoading } from "../../HOC/withLazyLoading";
+
+const Sending = lazy (() => import ('./sending'))
 
 
 
@@ -49,4 +52,4 @@ export const mapStateToProps = (state) => {
 
 
 export const SendingContainer = compose(connect(mapStateToProps, {onSendingMainClear, onSendingParrentDataClear, onSendingChildDataClear, 
-    onLoader, onErrorSending, setLocalesThunk, ErrorSendingText, sendingText}), withLocales)(Sending)
+    onLoader, onErrorSending, setLocalesThunk, ErrorSendingText, sendingText}), withLocales)(withLazyLoading(Sending))

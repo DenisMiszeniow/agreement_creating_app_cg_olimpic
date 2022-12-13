@@ -2,12 +2,15 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withLocales } from "../../HOC/withLocales";
-import Downloading from "./downloading";
 import { setLocalesThunk } from '../../BLL/locales_reducer'
 import { getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
 import { getDownloadSection, getDownloadText } from "../../BLL/Selectors/locales_selectors";
+import { lazy } from "react";
+import { withLazyLoading } from "../../HOC/withLazyLoading";
+
+const Downloading = lazy (() => import ('./downloading'))
 
 export const mapStateToProps = (state) => {
     return (
@@ -50,4 +53,4 @@ export const mapStateToProps = (state) => {
     )
 }
 
-export const DownloadingContainer = compose(connect(mapStateToProps, {setLocalesThunk}), withLocales)(Downloading)
+export const DownloadingContainer = compose(connect(mapStateToProps, {setLocalesThunk}), withLocales)(withLazyLoading(Downloading))
