@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import Locales from "./locales"
-import { localesSwitch} from "../../BLL/locales_reducer"
+import { localesSwitch} from "../../BLL/locales_reducer.ts"
 
 
 const mapStateToProps = (state) => ({localize: state.localesReducer.localize, buttonDisable: state.localesReducer.buttonDisable})

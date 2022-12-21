@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onParrentName, onParrentIdCard, onParrentCity, onParrentZipCode, onParrentAddress} from "../../../BLL/parrent_data_reducer";
+import { onParrentName, onParrentIdCard, onParrentCity, onParrentZipCode, onParrentAddress} from "../../../BLL/parrent_data_reducer.ts";
 import { getParentText } from "../../../BLL/Selectors/locales_selectors";
 import { getParentAddressSelector, getParentCitySelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../../BLL/Selectors/parent_data_selectors";
 import ParrentData from "./parrent_data";

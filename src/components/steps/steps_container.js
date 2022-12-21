@@ -6,7 +6,7 @@ import Step2 from "./step_2_div"
 import Step3 from "./step_3_div"
 import Step4 from "./step_4_div"
 import { withLocales } from "../../HOC/withLocales"
-import { setLocalesThunk } from "../../BLL/locales_reducer"
+import { setLocalesThunk } from "../../BLL/locales_reducer.ts"
 
 
 const mapStateToProps = (state) => {

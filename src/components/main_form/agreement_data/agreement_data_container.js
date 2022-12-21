@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {onChosenSite, onChosenFrequency, onChosenSchoolYear, getSites, getCompanyData } from "../../../BLL/main_state_data_reducer";
+import {onChosenSite, onChosenFrequency, onChosenSchoolYear, getSites, getCompanyData } from "../../../BLL/main_state_data_reducer.ts";
 import AgreementData from "./agreement_data";
 import { getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getFrequency, getFrequencySelector, getOnceRequestSelector, getPackages, getPackageSelector, getSchoolYearSelector, getSiteOwnerSelector, getSitesSelector } from "../../../BLL/Selectors/main_state_selectors";
 import { getChosenSiteTextSelector } from "../../../BLL/Selectors/locales_selectors";

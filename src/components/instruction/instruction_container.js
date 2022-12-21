@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import { compose } from "redux"
 import { withLocales } from "../../HOC/withLocales"
 import Instruction from './instruction'
-import { setLocalesThunk} from "../../BLL/locales_reducer"
+import { setLocalesThunk} from "../../BLL/locales_reducer.ts"
 import { getInstructionTexts, getSectionInstruction } from "../../BLL/Selectors/locales_selectors"
 
 

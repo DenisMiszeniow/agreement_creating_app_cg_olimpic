@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import { compose } from "redux"
 import { withLocales } from "../../HOC/withLocales"
-import {setLocalesThunk} from '../../BLL/locales_reducer'
+import {setLocalesThunk} from '../../BLL/locales_reducer.ts'
 import OsTester from "./os_tester"
 
 

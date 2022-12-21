@@ -2,7 +2,7 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withLocales } from "../../HOC/withLocales";
-import { setLocalesThunk } from '../../BLL/locales_reducer'
+import { setLocalesThunk } from '../../BLL/locales_reducer.ts'
 import { getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
 import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";

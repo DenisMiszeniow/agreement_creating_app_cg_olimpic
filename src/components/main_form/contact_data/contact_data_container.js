@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { onTestingForm, onTestingFormText } from "../../../BLL/main_state_data_reducer";
-import { onMotherPhoneNumber, onFatherPhoneNumber, onParrentEmail} from "../../../BLL/parrent_data_reducer";
+import { onTestingForm, onTestingFormText } from "../../../BLL/main_state_data_reducer.ts";
+import { onMotherPhoneNumber, onFatherPhoneNumber, onParrentEmail} from "../../../BLL/parrent_data_reducer.ts";
 import { getChildDayOfBirthSelector, getChildNameSelector } from "../../../BLL/Selectors/child_data_selectors";
 import { getCheckFormText, getContactDataText } from "../../../BLL/Selectors/locales_selectors";
 import { getAgreementRouteSelector, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getTestingFormSelector, getTestingFormTextSelector } from "../../../BLL/Selectors/main_state_selectors";
