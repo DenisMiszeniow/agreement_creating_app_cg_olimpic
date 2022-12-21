@@ -169,6 +169,7 @@ type DownloadRouteActionType = {type: typeof DOWNLOAD_ROUTE}
 export const onDownloadRoute = (): DownloadRouteActionType => ({ type: DOWNLOAD_ROUTE })
 
 // THUNK GET SITES, PACKAGES, FREQUENCES, SCHOOL YEARS
+
 const setSites = (data: any) => ({ type: SET_SITES, data})
 const setPackages = (data: any) => ({type: SET_PACKAGES, data})
 const setFrequences = (data: any) => ({type: SET_FREQUENCES, data})
