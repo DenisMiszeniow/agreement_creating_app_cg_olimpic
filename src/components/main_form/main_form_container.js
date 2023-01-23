@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 // import MainForm from "./main_form";
-import { setLocalesThunk } from "../../BLL/locales_reducer";
+import { setLocalesThunk } from "../../BLL/locales_reducer.ts";
 import { compose } from "redux";
 import { withLocales } from "../../HOC/withLocales";
 import { getSectionMainForm } from "../../BLL/Selectors/locales_selectors";

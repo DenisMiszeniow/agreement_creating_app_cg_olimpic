@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { onChildCheckbox, onChildDayOfBirth, onChildName } from "../../../BLL/child_data_reducer";
+import { onChildCheckbox, onChildDayOfBirth, onChildName } from "../../../BLL/child_data_reducer.ts";
 import ChildData from "./child_data";
 import { getChildText } from '../../../BLL/Selectors/locales_selectors'
 import { getChildNameSelector, getChildDayOfBirthSelector, getChildCheckboxSelector, getChildDayOfBirthParamSelector} from '../../../BLL/Selectors/child_data_selectors'
