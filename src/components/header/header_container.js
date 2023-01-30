@@ -3,7 +3,7 @@ import { compose } from "redux"
 import { withLocales } from "../../HOC/withLocales"
 import { setLocalesThunk } from "../../BLL/locales_reducer.ts"
 import Header from './header'
-import { getHeaderText, getSectionHeader } from "../../BLL/Selectors/locales_selectors"
+import { getHeaderText, getSectionHeader } from "../../BLL/Selectors/locales_selectors.ts"
 
 const mapStateToProps = (state) => {
     return (

@@ -6,10 +6,10 @@ import { onSendingChildDataClear } from "../../BLL/child_data_reducer.ts";
 import { compose } from "redux";
 import {withLocales} from '../../HOC/withLocales' 
 import {setLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_reducer.ts'
-import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChosenPackageSelector, getChosenSiteSelector, getShowLastPage, getLoader, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors";
-import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors";
-import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
-import { getErrorText, getSendingButtonText, getSendingSection, getSendingText } from "../../BLL/Selectors/locales_selectors";
+import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChosenPackageSelector, getChosenSiteSelector, getShowLastPage, getLoader, getOwnerName, getPriceCjk, getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors.ts";
+import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors.ts";
+import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors.ts";
+import { getErrorText, getSendingSection, getSendingText } from "../../BLL/Selectors/locales_selectors.ts";
 import { lazy } from "react";
 import { withLazyLoading } from "../../HOC/withLazyLoading";
 

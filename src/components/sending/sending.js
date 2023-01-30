@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { FileUploader } from 'react-drag-drop-files';
-import { sendEmailJs } from '../../API/api';
+import { sendEmailJs } from '../../API/api.ts';
 import EndPage from "../end_page/end_page";
 import Preloader from "../preloader/preloader";
 import { Step4Container } from "../steps/steps_container";

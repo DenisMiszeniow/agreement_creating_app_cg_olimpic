@@ -4,10 +4,10 @@ import { compose } from "redux";
 import { onDownloadRoute } from "../../BLL/main_state_data_reducer.ts";
 import { withLocales } from "../../HOC/withLocales";
 import { setLocalesThunk } from '../../BLL/locales_reducer.ts'
-import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord, getCompanyData } from "../../BLL/Selectors/main_state_selectors";
-import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors";
-import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors";
-import { getAgreementReadySection, getAgreementReadyText } from "../../BLL/Selectors/locales_selectors";
+import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePriceInWords, getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector, getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord, getCompanyData } from "../../BLL/Selectors/main_state_selectors.ts";
+import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../BLL/Selectors/parent_data_selectors.ts";
+import { getChildCheckboxSelector, getChildDayOfBirthSelector, getChildNameSelector } from "../../BLL/Selectors/child_data_selectors.ts";
+import { getAgreementReadySection, getAgreementReadyText } from "../../BLL/Selectors/locales_selectors.ts";
 import { withLazyLoading } from "../../HOC/withLazyLoading";
 import { lazy } from "react";
 

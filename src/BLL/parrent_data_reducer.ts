@@ -62,7 +62,7 @@ type ZipCodeActionType = {type: typeof PARRENT_ZIP_CODE, valueZipCode: string}
 export const onParrentZipCode = (valueZipCode: string): ZipCodeActionType => ({type:PARRENT_ZIP_CODE, valueZipCode})
 
 type AddressActionType = {type:typeof PARRENT_ADDRESS, valueAddress: string}
-export const onParrentAddress = (valueAddress: string) => ({type:PARRENT_ADDRESS, valueAddress})
+export const onParrentAddress = (valueAddress: string): AddressActionType => ({type:PARRENT_ADDRESS, valueAddress})
 
 type MotherPhoneNumberActionType = {type: typeof MOTHER_PHONE_NUMBER, valueMotherPhoneNumber: string | null}
 export const onMotherPhoneNumber = (valueMotherPhoneNumber: string | null): MotherPhoneNumberActionType => {

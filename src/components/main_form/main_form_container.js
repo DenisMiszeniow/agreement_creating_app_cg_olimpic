@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setLocalesThunk } from "../../BLL/locales_reducer.ts";
 import { compose } from "redux";
 import { withLocales } from "../../HOC/withLocales";
-import { getSectionMainForm } from "../../BLL/Selectors/locales_selectors";
+import { getSectionMainForm } from "../../BLL/Selectors/locales_selectors.ts";
 import { lazy } from "react";
 import { withLazyLoading } from "../../HOC/withLazyLoading";
 

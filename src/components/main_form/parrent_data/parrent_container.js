@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { onParrentName, onParrentIdCard, onParrentCity, onParrentZipCode, onParrentAddress} from "../../../BLL/parrent_data_reducer.ts";
-import { getParentText } from "../../../BLL/Selectors/locales_selectors";
-import { getParentAddressSelector, getParentCitySelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../../BLL/Selectors/parent_data_selectors";
+import { getParentText } from "../../../BLL/Selectors/locales_selectors.ts";
+import { getParentAddressSelector, getParentCitySelector, getParentIdCardSelector, getParentNameSelector, getParentZipCodeSelector } from "../../../BLL/Selectors/parent_data_selectors.ts";
 import ParrentData from "./parrent_data";
 
 export const mapStateToProps = (state) => {

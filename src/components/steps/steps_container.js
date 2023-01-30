@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import { compose } from "redux"
-import { getStep1Text, getStep2Text, getStep3Text, getStep4Text, getStepSection } from "../../BLL/Selectors/locales_selectors"
+import { getStep1Text, getStep2Text, getStep3Text, getStep4Text, getStepSection } from "../../BLL/Selectors/locales_selectors.ts"
 import Step1 from "./step_1_div"
 import Step2 from "./step_2_div"
 import Step3 from "./step_3_div"

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import emailjs from '@emailjs/browser';
+
+
 const instance = axios.create({
     withCredentials: true,
     baseURL: './assets/',
@@ -26,7 +28,7 @@ export const MainDataApi = {
         .then(response => response.data)
     },
 
-    getCompanyData (owner) {
+    getCompanyData (owner: string) {
         return instance.get(`owner/${owner}.json`)
         .then (response => response.data)
     },
@@ -36,7 +38,7 @@ export const MainDataApi = {
         .then (response => response.data)
     },
 
-    setLocales (locales, section) {
+    setLocales (locales: string, section: string) {
         return instance.get(`locales/${locales}/${section}.json`)
         .then (response => response.data)        
     },
