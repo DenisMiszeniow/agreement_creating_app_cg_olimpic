@@ -1,5 +1,6 @@
 
-import { MainDataApi } from "../API/api"
+//@ts-ignore
+import { MainDataApi } from "../API/api.ts"
 import { ChosenSiteFullDataType, CompanyDataType, FrequenciesType, PackageOptionsType } from "../types/types"
 
 
@@ -22,7 +23,8 @@ const ERROR_SENDING: string  = 'main_state_data_reducer/ERROR_SENDING'
 const DOWNLOAD_ROUTE: string  = 'main_state_data_reducer/DOWNLOAD_ROUTE'
 
 //---TEST BUTTON----------
-const TEST_MAIN: string = 'main_state_data_reducer/TEST_MAIN'
+
+// const TEST_MAIN: string = 'main_state_data_reducer/TEST_MAIN'
 
 
 const initialState = {
