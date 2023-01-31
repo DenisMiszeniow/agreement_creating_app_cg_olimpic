@@ -35,12 +35,12 @@ export type FrequenciesType = {
 
 // Locales Reducer Types
 
-type HeaderTextsType = {
+export type HeaderTextsType = {
     nameText?: string
     discriptionText?: string
 }
 
-type InstructionStep1Type = {
+export type InstructionStep1Type = {
     step1: string
     step1Line1: string
     step1Line2: string
@@ -49,13 +49,13 @@ type InstructionStep1Type = {
     checkKontaktData: string
 }
 
-type InstructionStep2Type = {
+export type InstructionStep2Type = {
     step2: string
     step2Line1: string
     step2Line2: string
 }
 
-type InstructionStep3Type = {
+export type InstructionStep3Type = {
     step3: string
     step3Click: string
     step3Line1: string
@@ -63,7 +63,7 @@ type InstructionStep3Type = {
     step3Remember: string
 }
 
-type InstructionStep4Type = {
+export type InstructionStep4Type = {
     step4: string
     step4Line1: string
     step4Line2: string
@@ -71,13 +71,13 @@ type InstructionStep4Type = {
     step4Line4: string
 }
 
-type InstructionWarningType = {
+export type InstructionWarningType = {
     warningText: string
     warningLine1: string
     warningLine2: string
 }
 
-type InstructionTextsType = {
+export type InstructionTextsType = {
     shortInstruction: string
     easySteps: string
     checkData: string
@@ -92,7 +92,7 @@ type InstructionTextsType = {
     instructionWarning: InstructionWarningType
 }
 
-type ChoseSiteTextType = {
+export type ChoseSiteTextType = {
     h3Text: string
     site: string
     siteChosenText: string
@@ -105,7 +105,7 @@ type ChoseSiteTextType = {
     schoolYear: string
 }
 
-type ChildDataTextType = {
+export type ChildDataTextType = {
     h3Text: string
     nameText: string
     dateText: string
@@ -113,7 +113,7 @@ type ChildDataTextType = {
     lineText: string
 }
 
-type ParrentDataTextType = {
+export type ParrentDataTextType = {
     h3Text: string
     nameText: string
     idText: string
@@ -122,7 +122,7 @@ type ParrentDataTextType = {
     addressText: string
 }
 
-type ContactDataTextType = {
+export type ContactDataTextType = {
     h3Text: string
     motherTelText: string
     fatherTelText: string
@@ -131,7 +131,7 @@ type ContactDataTextType = {
     nextStepText: string
 }
 
-type CheckFormTextType = {
+export type CheckFormTextType = {
     siteText: string
     packageText: string
     frequencyText: string
@@ -149,28 +149,28 @@ type CheckFormTextType = {
     allRightText: string
 }
 
-type AgreementReadyTextsType = {
+export type AgreementReadyTextsType = {
     acceptAgreementText: string
     nextStepText: string
 }
 
-type DownloadTextType = {
+export type DownloadTextType = {
     downloadText: string
 }
 
-type Step1TextsType = {
+export type Step1TextsType = {
     step1Text: string
     h2Text: string
     pText: string
 }
 
-type Step2TextsType = {
+export type Step2TextsType = {
     step2Text: string
     h2Text: string
     pText: string
 }
 
-type Step3TextsType = {
+export type Step3TextsType = {
     step3Text: string
     h2TextLine1: string
     h2TextLine2: string
@@ -178,46 +178,40 @@ type Step3TextsType = {
     pTextLine2: string
 }
 
-type Step4TextsType = {
-    step4Text:string
+export type Step4TextsType = {
+    step4Text: string
     h2Text: string
     pTextLine1: string
     pTextLine2: string
 }
 
-export type InitialStateType = {
-    localize: boolean
-    language: string
-    asyncFnRunCounter: number
-    errorSendingText: string
-    sendingButtonText: string
-    buttonDisable: boolean
-    sendingTexts: {
-        limitText: string | null
-        errorText: string | null
-        bottonText: string | null
-    },
-    section: {
-        header: string
-        instruction: string
-        mainForm: string
-        agreementReady: string
-        download: string
-        sending: string
-        osTest: string
-        steps: string
-    },
-    headerTexts?: HeaderTextsType
-    instructionTexts?: InstructionTextsType
-    choseSiteText?: ChoseSiteTextType
-    childDataText?: ChildDataTextType
-    parrentDataText?: ParrentDataTextType
-    contactDataText?: ContactDataTextType
-    checkFormText?: CheckFormTextType
-    agreementReadyTexts?: AgreementReadyTextsType
-    downloadText?: DownloadTextType
-    step1Texts?: Step1TextsType
-    step2Texts?: Step2TextsType
-    step3Texts?: Step3TextsType
-    step4Texts?: Step4TextsType
+export type OsTestTextType = {
+    h3Text: string
+    pText: string
+}
+
+export type SendingTextType = {
+    yourNameText?: string
+    yourEmailText?: string
+    fileText?: string
+    limitText: string | null
+    errorText: string | null
+    buttonText: string | null
+    endPagetextLine1: string | null
+    endPagetextLine2: string | null
+    endPagetextLine3: string | null
+    endPagetextSpan: string | null
+}
+
+export type MainFormLocalesType = {
+    h3Text: string
+    site: string
+    siteChosenText: string
+    package: string
+    siteFirst: string
+    chosePackage: string
+    frequency: string
+    packageFirst: string
+    choseFrequency: string
+    schoolYear: string
 }

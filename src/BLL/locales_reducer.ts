@@ -1,7 +1,10 @@
-
 //@ts-ignore
 import { MainDataApi } from "../API/api.ts"
-import { InitialStateType } from "../types/types"
+import {
+    AgreementReadyTextsType, CheckFormTextType, ChildDataTextType, ChoseSiteTextType, ContactDataTextType,
+    DownloadTextType, HeaderTextsType, InstructionTextsType, OsTestTextType, ParrentDataTextType, SendingTextType, Step1TextsType, Step2TextsType,
+    Step3TextsType, Step4TextsType
+} from "../types/types.js"
 
 const SET_LOCALES: string = 'locales_reducer/INSTRUCTION_LOCALES'
 
@@ -10,6 +13,41 @@ const SENDING_TEXT: string = 'locales_reducer/SENDING_TEXT'
 
 const SWITCH_LOCALIZE: string = 'locales_reducer/SWITCH_LOCALIZE'
 const IS_ANY_ASYNC_FN_RUN: string = 'locales_reducer/IS_ANY_ASYNC_FN_RUN'
+
+type InitialStateType = {
+    localize: boolean
+    language: string
+    asyncFnRunCounter: number
+    errorSendingText: string
+    sendingButtonText: string
+    buttonDisable: boolean
+    initialized?: boolean
+    section: {
+        header: string
+        instruction: string
+        mainForm: string
+        agreementReady: string
+        download: string
+        sending: string
+        osTest: string
+        steps: string
+    },
+    headerTexts?: HeaderTextsType
+    instructionTexts?: InstructionTextsType
+    choseSiteText?: ChoseSiteTextType
+    childDataText?: ChildDataTextType
+    parrentDataText?: ParrentDataTextType
+    contactDataText?: ContactDataTextType
+    checkFormText?: CheckFormTextType
+    agreementReadyTexts?: AgreementReadyTextsType
+    downloadText?: DownloadTextType
+    step1Texts?: Step1TextsType
+    step2Texts?: Step2TextsType
+    step3Texts?: Step3TextsType
+    step4Texts?: Step4TextsType
+    osTestTexts?: OsTestTextType
+    sendingTexts?: SendingTextType
+}
 
 const initialState: InitialStateType = {
     localize: true,
@@ -21,7 +59,11 @@ const initialState: InitialStateType = {
     sendingTexts: {
         limitText: null,
         errorText: null,
-        bottonText: null
+        buttonText: null,
+        endPagetextLine1: null,
+        endPagetextLine2: null,
+        endPagetextLine3: null,
+        endPagetextSpan: null
     },
     section: {
         header: 'header',
@@ -38,7 +80,11 @@ const initialState: InitialStateType = {
 export const localesReducer = (state = initialState, action: any): InitialStateType => {
     switch (action.type) {
         case SET_LOCALES: return { ...state, ...action.data }
-        case ERROR_SENDING: return { ...state, errorSendingText: action.errorStatus === 426 ? state.sendingTexts.limitText : state.sendingTexts.errorText, sendingButtonText: state.sendingTexts.bottonText }
+        case ERROR_SENDING: return {
+            ...state, errorSendingText: action.errorStatus === 426
+                ? state.sendingTexts.limitText
+                : state.sendingTexts.errorText, sendingButtonText: state.sendingTexts.buttonText
+        }
         case SENDING_TEXT: return { ...state, sendingButtonText: '' }
         case SWITCH_LOCALIZE: return { ...state, localize: !state.localize, language: !state.localize ? 'pl' : 'ua' }
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from "react-redux"
 
 const MapStateToProps = state => ({language: state.localesReducer.language, initialized: state.localesReducer.initialized})
