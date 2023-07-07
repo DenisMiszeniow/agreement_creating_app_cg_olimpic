@@ -1,27 +1,27 @@
 {
     "price60Ones": {
-       "price": 140,
-       "letter": "Sto Czterdzieści zł 00/100"
+       "price": 155,
+       "letter": "Sto Pięćdziesiąt Pięć zł 00/100"
     },
     "price90Ones": {
-       "price": 175,
-       "letter": "Sto Siedemdziesiąt Pięć zł 00/100"
+       "price": 190,
+       "letter": "Sto Dziewięćdziesiąt zł 00/100"
     },
     "price60Twise": {
-       "price": 240,
-       "letter": "Dwieście Czterdzieści zł 00/100"
+       "price": 265,
+       "letter": "Dwieście Śześćdziesiąt Pięć zł 00/100"
     },
     "price90Twise": {
-       "price": 275,
-       "letter": "Dwieście Siedemdziesiąt Pięć zł 00/100"
-    },
-    "priceTriple": {
        "price": 300,
        "letter": "Trzysta zł 00/100"
     },
+    "priceTriple": {
+       "price": 340,
+       "letter": "Trzysta Czterydzieści zł 00/100"
+    },
     "priceQuatro": {
-       "price": 350,
-       "letter": "Trzysta Pięćdziesiąt zł 00/100"
+       "price": 390,
+       "letter": "Trzysta Dziewięćdziesiąt zł 00/100"
     },
     "priceCjk": "100",
     "priceCjkWord": "sto zł 00/100"
