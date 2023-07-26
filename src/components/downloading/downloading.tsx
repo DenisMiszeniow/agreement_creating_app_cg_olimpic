@@ -52,7 +52,9 @@ const Downloading: FC<PropsType> = (props) => {
     useEffect(() => { props.setLocalesThunk(props.language, props.downloadSection) }, [props.language])
 
     const onClickDownload = () => {
-        const opt = { filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf` }
+        const opt = { 
+            filename: `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`,
+        }
         html2pdf(document.getElementById('element-to-print'), opt)
     }
     return !props.localesTexts
@@ -99,7 +101,7 @@ const Downloading: FC<PropsType> = (props) => {
                         <p>3. Podczas ferii zimowych zajęcia dodatkowe nie odbywają się.</p>
                         <p>4. Wykonawca zobowiązuje się do wykonania odpowiedniej ilości zajęć w roku szkolnym zgodnie z tabelą zajęć umieszczonej
                             pod adresem internetowym: <a href="https://cg-olimpic.pl/gimnastyka_artystyczna" target="_blank" rel="noreferrer">https://cg-olimpic.pl/gimnastyka_artystyczna</a>.</p>
-                        <p>5. Wykonawca zobowiązuje się do zachowania stałej odpłatności za zajęcia przez cały rok szkolny w wysokości <b>{props.calculatePrice},00 zł ({props.calculatePriceInWords}) BRUTTO</b> za miesiąc zajęć z wyjątkiem miesiąca na który przypadają ferie zimowe. <b>W miesiącu na który przypadają ferie zimowe koszt zajęć wyniesie połowę od miesięcznej kwoty</b>. Jednocześnie Klient zobowiązuje się do wpłacenia corocznej
+                        <p>5. Zamawiający zobowiązuje się do zapłaty Wykonawcy wynagrodzenia ryczałtowego do końca okresu ważności umowy w wysokości <b>{props.calculatePrice},00 zł ({props.calculatePriceInWords}) BRUTTO</b> za miesiąc zajęć z wyjątkiem miesiąca na który przypadają ferie zimowe. <b>W miesiącu na który przypadają ferie zimowe koszt zajęć wyniesie połowę od miesięcznej kwoty</b>. Jednocześnie Klient zobowiązuje się do wpłacenia corocznej
                             jednorazowej kwoty (CJK) w wysokości <b>{props.priceCjk},00 zł ({props.priceCjkWord}) BRUTTO, <u>(wpłata CJK to warunek konieczny dla aktywacji umowy na wybrany rok szkolny)</u></b>.</p>
                         <p>6. W przypadku choroby nauczyciela lub innych zdarzeń losowych uniemożliwiających odbycie się zajęć dodatkowych w
                             ustalonym dniu Wykonawca zastrzega sobie prawo do odrobienia zajęć w innym terminie.</p>

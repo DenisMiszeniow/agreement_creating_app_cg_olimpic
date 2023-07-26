@@ -75,12 +75,12 @@
 
 p.signatures {
     padding: 50px 100px 0 100px!important;
+    span {
+        border-bottom: 3px dotted #000;
+    }
 }
 p.signaturesDiscription {
     padding: 0 100px 20px 100px!important;
-    span {
-        border-top: 3px dotted #000;
-    }
 }
 
 .clientSignature {
