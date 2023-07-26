@@ -12,7 +12,9 @@ import { getAcceptAgreement, getBankAccount, getcalCulatePrice, getCalculatePric
     getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon, 
     getCurrentDateSelector, getDownloadRoute, getOwnerName, getPriceCjk, getPriceCjkWord, 
     //@ts-ignore
-    getCompanyData } from "../../BLL/Selectors/main_state_selectors.ts";
+    getCompanyData, 
+    //@ts-ignore
+    getCompanyKRS} from "../../BLL/Selectors/main_state_selectors.ts";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentAddressSelector, getParentCitySelector, 
     getParentEmailSelector, getParentIdCardSelector, getParentNameSelector, 
     //@ts-ignore
@@ -43,6 +45,7 @@ type MapStateToPropsType = {
     companyAdress: string
     companyNip: string
     companyRegon: string
+    companyKRS: string
     ownerName: string
     bankAccount: string
     //parrentData
@@ -86,6 +89,7 @@ export const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
             companyAdress: getCompanyAddress(state),
             companyNip: getCompanyNip(state),
             companyRegon: getCompanyRegon(state),
+            companyKRS: getCompanyKRS(state),
             ownerName: getOwnerName(state),
             bankAccount: getBankAccount(state),
             //parrentData

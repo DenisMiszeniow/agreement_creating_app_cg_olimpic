@@ -16,6 +16,7 @@ export type CompanyDataType = {
     companyRegon?: string,
     companyAdress?: string,
     ownerName?: string
+    companyKRS?: string
 }
 
 export type PackageOptionsType = {

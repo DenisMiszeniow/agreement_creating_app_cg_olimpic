@@ -31,7 +31,7 @@ const initialState = {
     
     //Dates
     currentDate: new Date() as Date,
-    schoolYear: [] as Array<number>,
+    schoolYear: [] as Array<string>,
     chosenSchoolYear:'' as string,
 
     //SITE
@@ -89,7 +89,24 @@ export const mainStateDataReducer = (state = initialState, action: any): Initial
         case SET_FREQUENCES: return {...state, frequencyOptions: {...action.data}}
         case SET_PRICES: return {...state, prices: {...action.data}}
         case SET_OWNER: return {...state, companyData: {...action.data}}
-        case SET_SCHOOL_YEARS: return {...state, schoolYear: [...action.data], chosenSchoolYear: action.data[0]}
+        case SET_SCHOOL_YEARS: 
+        const newSateteYear = {...state}
+            let month = new Date().getMonth()
+            let currentYear = new Date().getFullYear()
+            if ( month >= 0 && month < 6 ) {
+                newSateteYear.schoolYear = [
+                    `${currentYear - 1}-${currentYear}`,
+                    `${currentYear}-${currentYear +1}`
+                ]
+            }
+            if (month >=6  && month <= 11 ) {
+                newSateteYear.schoolYear = [
+                    `${currentYear}-${currentYear + 1}`,
+                    `${currentYear + 1}-${currentYear + 2}`
+                ]
+            }
+            newSateteYear.chosenSchoolYear = newSateteYear.schoolYear[0]
+            return newSateteYear
         case VALUE_SITE:
             const choseGroupState = { ...state, chosenPackage: '', chosenFrequency: '', frequency: null, chosenSite: action.valueSite}
             choseGroupState.sites.forEach(el => (el.site === choseGroupState.chosenSite) && (choseGroupState.chosenSiteFullData = el))
@@ -177,13 +194,13 @@ const setPackages = (data: any) => ({type: SET_PACKAGES, data})
 const setFrequences = (data: any) => ({type: SET_FREQUENCES, data})
 const setPrices = (data: any) => ({type: SET_PRICES, data})
 const setOwner = (data: any) => ({type: SET_OWNER, data})
-const setSchoolYears = (data: any) => ({type: SET_SCHOOL_YEARS, data})
+const setSchoolYears = () => ({type: SET_SCHOOL_YEARS})
 export const getSites = () => async (dispatch: any) => {
     dispatch(setSites(await MainDataApi.getSites()))
     dispatch(setPackages(await MainDataApi.getPackages()))
     dispatch(setFrequences(await MainDataApi.getFrequences()))
     dispatch(setPrices(await MainDataApi.getPrices()))
-    dispatch(setSchoolYears(await MainDataApi.getSchoolYerars()))
+    dispatch(setSchoolYears())
 }
 
 //THUNK SET PACKAGE AND SITE OWNER

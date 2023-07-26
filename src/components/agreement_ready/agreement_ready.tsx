@@ -6,6 +6,7 @@ import { FC, useEffect } from "react"
 //@ts-ignore
 import Preloader from "../preloader/preloader.tsx"
 import { AgreementReadyTextsType, CompanyDataType } from "../../types/types"
+import React from "react"
 
 type PropsType = {
         agreementReady: string
@@ -20,6 +21,7 @@ type PropsType = {
         companyName: string
         companyAdress: string
         companyNip: string
+        companyKRS: string
         companyRegon: string
         ownerName: string
         bankAccount: string
@@ -59,9 +61,13 @@ const Agreement: FC<PropsType> = (props) => {
                                 <h3>UMOWA PROWADZENIA ZAJĘĆ DODATKOWYCH Z GIMNASTYKI ARTYSTYCZNEJ</h3>
                                 <h3>{`${props.chosenPackage}, ${props.chosenFrequency}`}</h3>
                                 <div className={styles.separator}></div>
-                                <p>{`Zawarta w dniu ${props.currentDate.getDate() < 10 ? `0${props.currentDate.getDate()}` : props.currentDate.getDate()}.${props.currentDate.getMonth() + 1}.${props.currentDate.getFullYear()}, pomiędzy:`}</p>
+                                <p>{`Zawarta w dniu ${props.currentDate.getDate() < 10 
+                                        ? `0${props.currentDate.getDate()}` 
+                                        : props.currentDate.getDate()}.${props.currentDate.getMonth() + 1 < 10 
+                                        ? `0${props.currentDate.getMonth() + 1}`
+                                        : props.currentDate.getMonth() + 1}.${props.currentDate.getFullYear()}, pomiędzy:`}</p>
                                 <h4>Dane kontrahentów:</h4>
-                                <p>Firmą <b>{props.companyName}, {props.companyAdress}, REGON: {props.companyRegon}, NIP: {props.companyNip}, </b>reprezentowaną przez {props.ownerName} - właściciel, zwanym dalej <b>"Wykonawca"</b></p>
+                                <p>Firmą <b>{props.companyName}, {props.companyAdress}, REGON: {props.companyRegon}, NIP: {props.companyNip}, KRS: {props.companyKRS}</b>, reprezentowaną przez Olgę Mishenovą - Członek Zarządu oraz Ielyzavetę Kanarovą - Członek Zarządu, zwanym dalej <b>"Wykonawca"</b></p>
                                 <p>a</p>
 
                                 {/* --- Dane klienta --- */}
@@ -126,7 +132,7 @@ const Agreement: FC<PropsType> = (props) => {
                                 <p>1. Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednym dla każdej ze stron.</p>
 
                                 {/* --- podpisy stron --- */}
-                                <p className={styles.signatures}><span className={styles.clientSignature}><i>tutaj będzie twój podpis</i></span><span className={styles.ownerSignature}><i>{props.ownerName}</i></span></p>
+                                <p className={styles.signatures}><span className={styles.clientSignature}><i>tutaj będzie twój podpis</i></span><span className={styles.ownerSignature}><i>Olga Mishenova, Ielyzaveta Kanarova</i></span></p>
                                 <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Podpis Klienta</span><span className={styles.ownerSignature}>Podpis Wykonawcy</span></p>
                         </div>
                         <div className={styles.container}>
@@ -156,7 +162,11 @@ const Agreement: FC<PropsType> = (props) => {
                                         niepodanie uniemożliwi realizację zawartej umowy.</p>
 
                                 {/* --- podpis rodzica / opiekuna prawnego --- */}
-                                <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.currentDate.getDate() < 10 ? `0${props.currentDate.getDate()}` : props.currentDate.getDate()}.${props.currentDate.getMonth() + 1}.${props.currentDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>tutaj będzie twój podpis</i></span></p>
+                                <p className={styles.signatures}><span className={styles.clientSignature}><i>{`Wrocław, ${props.currentDate.getDate() < 10 
+                                        ? `0${props.currentDate.getDate()}` 
+                                        : props.currentDate.getDate()}.${props.currentDate.getMonth() + 1 < 10 
+                                        ? `0${props.currentDate.getMonth() + 1}`
+                                        : props.currentDate.getMonth() + 1}.${props.currentDate.getFullYear()}`}</i></span><span className={styles.ownerSignature}><i>tutaj będzie twój podpis</i></span></p>
                                 <p className={styles.signaturesDiscription}><span className={styles.clientSignature}>Miejscowość, Data</span><span className={styles.ownerSignature}>Podpis Klienta</span></p>
                         </div>
                         <div className={styles.checkboxContainer}>

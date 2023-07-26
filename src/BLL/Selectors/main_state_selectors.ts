@@ -24,6 +24,7 @@ export const getCompanyName = (state: AppStateType) => state.mainData.companyDat
 export const getCompanyAddress = (state: AppStateType) => state.mainData.companyData.companyAdress
 export const getCompanyNip = (state: AppStateType) => state.mainData.companyData.companyNip
 export const getCompanyRegon = (state: AppStateType) => state.mainData.companyData.companyRegon
+export const getCompanyKRS = (state: AppStateType) => state.mainData.companyData.companyKRS
 export const getOwnerName = (state: AppStateType) => state.mainData.companyData.ownerName
 export const getBankAccount = (state: AppStateType) => state.mainData.companyData.bankAccount
 export const getDownloadRoute = (state: AppStateType) => state.mainData.downloadRoute

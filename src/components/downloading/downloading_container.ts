@@ -8,7 +8,7 @@ import { setLocalesThunk } from '../../BLL/locales_reducer.ts'
 import {
     getBankAccount, getcalCulatePrice, getCalculatePriceInWords,
     getChosenFrequencySelector, getChosenPackageSelector, getChosenSchoolYearSelector,
-    getChosenSiteSelector, getCompanyAddress, getCompanyName, getCompanyNip, getCompanyRegon,
+    getChosenSiteSelector, getCompanyAddress, getCompanyKRS, getCompanyName, getCompanyNip, getCompanyRegon,
     getCurrentDateSelector, getOwnerName, getPriceCjk, getPriceCjkWord
     //@ts-ignore
 } from "../../BLL/Selectors/main_state_selectors.ts";
@@ -42,6 +42,7 @@ type MapStateToPropsType = {
     companyAdress: string
     companyNip: string
     companyRegon: string
+    companyKRS: string
     ownerName: string
     bankAccount: string
     //parrentData
@@ -80,6 +81,7 @@ export const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
             companyAdress: getCompanyAddress(state),
             companyNip: getCompanyNip(state),
             companyRegon: getCompanyRegon(state),
+            companyKRS: getCompanyKRS(state),
             ownerName: getOwnerName(state),
             bankAccount: getBankAccount(state),
             //parrentData
