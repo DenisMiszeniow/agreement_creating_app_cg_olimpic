@@ -102,6 +102,12 @@
             "1-x w tygodniu",
             "2-x w tygodniu"
           ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu"
+          ]
         }
       ]
     },
@@ -146,7 +152,14 @@
           ]
         },
         {
-          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
+          "freq": [
+            "1-x w tygodniu",
+            "2-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
             "1-x w tygodniu",
             "2-x w tygodniu"

@@ -103,12 +103,12 @@ const Downloading: FC<PropsType> = (props) => {
                             pod adresem internetowym: <a href="https://cg-olimpic.pl/gimnastyka_artystyczna" target="_blank" rel="noreferrer">https://cg-olimpic.pl/gimnastyka_artystyczna</a>.</p>
                         <p>5. Klient zobowiązuje się do zapłaty Wykonawcy wynagrodzenia ryczałtowego do końca okresu ważności umowy w wysokości <b>{props.calculatePrice},00 zł ({props.calculatePriceInWords}) BRUTTO</b> za miesiąc zajęć z wyjątkiem miesiąca na który przypadają ferie zimowe. <b>W miesiącu na który przypadają ferie zimowe koszt zajęć wyniesie połowę od miesięcznej kwoty</b>. Jednocześnie Klient zobowiązuje się do wpłacenia corocznej
                             jednorazowej kwoty (CJK) w wysokości <b>{props.priceCjk},00 zł ({props.priceCjkWord}) BRUTTO, <u>(wpłata CJK to warunek konieczny dla aktywacji umowy na wybrany rok szkolny)</u></b>.</p>
-                        <p>6. W przypadku choroby nauczyciela lub innych zdarzeń losowych uniemożliwiających odbycie się zajęć dodatkowych w
-                            ustalonym dniu Wykonawca zastrzega sobie prawo do odrobienia zajęć w innym terminie.</p>
+                        <p>6. W przypadku choroby nauczyciela / trenera lub innych zdarzeń losowych uniemożliwiających odbycie się zajęć dodatkowych w
+                            ustalonym dniu Klient ma prawo do odrobienia zajęć w innym terminie.</p>
 
                         {/* --- §3 --- */}
                         <center><p className={styles.paragraph}>§3</p></center>
-                        <p>1. Za świadczenie usług prowadzenia zajęć dodatkowych Klient ponoszą odpłatność miesięcznie z góry <b>do dnia 5-go każdego
+                        <p>1. Za świadczenie usług prowadzenia zajęć dodatkowych Klient ponosi odpłatność miesięcznie z góry <b>do dnia 5-go każdego
                             miesiąca</b>.</p>
                         <p>2. CJK wpłacane są przed pierwszą opłatą za miesiąc zajęć bądź wraz z nią.</p>
                         <p>3. Opłaty należy realizować przelewem na rachunek bankowy Wykonawcy: <b>{props.bankAccount}</b> (w tytule
