@@ -128,6 +128,7 @@ export type ContactDataTextType = {
     motherTelText: string
     fatherTelText: string
     mailText: string
+    repeatMailText: string
     checkDataText: string
     nextStepText: string
 }
@@ -147,6 +148,7 @@ export type CheckFormTextType = {
     telText: string
     mailText: string
     checkMailText: string
+    checkMailAdresses: string
     allRightText: string
 }
 

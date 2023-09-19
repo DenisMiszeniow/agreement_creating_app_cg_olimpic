@@ -31,6 +31,7 @@
         "motherTelText": "tel. matki / opiekuna prawnego",
         "fatherTelText": "tel. ojca / opiekuna prawnego",
         "mailText": "Adres e-mail do kontaktu",
+        "repeatMailText": "Wprowadź e-mail raz jeszcze",
         "checkDataText": "SPRAWDŹ DANE",
         "nextStepText": "NASTĘPNY KROK"
     },
@@ -49,6 +50,7 @@
         "telText": "WPROWADŹ NUMER TELEFONU PRZYNAJMNIEJ JEDNEGO Z RODZICÓW / OPIEKUNA PRAWNEGO",
         "mailText": "WPROWADŹ ADRES EMAIL",
         "checkMailText": "SPRAWDŹ POPRAWNOŚĆ EMAIL",
+        "checkMailAdresses": "RÓŻNE ADRESY E-MAIL",
         "allRightText": "WSZYSTKO SIĘ ZGADZA :)"
     }
 }

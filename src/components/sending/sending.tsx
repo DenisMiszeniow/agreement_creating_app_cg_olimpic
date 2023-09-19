@@ -17,6 +17,7 @@ type PropsType = {
     chosenSite: string
     chosenPackage: string
     chosenFrequency: string
+    chosenSchoolYear: string
     calculatePrice: number
     priceCjk: number
     priceCjkWord: string
@@ -54,6 +55,12 @@ const Sending: FC<PropsType> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {props.setLocalesThunk(props.language, props.section)}, [props.language])
     const [file, setFile] = useState(null);
+    const [correctFile, setCorrectFile] = useState(false);
+    useEffect(()=> {if (file && file[0].name === `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`) {
+        setCorrectFile(true)
+    }else{
+        setCorrectFile(false)
+    }}, [file])
     const handleChange = (file: any) => {
         file.length ? setFile(file) : setFile(null)
         
@@ -78,6 +85,7 @@ const Sending: FC<PropsType> = (props) => {
                     }
                     )
     }
+    debugger
     return !props.localesTexts
     ? <Preloader/>
     :    <>
@@ -116,15 +124,18 @@ const Sending: FC<PropsType> = (props) => {
                                     types={fileTypes}
                                     label={file ? `${file[0].name}` : ""}
                                     hoverTitle = ''
-                                    children={<div className={styles.customFileUpload}><p>{file 
-                                        ? <u>{file[0].name}</u> 
+                                    children={<div className={styles.customFileUpload}><p>{
+                                        file 
+                                        ?   file[0].name === `umowa_CG-Olimpic_${props.parrentName}_${props.chosenSchoolYear}.pdf`
+                                            ? <u>{file[0].name}</u>
+                                            : 'wybrałeś nie właściwy plik' 
                                         : props.localesTexts.fileText}</p></div>}
                                 />
+                                
                             </div>
-                            
                             <div>
                             {
-                            file && props.parrentEmail !== ''
+                            file && correctFile && props.parrentEmail !== ''
                             ? <input className={!props.loader 
                                 ? `${styles.buttonActive}` 
                                 : `${styles.buttonSending}`} onClick={handleSending} type="submit" value={props.localesTexts.buttonText} />

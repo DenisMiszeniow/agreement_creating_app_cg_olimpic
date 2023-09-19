@@ -14,7 +14,8 @@ import {setLocalesThunk, ErrorSendingText, sendingText} from '../../BLL/locales_
 import { getBankAccount, getcalCulatePrice, getChosenFrequencySelector, getChosenPackageSelector, 
     getChosenSiteSelector, getShowLastPage, getLoader, getOwnerName, getPriceCjk, 
     //@ts-ignore
-    getPriceCjkWord } from "../../BLL/Selectors/main_state_selectors.ts";
+    getPriceCjkWord, 
+    getChosenSchoolYearSelector} from "../../BLL/Selectors/main_state_selectors.ts";
 import { getFatherNumberSelector, getMotherNumberSelector, getParentEmailSelector, 
     //@ts-ignore
     getParentNameSelector } from "../../BLL/Selectors/parent_data_selectors.ts";
@@ -34,11 +35,12 @@ type MapStateToPropsType = {
     chosenSite: string
     chosenPackage: string
     chosenFrequency: string
+    chosenSchoolYear: string
     calculatePrice: number
     priceCjk: number
     priceCjkWord: string
-    ownerName: string
-    bankAccount: string
+    ownerName: string | undefined
+    bankAccount: string | undefined
     //parrentData
     parrentName: string
     motherPhoneNumber: string
@@ -65,6 +67,7 @@ export const mapStateToProps = (state:AppStateType):MapStateToPropsType => {
             chosenSite: getChosenSiteSelector(state),
             chosenPackage: getChosenPackageSelector(state),
             chosenFrequency: getChosenFrequencySelector(state),
+            chosenSchoolYear: getChosenSchoolYearSelector(state),
             calculatePrice: getcalCulatePrice(state),
             priceCjk: getPriceCjk(state),
             priceCjkWord: getPriceCjkWord(state),

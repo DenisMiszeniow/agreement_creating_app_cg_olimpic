@@ -31,6 +31,7 @@
         "motherTelText": "тел. матері / законного опікуна",
         "fatherTelText": "тел. батька / законного опікуна",
         "mailText": "Адреса e-mail для контакту",
+        "repeatMailText": "Впровадь e-mail ще раз",
         "checkDataText": "ПЕРЕВІРИТИ ДАНІ",
         "nextStepText": "НАСТУПНИЙ КРОК"
     },
@@ -49,6 +50,7 @@
         "telText": "ВВЕДИ НОМЕР ТЕЛЕФОНУ ПРИНАЙМНІ ОДНОГО З БАТЬКІВ / ЗАКОННОГО ОПІКУНА",
         "mailText": "ВВЕДИ АДРЕС EMAIL",
         "checkMailText": "ПЕРЕВІР ПРАВИЛЬНІСТЬ EMAIL",
+        "checkMailAdresses": "РІЗНІ АДРЕСИ E-MAIL",
         "allRightText": "ВСЕ ВІРНО :)"
     }
 }

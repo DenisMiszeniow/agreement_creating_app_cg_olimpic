@@ -75,7 +75,7 @@
           ]
         },
         {
-          "group": "GRUPA KONTYNUUJĄCA (90 min)",
+          "group": "GRUPA KONTYNUUJĄCA (60 min)",
           "freq": [
             "1-x w tygodniu",
             "2-x w tygodniu",
@@ -104,9 +104,10 @@
           ]
         },
         {
-          "group": "GRUPA KONTYNUUJĄCA (60 min)",
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
-            "1-x w tygodniu"
+            "1-x w tygodniu",
+            "2-x w tygodniu"
           ]
         }
       ]
@@ -214,25 +215,13 @@
             "2-x w tygodniu",
             "3-x w tygodniu"
           ]
-        }
-      ]
-    },
-    {
-      "owner": "olimpic",
-      "site": "Szkoła Podstawowa nr 42 - Wałbrzyska 50, 52-314 Wrocław",
-      "groupOption": [
-        {
-          "group": "GRUPA POCZĄTKUJĄCA (60 min)",
-          "freq": [
-            "1-x w tygodniu",
-            "2-x w tygodniu"
-          ]
         },
         {
-          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "group": "GRUPA ZAAWANSOWANA",
           "freq": [
-            "1-x w tygodniu",
-            "2-x w tygodniu"
+            "2-x w tygodniu",
+            "3-x w tygodniu",
+            "4-x w tygodniu"
           ]
         }
       ]
@@ -249,7 +238,7 @@
           ]
         },
         {
-          "group": "GRUPA POCZĄTKUJĄCA (90 min)",
+          "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
             "1-x w tygodniu",
             "2-x w tygodniu"
@@ -304,7 +293,15 @@
           "group": "GRUPA KONTYNUUJĄCA (90 min)",
           "freq": [
             "1-x w tygodniu",
-            "2-x w tygodniu"
+            "2-x w tygodniu",
+            "3-x w tygodniu"
+          ]
+        },
+        {
+          "group": "GRUPA ZAAWANSOWANA",
+          "freq": [
+            "2-x w tygodniu",
+            "3-x w tygodniu"
           ]
         }
       ]

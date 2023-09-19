@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import Preloader from "../../preloader/preloader.tsx"
 import styles from "../main_form.module.scss"
 import { CheckFormTextType, ContactDataTextType } from "../../../types/types.js"
-import { FC } from "react"
+import { FC, useState } from "react"
 
 type PropsType = {
     motherPhoneNumber: string
@@ -34,6 +34,7 @@ type PropsType = {
 }
 
 const ContactData: FC<PropsType> = (props) => {
+    const [checkMailTekst, setChekMailTekst] = useState('')
 
     //-------------mother phone number-----------------
     const localOnMotherPhoneNumber = ({ target: { value } }) => {
@@ -48,6 +49,10 @@ const ContactData: FC<PropsType> = (props) => {
     //------------parrent email------------
     const localOnParrentEmail = ({ target: { value } }) => {
         props.onParrentEmail(value)
+    }
+
+    const onCheckMailText = ({target: {value}}) => {
+        setChekMailTekst(value)
     }
 
     //------------test form------------
@@ -82,7 +87,9 @@ const ContactData: FC<PropsType> = (props) => {
             props.onTestingFormText (props.checkLocalesTexts.checkMailText)
         } else if (!/\./.test(props.parrentEmail)) {
             props.onTestingFormText (props.checkLocalesTexts.checkMailText)
-        } else {
+        } else if (props.parrentEmail !== checkMailTekst){
+            props.onTestingFormText(props.checkLocalesTexts.checkMailAdresses)
+        }else {
             props.onTestingForm(props.checkLocalesTexts.allRightText)
         }
     }
@@ -106,9 +113,19 @@ const ContactData: FC<PropsType> = (props) => {
                     <input type="text" name="father_tel" onChange={localOnFatherPhoneNumber} value={props.fatherPhoneNumber} placeholder="w formacie: 654-321-987"/>
                 </div>
             </div>
-            <div className={styles.sectionForm__Form__Alone}>
-                <label>{props.localesTexts.mailText}</label>
-                <input type="email" name="email" onChange={localOnParrentEmail} value={props.parrentEmail} required placeholder="np.: kowalski@name.com" />
+            <div className={`${styles.sectionForm__Form__DoubleSame} ${styles.sectionForm__Form__Alone}`}>
+                <div>
+                    <label>{props.localesTexts.mailText}</label>
+                    <input type="email" name="email" onChange={localOnParrentEmail} value={props.parrentEmail} required placeholder="np.: kowalski@name.com" />
+                </div>
+                <div>
+                    <label>{props.localesTexts.repeatMailText}</label>
+                    <input type="email" onPaste={(e)=>{
+                                                    e.preventDefault()
+                                                    return false;
+                                                    }} 
+                                        autoComplete="nope" name="email" onChange={onCheckMailText} value={checkMailTekst} required placeholder="np.: kowalski@name.com" />
+                </div>
             </div>
             <div className={`${styles.sectionForm__Form__Alone} ${styles.sectionForm__Form__DoubleSame}`}>
                 <div>
